@@ -1,42 +1,49 @@
-# sushi-config.yaml is documented https://fshschool.org/docs/sushi/configuration/
-# ───────────────────────────────────────────────────
-# the id should be lowercase made up of "ihe." + {domain acronym} + "." + {profile acronym/short-name}
-# e.g. ihe.iti.mhds, or ihe.iti.basicaudit
-id: ihe.domain.profile
-canonical: https://profiles.ihe.net/Domain/Profile
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: ihe.rad.mado
+canonical: https://profiles.ihe.net/RAD/MADO
 version: 0.0.1-current
-name: IHE_Domain_Profile
-title: "spelled out name of the IHE Profile"
-description: put the short description of the profile here. it should explain what problem is being solved
+name: IHE_RAD_MADO
+title: "Mobile Access to DICOM Objects (MADO)"
+description: ImplementationGuide for IHE IT Radiology Technical Framework Supplement Mobile Access to DICOM Objects (MADO)
 releaseLabel: ci-build
 #releaseLabel: ballot
 #releaseLabel: trial-use
 #releaseLabel: release
-#date: 2022-01-02
-status: draft
+#date: 2026-03-16
+status: draft # draft | active | retired | unknown
 publisher:
   ## Find your domain contact on the https://www.ihe.net/ihe_domains page
-  - name: IHE IT Infrastructure Technical Committee
-  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
-  - email: iti@ihe.net
+  - name: IHE Radiology Technical Committee
+  - url: https://www.ihe.net/ihe_domains/radiology/
+  - email: rad@ihe.net
 contact:
-  - name: IHE IT Infrastructure Technical Committee
+  - name: IHE Radiology Technical Committee
     telecom:
       - system: email
-        value: iti@ihe.net
+        value: rad@ihe.net
 license:  CC-BY-4.0
-fhirVersion: 4.0.1
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 #copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
-copyrightYear: 2021+
+copyrightYear: 2025+
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current). For advanced
+# use cases, the value can be an object with keys for id, uri, and version.
+#
 dependencies:
-  ihe.iti.balp:
-    id: iheitibasicaudit
-    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: 1.1.x
+  ihe.iti.mhd: current
+  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2 
+  fhir.dicom: 
+    id: DICOM
+    uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
+    version: 2025.3.20250714
+  ihe.formatcode.fhir: current
 
-
-parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
     - input/resources
     - fsh-generated/resources
@@ -53,6 +60,8 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   apply-jurisdiction: 'true'
   apply-publisher: 'true'
   apply-version: 'true'
+  autoload-resources: 'true'
+
 # valueSets and codeSystems should be given OIDs, this is especially required if that codeSystem or valueSet is going to be used by CDA. IHE has an OID root that is managed https://wiki.ihe.net/index.php/OID_Registration, with a branch assigned to each IHE domain. Each IHE domain should have a page where they manage assignments within their branch. an OID should be assigned to each IG, and that OID placed below so that the IG publisher will manage OID assignment to all valueSets and codeSystems defined in that IG. The IG publisher will create an ./oids.ini in the project root that will need to be checked into your github repository.
 #  auto-oid-root: 1.3.6.1.4.1.19376.1.5....
 
@@ -60,50 +69,208 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 # list every example here with a name, description and that exampleBoolean is true; These are used to populate the artifacts page, and are needed to eliminate build warnings 
 # You may delay filling out this section until you approach publication as it is merely a nice to have and eliminates build warnings -- If you do this then you will need above the autoload-resources true
 
-
+ 
+# The pages property corresponds to IG.definition.page. SUSHI can
+# auto-generate the page list, but if the author includes pages in
+# this file, it is assumed that the author will fully manage the
+# pages section and SUSHI will not generate any page entries.
+# The page file name is used as the key. If title is not provided,
+# then the title will be generated from the file name.  If a
+# generation value is not provided, it will be inferred from the
+# file name extension.  Any subproperties that are valid filenames
+# with supported extensions (e.g., .md/.xml) will be treated as
+# sub-pages.
+#
 pages:
-# itemize here each narrative page. Include assigned section numbers when appropriate. The order they appear here is the order they will appear in the TOC and on the next/prev navigation.
+  # itemize here each narrative page. Include assigned section numbers when appropriate. The order they appear here is the order they will appear in the TOC and on the next/prev navigation.
   index.md:
-    title: ToDo Home
-    generation: markdown
+    title: Imaging Manifest for DICOM Objects (MADO) Implementation Guide
   volume-1.md:
-    title: 1:XX ToDo Volume 1
+    title: Volume 1
     generation: markdown
-  domain-YY.md:
-    title: 2:3.YY Transaction one [Domain-YY]
+  volume-2.md:
+    title: Volume 2
     generation: markdown
-  domain-ZZ.md:
-    title: 3:?.ZZ Content one [Domain-ZZ]
+  volume-3.md:
+    title: Volume 3
+    generation: markdown
+    fhir-imaging-manifest.md:
+      title: FHIR Imaging Manifest
+      generation: markdown
+    manifest-envelope.md:
+      title: Manifest Envelopes for IHE-MHD
+      generation: markdown
+    mapping.md:
+      title: Mappings between MADO FHIR and MADO DICOM KOS
+      generation: markdown
+  download.md: 
+    title: Download
     generation: markdown
   testplan.md:
-    title: "Test Plan"
-    generation: markdown
-  other.md:
-    title: Changes to Other IHE Specifications
-    generation: markdown
-  download.md:
-    title: "Download and Analysis"
+    title: Test plan
     generation: markdown
   issues.md:
     title: Significant Changes and Issues
     generation: markdown
-
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
+# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
+# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
+# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
+# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
+# │ property below.                                                                                │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: index.html
-  Volume 1:
+  MADO Home: index.html
+  Volume 1: 
     Introduction: volume-1.html
-    Actors and Transactions: volume-1.html#actors-and-transactions
-    Actor Options: volume-1.html#actor-options
-    Required Actor Groupings: volume-1.html#required-groupings
-    Overview: volume-1.html#overview
-    Security Considerations: volume-1.html#security-considerations
-    Cross-Profile Considerations: volume-1.html#other-grouping
-  Volume 2:
-    "Transaction one [Domain-YY]": domain-YY.html
-  Volume 3:
-    "Content one [Domain-ZZ]": domain-ZZ.html
+    # Actors and Transactions: volume-1.html#actors-and-transactions
+    # Actor Options: volume-1.html#actor-options
+    # Required Actor Groupings: volume-1.html#required-groupings
+    # Overview: volume-1.html#overview
+    # Security Considerations: volume-1.html#security-considerations
+    # Cross-Profile Considerations: volume-1.html#other-grouping
+  Volume 2: volume-2.html
+  Volume 3: 
+    FHIR Imaging Manifest: fhir-imaging-manifest.html
+    IHE-MHD Manifest Envelopes: manifest-envelope.html
+    Mappings between MADO FHIR and MADO DICOM KOS: mapping.html
   Artifacts: artifacts.html
   Other:
-    Changes to Other IHE Specifications: other.html
+    # Changes to Other IHE Specifications: other.html
     Download and Analysis: download.html
     Test Plan: testplan.html
+
+# ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
+# │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
+# │  resource. These properties are less commonly needed than those above.                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+#
+# Those who need more control or want to add additional details to the contact values can use
+# contact directly and follow the format outlined in the ImplementationGuide resource and
+# ContactDetail.
+#
+# contact:
+#   - name: Bob Smith
+#     telecom:
+#       - system: email # phone | fax | email | pager | url | sms | other
+#         value: bobsmith@example.org
+#         use: work
+#
+#
+# The global property corresponds to the IG.global property, but it
+# uses the type as the YAML key and the profile as its value. Since
+# FHIR does not explicitly disallow more than one profile per type,
+# neither do we; the value can be a single profile URL or an array
+# of profile URLs. If a value is an id or name, SUSHI will replace
+# it with the correct canonical when generating the IG JSON.
+#
+# global:
+#   Patient: http://example.org/fhir/StructureDefinition/my-patient-profile
+#   Encounter: http://example.org/fhir/StructureDefinition/my-encounter-profile
+#
+#
+# The resources property corresponds to IG.definition.resource.
+# SUSHI can auto-generate all of the resource entries based on
+# the FSH definitions and/or information in any user-provided
+# JSON or XML resource files. If the generated entries are not
+# sufficient or complete, however, the author can add entries
+# here. If the reference matches a generated entry, it will
+# replace the generated entry. If it doesn't match any generated
+# entries, it will be added to the generated entries. The format
+# follows IG.definition.resource with the following differences:
+#   * use IG.definition.resource.reference.reference as the YAML key.
+#   * if the key is an id or name, SUSHI will replace it with the
+#     correct URL when generating the IG JSON.
+#   * specify "omit" to omit a FSH-generated resource from the
+#     resource list.
+#   * if the exampleCanonical is an id or name, SUSHI will replace
+#     it with the correct canonical when generating the IG JSON.
+#   * groupingId can be used, but top-level groups syntax may be a
+#     better option (see below).
+# The following are simple examples to demonstrate what this might
+# look like:
+#
+# resources:
+#   Patient/my-example-patient:
+#     name: My Example Patient
+#     description: An example Patient
+#     exampleBoolean: true
+#   Patient/bad-example: omit
+#
+#
+# Groups can control certain aspects of the IG generation.  The IG
+# documentation recommends that authors use the default groups that
+# are provided by the templating framework, but if authors want to
+# use their own instead, they can use the mechanism below.  This will
+# create IG.definition.grouping entries and associate the individual
+# resource entries with the corresponding groupIds. If a resource
+# is specified by id or name, SUSHI will replace it with the correct
+# URL when generating the IG JSON.
+#
+# groups:
+#   GroupA:
+#     name: Group A
+#     description: The Alpha Group
+#     resources:
+#     - StructureDefinition/animal-patient
+#     - StructureDefinition/arm-procedure
+#   GroupB:
+#     name: Group B
+#     description: The Beta Group
+#     resources:
+#     - StructureDefinition/bark-control
+#     - StructureDefinition/bee-sting
+#
+#
+# The ImplementationGuide resource defines several other properties
+# not represented above. These properties can be used as-is and
+# should follow the format defined in ImplementationGuide:
+# * date
+# * meta
+# * implicitRules
+# * language
+# * text
+# * contained
+# * extension
+# * modifierExtension
+# * experimental
+# * useContext
+# * copyright
+# * packageId
+#
+#
+# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
+# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# The FSHOnly flag indicates if only FSH resources should be exported.
+# If set to true, no IG related content will be generated.
+# The default value for this property is false.
+#
+# FSHOnly: false
+#
+#
+# When set to true, the "short" and "definition" field on the root element of an Extension will
+# be set to the "Title" and "Description" of that Extension. Default is true.
+#
+# applyExtensionMetadataToRoot: true
+#
+#
+# The instanceOptions property is used to configure certain aspects of how SUSHI processes instances.
+# See the individual option definitions below for more detail.
+#
+instanceOptions:
+  # When set to true, slices must be referred to by name and not only by a numeric index in order to be used
+  # in an Instance's assignment rule. All slices appear in the order in which they are specified in FSH rules.
+  # While SUSHI defaults to false for legacy reasons, manualSliceOrding is recommended for new projects.
+  manualSliceOrdering: true # true | false
+  # Determines for which types of Instances SUSHI will automatically set meta.profile
+  # if InstanceOf references a profile:
+  #
+  # setMetaProfile: always # always | never | inline-only | standalone-only
+  #
+  #
+  # Determines for which types of Instances SUSHI will automatically set id
+  # if InstanceOf references a profile:
+  #
+  # setId: always # always | standalone-only

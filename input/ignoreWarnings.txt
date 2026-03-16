@@ -1,6 +1,14 @@
 == Suppressed Messages ==
-# instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
-# IHE valueset that is not yet a real valueset
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
+# Add warning and/or information messages here after you've confirmed that they aren't really a problem
+# (And include comments like this justifying why)
+# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
+# Common DICOM error to be resolved with the update of the DICOM terminology by DICOM WG20
+ValueSet 'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1' not found
+
+# There is no CodeSystem for DICOM OID's so using the definition of urn instead
+A definition for CodeSystem 'urn:ietf:rfc:3986' could not be found, so the code cannot be validated
+
+# This codesystem has not been updated yet.
+Unknown code 'urn:ihe:rad:MADO:fhir-manifest:2026"' in the CodeSystem%

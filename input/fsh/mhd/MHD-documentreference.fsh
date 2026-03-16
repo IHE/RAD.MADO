@@ -1,0 +1,78 @@
+Profile: MadoFhirMinimalDocumentReference
+Parent: IHE.MHD.Minimal.DocumentReference
+Title: "MADO MHD DocumentReference Profile for FHIR Imaging Manifests"
+Description: """
+MADO specific profile for the IHE-MHD Minimal Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
+related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
+"""
+* insert SetFmmAndStatusRule( 1, draft )
+* insert CommonMhdDocumentReferenceFields
+
+* relatesTo 
+  * insert SliceElement( #value, code )
+* relatesTo contains kosReference 0..1
+* relatesTo[kosReference] 
+  * ^short = "Reference to the DocumentReference resource that contains the DICOM KOS manifest that corresponds to this imaging report in FHIR format"
+  * code = #transforms
+  * target only Reference( MadoDicomKosMinimalDocumentReference )
+// category EU EEHRxFDocumentTypeMedicalImagingVS#Medical-Imaging
+// type $loinc 18748-4/
+//    $loinc#18748-4 "Diagnostic imaging study"
+//    $loinc#85430-7 "Diagnostic imaging report - example sections and entries"
+
+
+// content profile representation
+* content 1..1
+  * attachment 1..1
+    * contentType = #application/fhir+json
+  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  * extension contains  http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile named profile 1..*
+  * extension[profile]
+    * ^short = "Contains the profile of the referred report"
+    * extension[value[x]]
+      * valueCanonical = Canonical( MadoFhirBundle )
+
+Profile: MadoDicomKosMinimalDocumentReference
+Parent: IHE.MHD.Minimal.DocumentReference
+Title: "MADO MHD DocumentReference Profile for DICOM KOS Imaging Manifests"
+Description: """
+MADO specific profile for the IHE-MHD Minimal Document Reference for MADO DICOM KOS Manifests that includes the MADO specific content format, the extensions
+related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
+"""
+* insert SetFmmAndStatusRule( 1, draft )
+* insert CommonMhdDocumentReferenceFields
+
+* relatesTo 
+  * insert SliceElement( #value, code )
+* relatesTo contains fhirReference 0..1
+* relatesTo[fhirReference] 
+  * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging report in DICOM KOS format"
+  * code = #transforms
+  * target only Reference( MadoFhirMinimalDocumentReference )
+* content
+  * attachment 1..1
+    * contentType = #application/dicom
+  * format = http://dicom.nema.org/resources/ontology/DCMUID#1.2.840.10008.5.1.4.1.1.88.59	"Key Object Selection Document"
+
+
+RuleSet: CommonMhdDocumentReferenceFields
+// bodysite
+* extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 
+* extension[bodysite].extension[concept] 1..1
+* extension[bodysite].extension[concept]
+  * valueCodeableConcept from ValueSetAnatomicalRegion (extensible)
+  * ^short = "The anatomical region of the patient that is the focus of the imaging manifest, concept field is required."
+  * ^definition = "This field may be used to provide additional information about the anatomical region of interest for the imaging manifest."
+
+// // modality
+* extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 
+
+// study Instance UID and accession number
+* context 1..1
+  * related 
+    * insert SliceElement( #profile, identifier )
+  * related contains study-instance-uid 1..1 and accession-number 0..1
+  * related[study-instance-uid] only MadoReferencedStudyInstanceUidIdentifier
+    * ^short = "The Study Instance UID of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Study Instance UID."
+  * related[accession-number] only MadoReferencedAccessionNumberIdentifier
+    * ^short = "The Accession Number of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Accession Number."

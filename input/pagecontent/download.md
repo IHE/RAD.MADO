@@ -1,11 +1,11 @@
 
-You can also download:
+You can download:
 
 - [this entire guide](full-ig.zip),
-- the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), or [ttl](definitions.ttl.zip)
+- the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
 - the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
 
-The source code for this Implementation Guide can be found on **TODO: Put your github repo here**
+The source code for this Implementation Guide can be found on [IHE RAD.MADO Github Repo](https://github.com/IHE/RAD.MADO).
 
 #### Cross Version Analysis
 
