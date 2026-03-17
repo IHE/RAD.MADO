@@ -4,7 +4,7 @@ This GITHUB repository is the source content for the MADO publication by the IHE
 
 The Manifest-based Access to DICOM Objects (MADO) Profile represents a summary of the data stored in a DICOM imaging study as is stored in a PACS expressed in DICOM KOS and/or FHIR. 
 
-This Continuous Build will appear http://build.fhir.org/ig/IHE/RAD.MADO/branches/master/index.html (TODO)
+This Continuous Build is at http://build.fhir.org/ig/IHE/RAD.MADO/branches/master/index.html
 
 Formal Publication at http://profiles.ihe.net/RAD/MADO (TODO)
 
