@@ -2,7 +2,7 @@
 
 This reThis GITHUB repository is the source content for the MADO publication by ITI Radiology committee.
 
-The Mobile Access to DICOM Objects (MADO) Profile represents a summary of the data stored in a DICOM imaging study as is stored in a PACS expressed in DICOM KOS and/or FHIR. 
+The Manifest-based Access to DICOM Objects (MADO) Profile represents a summary of the data stored in a DICOM imaging study as is stored in a PACS expressed in DICOM KOS and/or FHIR. 
 
 This Continuous Build will appear http://build.fhir.org/ig/IHE/RAD.MADO/branches/master/index.html (TODO)
 

@@ -7,8 +7,8 @@ id: ihe.rad.mado
 canonical: https://profiles.ihe.net/RAD/MADO
 version: 0.0.1-current
 name: IHE_RAD_MADO
-title: "Mobile Access to DICOM Objects (MADO)"
-description: ImplementationGuide for IHE IT Radiology Technical Framework Supplement Mobile Access to DICOM Objects (MADO)
+title: "Manifest-base Access to DICOM Objects (MADO)"
+description: ImplementationGuide for IHE IT Radiology Technical Framework Supplement Manifest-based Access to DICOM Objects (MADO)
 releaseLabel: ci-build
 #releaseLabel: ballot
 #releaseLabel: trial-use
