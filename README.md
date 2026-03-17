@@ -1,4 +1,4 @@
-# IHE-RAD-MADO
+# IHE RAD MADO
 
 This GITHUB repository is the source content for the MADO publication by the IHE Radiology committee.
 
