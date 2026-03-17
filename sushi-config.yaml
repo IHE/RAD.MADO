@@ -133,7 +133,7 @@ menu:
   Volume 2: volume-2.html
   Volume 3: 
     FHIR Imaging Manifest: fhir-imaging-manifest.html
-    DICOM KOS Manifest: IHE_RAD_Suppl_MADO.pdf#page=41
+    DICOM KOS Manifest: https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_MADO.pdf#page=41
     IHE-MHD Manifest Envelopes: manifest-envelope.html
     Mappings between MADO FHIR and MADO DICOM KOS: mapping.html
   Artifacts: artifacts.html
