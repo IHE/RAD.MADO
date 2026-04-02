@@ -20,7 +20,11 @@ The main choices illustrated in the figure are:
 
 * There are two different DocumentReferences, one for the FHIR and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
 * A FHIR manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile {{MadoFhirBundle}}. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
+* The FHIR DocumentReference SHALL have the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
 * A KOS manifest is represented as a DICOM encoded DICOM instance following the MADO KOS profile.
+* The KOS manifest DocumentReference SHALL have include the SOPInstanceUid of the KOS instance as as `masterIdentifier`.
+* The `masterIdentifier` SHALL be part of the identifier list as well.
+
 
 The FHIR-manifest can be translated into the KOS-manifest and vice-versa allowing applications to change the representation when needed.
 

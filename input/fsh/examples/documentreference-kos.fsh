@@ -4,8 +4,11 @@ Title: "DocumentReference Example for DICOM KOS manifests"
 Description: "DocumentReference Example for DICOM KOS manifests"
 Usage: #example
 * masterIdentifier[+]
-  * system = "http://www.example.com/identifiers/documentreference"
-  * use = #usual
+  * system = "urn:dicom:uid"
+  * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+
+* identifier[+]
+  * system = "urn:dicom:uid"
   * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
 
 * status = #current

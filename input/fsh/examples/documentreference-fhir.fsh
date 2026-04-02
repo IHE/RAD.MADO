@@ -5,8 +5,11 @@ Description: "DocumentReference Example for FHIR manifests"
 Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
-  * use = #usual
-  * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+  * value = "koewopfwjqoddasf"
+
+* identifier[+]
+  * system = "http://www.example.com/identifiers/documentreference"
+  * value = "koewopfwjqoddasf"
 
 * status = #current
 * date = "2025-05-08T00:00:00Z"

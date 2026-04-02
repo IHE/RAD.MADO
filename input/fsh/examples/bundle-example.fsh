@@ -4,6 +4,9 @@ Title: "Bundle: MADO FHIR document"
 Description: "An example of a MADO FHIR manifest."
 Usage: #example
 * type = #collection
+* identifier
+  * system = "http://www.example.com/identifiers/mado-bundle"
+  * value = "koewopfwjqoddasf"
 * timestamp = "2026-02-24T11:48:21.136+01:00"
 * entry[0].fullUrl = "urn:ImagingStudy/1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
 * entry[=].resource = ExampleImagingStudy

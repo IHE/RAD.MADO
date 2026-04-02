@@ -8,6 +8,10 @@ related to body-site and modality, and the definition on where `StudyInstanceUID
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
 
+* masterIdentifier
+  * ^short = "The identifier of the FHIR bundle manifest."
+  * ^definition = "This field is used to store the identifier of the FHIR bundle manifest."
+
 * relatesTo 
   * insert SliceElement( #value, code )
 * relatesTo contains kosReference 0..1
@@ -42,6 +46,10 @@ related to body-site and modality, and the definition on where `StudyInstanceUID
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
 
+* masterIdentifier
+  * ^short = "The SOP Instance UID of the DICOM KOS manifest."
+  * ^definition = "This field is used to store the SOP Instance UID of the DICOM KOS manifest."
+
 * relatesTo 
   * insert SliceElement( #value, code )
 * relatesTo contains fhirReference 0..1
@@ -56,6 +64,7 @@ related to body-site and modality, and the definition on where `StudyInstanceUID
 
 
 RuleSet: CommonMhdDocumentReferenceFields
+* obeys mado-documentreference-masterIdentifier-also-identifier
 // bodysite
 * extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 
 * extension[bodysite].extension[concept] 1..1
@@ -76,3 +85,9 @@ RuleSet: CommonMhdDocumentReferenceFields
     * ^short = "The Study Instance UID of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Study Instance UID."
   * related[accession-number] only MadoReferencedAccessionNumberIdentifier
     * ^short = "The Accession Number of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Accession Number."
+
+
+Invariant:   mado-documentreference-masterIdentifier-also-identifier
+Description: "masterIdentifier, when used, need to be present as an identifier as well"
+Severity:    #error
+Expression:  "masterIdentifier.exists() implies identifier.where( %resource.masterIdentifier.system = system and %resource.masterIdentifier.value = value ).exists()"
