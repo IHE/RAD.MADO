@@ -69,3 +69,46 @@ Imaging specific search parameters include:
   ]
 } %}
 
+The expression below uses these search parameters to search for a FHIR manifest with StudyInstanceUid=324.232.5.5.324.2.
+
+```
+DocumentReference/?study-instance-uid=urn:oid:324.232.5.5.324.2&format=urn:ihe:rad:MADO:fhir-manifest:2026
+```
+
+This uses the optional study-instance-uid search parameter. An alternative with standard search params would be. As the study instance uid is an OID, in the identifier it is prefixed with `urn:oid:`.
+
+```
+DocumentReference/?related:identifier=urn:oid:324.232.5.5.324.2&format=urn:ihe:rad:MADO:fhir-manifest:2026
+```
+
+A similar query searching for DICOM KOS Manifests with accession number `12345` would look like:
+
+```
+DocumentReference/?related:identifier="12345"&format=1.2.840.10008.5.1.4.1.1.88.59
+```
+
+an alternative using the `accession-number` query is:
+
+```
+DocumentReference/?accession-number="12345"&format=1.2.840.10008.5.1.4.1.1.88.59
+```
+
+### DocumentReference examples
+
+The list below presents various examples of MADO DocumentReferences.
+
+{% sql {
+  "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='DocumentReference'",
+  "class" : "lines",
+  "columns" : [
+    { "name" : "Title"      , "type" : "link"     , "source" : "Name", "target" : "Web"},
+    { "name" : "Name"       , "type" : "markdown" , "source" : "Title" },
+    { "name" : "Description", "type" : "markdown" , "source" : "Description"}
+  ]
+} %}
+
+The [DocumentReference Example for FHIR manifests with transform](DocumentReference-DocumentReferenceFHIRwithTransform.html) example contains a FHIR MADO DocumentReference. The content section does not point to a FHIR file but to a transform service. The `content.attachment` section is presented below
+
+{% fragment DocumentReference/DocumentReferenceFHIRwithTransform JSON BASE:content.attachment %}
+
+The url points to a transform service and passes the link to the KOS manifest. This is just one example of such service. This specification does not specify the interface. Alternative implementation could could pass the StudyInstanceUID and wado URL parameters, or some other set of data.
