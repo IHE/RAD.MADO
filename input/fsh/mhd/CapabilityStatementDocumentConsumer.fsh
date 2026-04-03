@@ -39,3 +39,19 @@ Usage: #definition
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHOULD
       * documentation = "Modality of the related imaging study" 
+    * searchParam[+]
+      * name = "study-instance-uid"
+      * definition = Canonical( SearchParameterDocumentReferenceStudyInstanceUid )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #MAY
+      * documentation = "Study Instance UID of the related imaging study"   
+    * searchParam[+]
+      * name = "accession-number"
+      * definition = Canonical( SearchParameterDocumentReferenceAccessionNumber )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #MAY
+      * documentation = "Accession Number of the related imaging study"   
