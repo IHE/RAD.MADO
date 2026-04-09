@@ -83,7 +83,7 @@ RuleSet: CommonMhdDocumentReferenceFields
   * related contains study-instance-uid 1..1 and accession-number 0..1
   * related[study-instance-uid] only MadoReferencedStudyInstanceUidIdentifier
     * ^short = "The Study Instance UID of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Study Instance UID."
-  * related[accession-number] only MadoReferencedAccessionNumberIdentifier
+  * insert MadoRequestedProcedureReferenceWithIdentifier( related, accession-number )
     * ^short = "The Accession Number of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Accession Number."
 
 

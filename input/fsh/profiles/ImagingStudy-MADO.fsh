@@ -26,7 +26,8 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 * basedOn
   * insert SliceElement( #type, $this )
 * basedOn contains order 0..1
-* basedOn[order] only MadoReferencedAccessionNumberIdentifier
+* insert MadoRequestedProcedureReferenceWithIdentifier( basedOn, order )
+
 
 * endpoint 
   * insert SliceElement( #profile, [[$this.resolve()]] )
