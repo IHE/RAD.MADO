@@ -1,8 +1,12 @@
-<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="743px" height="381px" viewBox="-0.5 -0.5 743 381" content="&lt;mxfile&gt;&lt;diagram id=&quot;C8cuhm8FPLjEtc-HhFVm&quot; name=&quot;Page-1&quot;&gt;7Vvfc+I2EP5rmMk95MaW/ItHMOk1M02TKdO59FHYitGcsThZEOhfXxlLYMuiocQ4ZprkAWslraVvP0m7ixjAcLH5xtBy/kBjnA6AFW8GcDIAwLZ8R3wUkm0p8Vy/FCSMxLLRQTAlf2PVU0pXJMZ5rSGnNOVkWRdGNMtwxGsyxBh9rTd7oWn9rUuU4IZgGqG0Kf1OYj4vpYFrHeS/YpLM1ZttS9YskGosBfkcxfS1IoJ3AxgySnn5tNiEOC3AU7iU/X45UrsfGMMZP6UDKDusUbqSc5Pj4ls12dc54Xi6RFFRfhUGHcDxnC9SUbLF4wtJ05CmlIlyWsz5Nkbsx80AwBmI7Rfx+nBQDAI6kYeH1hfRpTlIOe41ZhxvKiI56G+YLjBnW9FE1ir8JIF8WXw9WMNTZJlXLAEDKUSSAcle8wEk8SBxMmMGDZh5KS+woGJCVfC8n6vCkuOoBGgkKlkyuwGuW8JSfSiRsQodt/mO8kVz21ludhVKlXhKis8nxEmBn3y1GHT59rL2PVYUtgK+H4TDdkzlwLqtbLtpLNs3GasFWzm9sNUUszWJ8B/45wrnx01WimOy1kVdjvVmFEU4zwnNRKvfV4sZZl/eGLEQ1wbdX+q5J1LPaYF6bi+o98RohOMVw9e3UQCrw43C64W1HoQ3EDKMuFB8ffZyOrSX/7bjgrN4VDh7ohSlSGxpUR2anDP6A1fAGU8s8bevUa6dgGAsUGLbZ1GwVOGvovDVVcXJplo52arShvDnynOllygdOhUF1eeoaXK6YhFWYJcyjliCFa6lCMc177Vpv4p9XIN5lIzhVPgY67rPa7KZfMMTJbuVslFW1jbfoVtXUU5H9qr6qLoiV1PkaIpKDBqKdhTaT/skVgWfrGqwyukVq25hoB0S4DxWOY7GKngxVg0/WdVgldsvVgGNVfa5rOpur1Jh1CetKrTy+kUrW6MVOJdWnh7IXI5Wyg/8pNWBVnbPDsFhnQ6OFXw917kK6hSFjq2rapFboMGt8SqLBa10hokQhNc5hVKSZAXhhO2woNW4CFRIhNKRrFiQuNAEx6aIiFHxHhxLHhQBlcwqC8u2k5B0azCaEpIXioRsUz7ykgtWLjy7tvBACyvPNqw81a4nKw9oXqOjJ5RPXXeeFjy7uqIWV10/kqDfR5NHUX+XxctyUteW34CB11jUF8tv2P1IHz6Ht9dvN6dLu5kSiT10n853hfoVuWnxFvDP9IP0dADUFbW4H3eduzQe2G2c127vz+v9t8DKrF5w5nntg7oiS1PUIj9OyEImwqFdnr5X7q9CoJnSYJnNoqYbaLip5HLFbAFoms2DLWyhzXzZ5D58fGiAkM/RsniMabRa7DAw+v6VZTMrw4DfZkeOoTuv+DfzPziC7VEMVbRTgcx06rgtnDrqOsS1Q+bVSOd3h18z6XFd+O2T2N1B1ozlP+b7bRRxwgnNMLs+1xSobbYL19R4camHrmmnmT2FQU/8Fd0Ltc51Z/WEsf7la3vuivGOVX9W3NuXz4xbJLTbWHGmIP5d0ATWKJwcOS3+KzS+Bo1hLwKmS5S21wY0F71wY7pXc79ACcmSKV/F2w+5gte4aSeHYt1nOUeZIACw/ryfvPO23dVlzoN65twGXR6JplD8YgafYkZw3hPuybH838mnH5MG8g0vRb5mnH8wRoMMN9PHp3811zuu4LYApPaN5Ml3AVsJRZoJgwNMH40E7PIWq9LRi/2sr44ONNwCNzo6Z9wCF8XDj3dKZ/rwEyh49w8=&lt;/diagram&gt;&lt;/mxfile&gt;">
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="743px" height="381px" viewBox="-0.5 -0.5 743 381" content="&lt;mxfile&gt;&lt;diagram id=&quot;C8cuhm8FPLjEtc-HhFVm&quot; name=&quot;Page-1&quot;&gt;7Vtfc5s4EP80nkkfkkESYHj0n7SXmcslc5679h4xKFhTDK7AsX2f/oSRDEhy4yMY42namRatxCLt/na9uywDNFluv1BvtXhMAhwNoBFsB2g6gNC1XPZvTtgVBMtxCkJISVCQQEmYkX8xJxqcuiYBTmsLsySJMrKqE/0kjrGf1WgepcmmvuwliepPXXkhVggz34tU6lcSZIuC6lhGSf8Nk3AhngwMPrP0xGJOSBdekGwqJHQ/QBOaJFlxtdxOcJTLTsiluO/zkdnDxiiOs1NugMUNr1605mfj+8p24rCbBcnwbOX5+XjD9DlA40W2jNgIsMsXEkWTJEooG0f5mW8Dj36/GUA0hwF4YY+fDPJNINO3sWt8Yreom+T7fsU0w9sKiW/6C06WOKM7toTPCvlxAA35cFNqwxZgWVQ0gRxO9DgCwgPnUkjsgstJLzOE3hYajoNRDjQ28iMvTYlfl1qa0eQ7FnJj0hlPDfbnMCNgxUQwxluSfWPXt8adASxO+IcRjDtkifE0F4whBrvK4BlTws6IqaDF7LzfqoOClyWGJav9SPAqzogDxTQUNabJmvp8FTS5fXo0xGKZpddtRXuWRnmCRnHkZeS1vg2dQvkTnhPCNlhCRzibnVCnVWdRbJ/fVbUdiZFp1kFoAglcxZkVRnt8HY59GuQ0iLOjLDe/ZL+lEnr2j3XuPMZ+ga1RLrBwfgMZUvaWWL0ojNHIedymey+bLwfmarufEKzYVZj//8zEnuuaP5ptunh6Mfsex8EMAA6HzsRtxzuYqK4ZAFT/AIY6/9CCezB7oasZpq/Ex3/iH2ucHldZQQ7Iq0zqcq83I9/HzEcmMVv1x3o5x/TTGztm5Nqm+ws960TomS1Az+oF9J5p4uNgTfH1OQpodOgo7F5o65EFoBOKvYwxvj59mR3qa9hx2NcwThPhoriu3HU0TmwcyiFtVHip0A4ZkvN1G4Z2yJIYmRKj9kI75wNVCqrMXqHqFtUTBuZlm6FKThiAnHm0hyr3A1UKqqx+oQpKqAJNUdWdrxJp1AesKrCy+wUrIMEKNoWVLScy54MVVGA1XscBQ5QMLhYmZnU4eREJ4xxrTG15iWucB5PE96IRn1iSIOeExrqolSbsOTjgEMiDXl5sBmZLdUqrJkRdnfJM0Sq4UJUS1GwOtmB0QGN0Yl1PrA7KpUC5znyq1dlSgmPJjFq0un4Uqr6Opk9s/j4OVsWhri0HRY6tGPXZclDQjxLP3wRvmLe9arWZXaqt69qB1hm34Yut3vviw4s/oWjbaeiLh7DOyJAYteiLT6gChCxYWZ1uCIe3395ccDD0ahHHdSS5ieJORW0OVNVmoxbsQ81Xpw+Tp0dFCOnCW+WXQeKvl3sZaOO6itnMixDv9/kRH3Nv53/1+HeOyPaoDEUkWxGZzqVYLbgUqOZiVykyuwa6YXfyA1cuv0MRqTuRqXnaZd4veX5GMpLEeQhybXEHdNQc8Gxxh7Zx4JxxxzUUbIQMehKvSKkjMpq2o8gFG/nlR3vhirbHoT8W93bzh9ZFIrl/p5HF6RK0d4nGMUaT6ZFfi/8rmqEkGo0vgrq+OWC3IZqzvvDWvdd+WHohicNZtg52F2mBUTpd+FaMhzjNvJgBABp/PUzf2e1ydVVRp14VBbDLn0RdKn42hc8wJTjtCfb4Xn518Mk/kxrwuecCn5rnl8pQwHAze3r+qbre0QLXgiBdKbA9tRenlVRELRiUYrq0JFCXXWSCRy/8WV8DHaTpwtQGOm10YQK1sqBIpk9JV+tFYgHJWs9/z3p6JJM1Deeuaa+Y/D2BCWRWLX4I0DW2RGJ+57o1mLiG/VOg6L480SLg7RT+ol+LSM01cNg0O0cy4Np6scuG5fdixfLyozt0/x8=&lt;/diagram&gt;&lt;/mxfile&gt;">
     <defs/>
     <g>
         <g>
             <rect x="0" y="0" width="610" height="380" fill="#b2d1f0" stroke="#000000" pointer-events="all" style="fill: light-dark(rgb(178, 209, 240), rgb(76, 110, 144)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <path d="M 15.95 150.05 L 402.25 288.23" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
+            <path d="M 407.89 290.25 L 399.01 291.32 L 402.25 288.23 L 401.71 283.79 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
         </g>
         <g>
             <rect x="410" y="40" width="170" height="30" fill="#2778c9" stroke="#000000" pointer-events="all" style="fill: light-dark(rgb(39, 120, 201), rgb(84, 154, 224)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
@@ -118,10 +122,6 @@
             <path d="M 407.76 185.06 L 399.87 189.26 L 401.77 185.21 L 399.66 181.26 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
         </g>
         <g>
-            <path d="M 20 195 L 402.22 328.29" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
-            <path d="M 407.89 330.26 L 399.02 331.41 L 402.22 328.29 L 401.65 323.85 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
-        </g>
-        <g>
             <rect x="5" y="0" width="60" height="30" fill="none" stroke="none" pointer-events="all"/>
         </g>
         <g>
@@ -180,21 +180,17 @@
                             <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
                                 <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
                                     <font style="color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 14px;">
-                                        XC-WADO Endpoint
+                                        Viewer Endpoint
                                     </font>
                                 </div>
                             </div>
                         </div>
                     </foreignObject>
                     <text x="495" y="295" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
-                        XC-WADO Endpoint
+                        Viewer Endpoint
                     </text>
                 </switch>
             </g>
-        </g>
-        <g>
-            <path d="M 290 245.82 L 402.29 288.1" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
-            <path d="M 407.91 290.21 L 399.01 291.14 L 402.29 288.1 L 401.83 283.65 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
         </g>
         <g>
             <path d="M 580 291 L 651.76 291" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
@@ -420,6 +416,14 @@
                     </text>
                 </switch>
             </g>
+        </g>
+        <g>
+            <path d="M 260 300 L 401.93 329.33" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
+            <path d="M 407.81 330.55 L 399.17 332.85 L 401.93 329.33 L 400.79 325.01 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
+        </g>
+        <g>
+            <path d="M 257.9 254.96 L 402.61 326.36" fill="none" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
+            <path d="M 407.99 329.01 L 399.05 329.06 L 402.61 326.36 L 402.59 321.88 Z" fill="#bd0000" stroke="#bd0000" stroke-width="2" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(189, 0, 0), rgb(255, 168, 168)); stroke: light-dark(rgb(189, 0, 0), rgb(255, 168, 168));"/>
         </g>
     </g>
     <switch>
