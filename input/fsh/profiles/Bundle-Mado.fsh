@@ -19,8 +19,7 @@ report, the clinical specialty, and the anatomical region of interest.
     patient 0..1 and
     endpoint 1..* and
     creator 1..1 and
-    requested-procedure 0..* and
-    performed-procedure 0..* 
+    requested-procedure 0..* 
 * entry[imaging-study].resource only MadoImagingStudy
   * ^short = "Imaging Study holding information on the structure of the study."
 * entry[patient].resource only Patient
@@ -31,5 +30,3 @@ report, the clinical specialty, and the anatomical region of interest.
   * ^short = "Endpoint holding information on how to retrieve the study data."
 * entry[requested-procedure].resource only ServiceRequest
   * ^short = "Service Request holding information on the order."
-* entry[performed-procedure].resource only Procedure
-  * ^short = "Procedure holding information on the acquisition procedure."
