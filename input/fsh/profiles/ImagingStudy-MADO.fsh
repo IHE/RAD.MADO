@@ -10,11 +10,11 @@ constraints and extensions specific to the MADO context, such as the type of ima
 * identifier 1..*
 * identifier
   * insert SliceElement( #profile, $this )
-* identifier contains study-instance-uid 1..1
+* identifier contains study-instance-uid 1..1 MS
 * identifier[study-instance-uid] only MadoStudyInstanceUidIdentifier
 
 
-* extension contains MadoAnatomicalRegionExtension named anatomical-region 0..* and MadoCreatorExtension named creator 1..1
+* extension contains MadoAnatomicalRegionExtension named anatomical-region 0..* MS and MadoCreatorExtension named creator 1..1 MS
 * extension[anatomical-region] ^short = "The anatomical regions covered by the study."
 * extension[anatomical-region] ^definition = """
 The anatomical regions covered by the study, depending on the study there can be zero, one or more regions. 
@@ -22,33 +22,50 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 """
 * extension[creator] ^short = "The creator of the MADO, which is the device that created the ImagingStudy resource in the MADO context."
 
-* subject 1..1
+* subject 1..1 MS
+* subject only Reference( MadoPatient )
 
 * basedOn
   * insert SliceElement( #type, $this )
-* basedOn contains order 0..1
+* basedOn contains order 0..1 MS
 * basedOn[order] only MadoReferencedAccessionNumberIdentifier
 
 * endpoint 
   * insert SliceElement( #profile, [[$this.resolve()]] )
-* endpoint contains webviewer 0..* 
+* endpoint contains webviewer 0..* MS
 * endpoint[webviewer] only Reference(MadoWebViewerEndpoint)
 
+* modality MS
+* started MS
+* description MS
+* procedureCode MS
+
 * series
-  * uid 1..1
-  * extension contains MadoRepresentativeInstanceExtension named representative-instance 0..1
+  * uid 1..1 MS
+  * number MS
+  * modality MS
+  * description MS
+  * numberOfInstances MS
+  * bodySite MS
+  * specimen MS
+  * started MS
+  
+  * extension contains MadoRepresentativeInstanceExtension named representative-instance 0..1 MS
   * extension[representative-instance] ^short = "Indicates that a referenced instance on and ImagingStudy series is a representative instance for that series."
 
   * endpoint 1..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
-  * endpoint contains wado 0..*
+  * endpoint contains wado 0..* MS
   * endpoint[wado] only Reference(MadoWadoEndpoint)
   
   * instance
-    * uid 1..1
+    * uid 1..1 MS
+    * sopClass MS
+    * number MS
+
     * extension contains 
-        MadoRepresentativeInstanceExtension named representative-instance 0..1 and
-        MadoNumberOfFrames named number-of-frames 0..1
+        MadoRepresentativeInstanceExtension named representative-instance 0..1 MS and
+        MadoNumberOfFrames named number-of-frames 0..1 MS
     * extension[representative-instance] ^short = "Indicates that a referenced instance on and ImagingStudy series is a representative instance for that series."
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
 

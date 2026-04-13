@@ -5,7 +5,7 @@ Description: """A profile for the ServiceRequest resource that represents the Re
 * insert SetFmmAndStatusRule( 1, draft )
 * identifier
   * insert SliceElement( #value, type )
-* identifier contains accessionNumber 0..1 and placer 0..* and filler 0..*
+* identifier contains accessionNumber 0..1 MS and placer 0..* MS and filler 0..* MS
 * identifier[accessionNumber] only MadoAccessionNumberIdentifier
 * identifier[placer]
   * type
@@ -21,6 +21,9 @@ Description: """A profile for the ServiceRequest resource that represents the Re
     * coding contains filler 1..1
     * coding[filler] = $v2-0203#FILL
 
-* code
+* code MS
   * ^short = "Requested procedure"
 * code from ProcedureEuImagingType (example)
+
+* requester MS
+* reasonCode MS

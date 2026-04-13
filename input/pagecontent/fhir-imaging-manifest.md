@@ -8,9 +8,13 @@ The figure below presents an overview of the data that is part of the imaging-ma
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
 
-The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This `Bundle` includes the {{MadoImagingStudy}} resource, the {{DeviceAuthor}}, at least one {{Endpoint}} and additional resources. The `Bundle` SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see [DICOM KOS <-> FHIR mappings](mapping.html)).
+The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, at least one {{Endpoint}} and additional resources.
 
-{% include stunote.html text="Feedback is requested from the implementer community whether we need to highlight these fields more explicitly and how (e.g. using FHIR obligations)."%}
+The profiles for the {{MadoFhirBundle}} and the resources it contained have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which means that within this specification, fields marked as `MS` SHALL be populated if the value is known.
+
+The {{MadoCreator}} and {{MadoCreatorOrganization}} resources provide information on the device and organization that created the manifest.
+
+The {{MadoRequestedProcedure}} provides information on the order for the imaging study, including the order specific identifiers: Accession Number, Placer Number and Filler number.
 
 {{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 

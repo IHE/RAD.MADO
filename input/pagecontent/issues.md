@@ -14,11 +14,6 @@
 ### Open Issues
 
 
-#### Circular dependencies between mapping and definition
-
-Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specific the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
-
-**Resolution**: Flag them using MustSupport - add definition to manifest definition page.
 
 #### Where to define the anatomical regions
 
@@ -103,3 +98,10 @@ XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box 
 The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
 
 **Resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with an arrow coming from the study. Add MADO WADO - with location uid in picture. Add <<resourceType>> where not clear from the name. Add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
+
+
+#### Circular dependencies between mapping and definition
+
+Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specific the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
+
+**Resolution**: Flag them using MustSupport - add definition to manifest definition page.

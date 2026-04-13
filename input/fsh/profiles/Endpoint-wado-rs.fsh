@@ -14,7 +14,7 @@ example for such an `Endpoint`.
 """
 * insert SetFmmAndStatusRule( 1, "draft" )
 
-* extension contains XcWadoRetrieveLocationUIDExtension named locationUid 1..1
+* extension contains XcWadoRetrieveLocationUIDExtension named locationUid 1..1 MS
 * address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named dataAbsentReason 0..1
   * ^short = "This extension is present when the address value is a placeholder and should not be used."
 
@@ -67,3 +67,4 @@ example for such an `Endpoint`.
 * payloadMimeType[text-rtf]        = #text/rtf
 * payloadMimeType[application-pdf] = #application/pdf
 
+* address MS

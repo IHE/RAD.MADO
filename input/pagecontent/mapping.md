@@ -45,6 +45,7 @@ expected that the concept will be present in each of them.
 | RequestedProcedure OrderId | MadoImagingStudy.basedOn[order] -> ServiceRequest. identifier  | GeneralStudy PlacerId     |  |
 | RequestedProcedure requester | MadoImagingStudy.basedOn[order] -> ServiceRequest. requester  | GeneralStudy ReferringPhysiciansName     |  |
 | RequestedProcedure reason | MadoImagingStudy.basedOn[order] -> ServiceRequest. reasonCode  | GeneralStudy ReasonForPerformedProcedureCodeSequence     |  |
+| RequestedProcedure code | MadoImagingStudy.procedureCode | GeneralStudy ProcedureCodeSequence     |  |
 |   |    |       |  |
 | Procedure (scheduled or performed) procedureCode | MadoImagingStudy.procedureCode  |  SR-TID 2010: EV (121023, DCM “Procedure Code”)     | Pending DICOM approval |
 |   |    |       |  |

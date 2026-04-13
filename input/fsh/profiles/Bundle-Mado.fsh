@@ -9,7 +9,7 @@ report, the clinical specialty, and the anatomical region of interest.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 
-* identifier 1..1 
+* identifier 1..1 MS
 * type = #collection
 * total ..0
 * entry 1..*
