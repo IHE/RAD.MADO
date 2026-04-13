@@ -1,11 +1,14 @@
-Instance: DocumentReferenceKOS
+Instance: DocumentReferenceKOSwithTransform
 InstanceOf: MadoDicomKosMinimalDocumentReference
 Title: "DocumentReference Example for DICOM KOS manifests"
 Description: "DocumentReference Example for DICOM KOS manifests"
 Usage: #example
 * masterIdentifier[+]
-  * system = "http://www.example.com/identifiers/documentreference"
-  * use = #usual
+  * system = "urn:dicom:uid"
+  * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+
+* identifier[+]
+  * system = "urn:dicom:uid"
   * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
 
 * status = #current
@@ -13,6 +16,8 @@ Usage: #example
 
 * subject = Reference(pat-mrn-1538098370)
 // * custodian = Reference(OrganizationSemiStructuredReport)
+
+* insert DocumentReferenceDefaults
 
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR
 
@@ -23,7 +28,7 @@ Usage: #example
 
 * relatesTo[fhirReference]
   * code = #transforms
-  * target = Reference( DocumentReferenceFHIR )
+  * target = Reference( DocumentReferenceFHIRwithTransform )
 
 * content[+]
   * attachment[+]
@@ -34,6 +39,8 @@ Usage: #example
   * format = http://dicom.nema.org/resources/ontology/DCMUID#1.2.840.10008.5.1.4.1.1.88.59	"Key Object Selection Document"
 
 * context
+  * period
+    * start = "2018-02-27T09:48:29+01:00"
   * related[study-instance-uid].identifier
     * type
       * coding[dcm] = $dicomOntology#110180 "Study Instance UID"

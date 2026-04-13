@@ -30,7 +30,6 @@ expected that the concept will be present in each of them.
 | Study  series.instancesInTheSeries | MadoImagingStudy.series.instance  |       |  |
 | Study  series.instancesInTheSeries.instanceTitle | MadoImagingStudy.series.instance.title  |       |  |
 | Study  series.instancesInTheSeries.instanceUid | MadoImagingStudy.series.instance.uid  |  SR-TID1601:EV (112002, DCM, “Instance Number”)     |  |
-| Study  series.instancesInTheSeries.instanceUid | MadoImagingStudy.series.instance[representative]  |  SR-TID2010:8  +  SR-TID2010:9  +  SR-TID2010:10 |  |
 | Study  series.instancesInTheSeries.sopClass | MadoImagingStudy.series.instances.sopClass  |       |  |
 | Study  series.instancesInTheSeries.instanceNumber | MadoImagingStudy.series.instance.number  |  SR-TID1601:EV (112002, DCM, “Instance Number”)     |  |
 | Study  series.instancesInTheSeries.numberOfFrames | MadoImagingStudy.series.instance.extension[numberOfFrames]  |  SR-TID1601:EV (121140, DCM, “Number of Frames”)     |  |
@@ -45,6 +44,7 @@ expected that the concept will be present in each of them.
 | RequestedProcedure OrderId | MadoImagingStudy.basedOn[order] -> ServiceRequest. identifier  | GeneralStudy PlacerId     |  |
 | RequestedProcedure requester | MadoImagingStudy.basedOn[order] -> ServiceRequest. requester  | GeneralStudy ReferringPhysiciansName     |  |
 | RequestedProcedure reason | MadoImagingStudy.basedOn[order] -> ServiceRequest. reasonCode  | GeneralStudy ReasonForPerformedProcedureCodeSequence     |  |
+| RequestedProcedure code | MadoImagingStudy.procedureCode | GeneralStudy ProcedureCodeSequence     |  |
 |   |    |       |  |
 | Procedure (scheduled or performed) procedureCode | MadoImagingStudy.procedureCode  |  SR-TID 2010: EV (121023, DCM “Procedure Code”)     | Pending DICOM approval |
 |   |    |       |  |

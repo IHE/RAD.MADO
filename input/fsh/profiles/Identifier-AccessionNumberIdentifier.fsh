@@ -12,9 +12,12 @@ constraints and extensions specific to the MADO context, such as the value set f
 * type
   * coding
     * insert SliceElement( #value, $this )
-  * coding contains v2-0203-coding 1..1 and dcm 0..1
+  * coding contains v2-0203-coding 1..1 and dcm 1..1 // and xds
   * coding[v2-0203-coding] = $v2-0203#ACSN "Accession Id"
   * coding[dcm] = $dicomOntology#121022 "Accession Number"
+  // * coding[xds] = ????#urn:ihe:iti:xds:2013:accession 
+// urn:ihe:iti:xds:2013:accession  
+// https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2
 
 Profile: MadoReferencedAccessionNumberIdentifier
 Parent: Reference

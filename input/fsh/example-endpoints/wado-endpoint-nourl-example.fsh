@@ -1,7 +1,7 @@
-Instance: EndpointXcWadoExample
-InstanceOf: MadoXcWadoEndpoint
-Title: "Endpoint: XC-WADO"
-Description: "Example implementation of an XC_WADO endpoint"
+Instance: EndpointWadoExampleNoAddress
+InstanceOf: MadoWadoEndpoint
+Title: "Endpoint: MADO WADO Endpoint example with no URL"
+Description: "Example implementation of an WADO endpoint holding a RetrieveLocationUID and no address."
 Usage: #example
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs "DICOM WADO-RS"
 * status = #active

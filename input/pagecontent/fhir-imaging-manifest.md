@@ -8,16 +8,24 @@ The figure below presents an overview of the data that is part of the imaging-ma
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
 
-The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This `Bundle` includes the {{MadoImagingStudy}} resource, the {{DeviceAuthor}}, at least one {{Endpoint}} and additional resources. The `Bundle` SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see [DICOM KOS <-> FHIR mappings](mapping.html)).
+The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, at least one {{Endpoint}} and additional resources.
 
-{% include stunote.html text="Feedback is requested from the implementer community whether we need to highlight these fields more explicitly and how (e.g. using FHIR obligations)."%}
+The profiles for the {{MadoFhirBundle}} and the resources it contained have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which means that within this specification, fields marked as `MS` SHALL be populated if the value is known.
 
-{{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies two different {{Endpoint}}s:
+The {{MadoCreator}} and {{MadoCreatorOrganization}} resources provide information on the device and organization that created the manifest.
 
-* The {{MadoWadoEndpoint}} endpoint which provides a WADO endpoint corresponding the WADO profile defined in this specification.
-* The {{MadoXcWadoEndpoint}} endpoint which provides an {{iheXcWado}} endpoint corresponding the {{iheXcWado}} specification.
+The {{MadoRequestedProcedure}} provides information on the order for the imaging study, including the order specific identifiers: Accession Number, Placer Number and Filler number.
 
-The {{DeviceAuthor}} profile provides information on the system that generated the manifest.
+{{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
+
+* On study level, the manifest can contain:
+  * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint.
+* For each series, the manifest can contain
+  * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding the WADO profile defined in this specification.
+
+As the purpose of the manifest is to provide access to the imaging study content, inclusion of an endpoint at study level or at each series level is REQUIRED.
+
+The {{MadoCreator}} profile provides information on the system that generated the manifest.
 
 Besides the {{ImagingStudy}} and {{Endpoint}} resources, also additional resources are present that reflect information present in DICOM such as information on the patient, performer, procedure and imaging device. What resources to include depends on the information to be included, see [DICOM KOS <-> FHIR mappings](mapping.html) for more information on when to include what resource.
 

@@ -5,10 +5,15 @@ Instance: IHE.RAD.MADO.DocumentConsumer
 InstanceOf: CapabilityStatement
 Title: "MADO Document Consumer (client)"
 Usage: #definition
+Description: """
+IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Consumer (client). It extends MHD  [Document Consumer (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentConsumer.html). 
 
+Please note that this CapabilityStatement representation only shows the delta of this instance with the 
+MHD [Document Responder (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentResponder.html). All the
+functionality specified by the [Document Consumer (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+SHALL also be supported.
+"""
 * name = "IHE_RAD_MADO_DocumentConsumer"
-* title = "MADO Document Consumer CapabilityStatement"
-* description = "IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Consumer (client). It extends https://build.fhir.org/ig/IHE/ITI.MHD/branches/MHD5/CapabilityStatement-IHE.MHD.DocumentConsumer.html"
 * status = #active
 * experimental = false
 * date = "2026-02-27"
@@ -39,3 +44,19 @@ Usage: #definition
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHOULD
       * documentation = "Modality of the related imaging study" 
+    * searchParam[+]
+      * name = "study-instance-uid"
+      * definition = Canonical( SearchParameterDocumentReferenceStudyInstanceUid )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #MAY
+      * documentation = "Study Instance UID of the related imaging study"   
+    * searchParam[+]
+      * name = "accession-number"
+      * definition = Canonical( SearchParameterDocumentReferenceAccessionNumber )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #MAY
+      * documentation = "Accession Number of the related imaging study"   

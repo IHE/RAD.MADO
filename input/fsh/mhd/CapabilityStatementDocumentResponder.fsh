@@ -5,10 +5,16 @@ Instance: IHE.RAD.MADO.DocumentResponder
 InstanceOf: CapabilityStatement
 Title: "MADO Document Responder (server)"
 Usage: #definition
+Description: """
+IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (server). It extends MHD [Document Responder (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentResponder.html). 
+
+Please note that this CapabilityStatement representation only shows the delta of this instance with the 
+MHD [Document Responder (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentResponder.html). All the
+functionality specified by the [Document Consumer (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentConsumer.html)
+SHALL also be supported.
+"""
 
 * name = "IHE_RAD_MADO_DocumentResponder"
-* title = "MADO Document Responder CapabilityStatement"
-* description = "IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (server). It extends https://build.fhir.org/ig/IHE/ITI.MHD/branches/MHD5/CapabilityStatement-IHE.MHD.DocumentResponder.html"
 * status = #active
 * experimental = false
 * date = "2026-02-27"
@@ -39,3 +45,19 @@ Usage: #definition
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
         * valueCode = #SHALL
       * documentation = "Modality of the related imaging study" 
+    * searchParam[+]
+      * name = "study-instance-uid"
+      * definition = Canonical( SearchParameterDocumentReferenceStudyInstanceUid )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHOULD
+      * documentation = "Study Instance UID of the related imaging study"   
+    * searchParam[+]
+      * name = "accession-number"
+      * definition = Canonical( SearchParameterDocumentReferenceAccessionNumber )
+      * type = #token
+      * extension[+]
+        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * valueCode = #SHOULD
+      * documentation = "Accession Number of the related imaging study"   

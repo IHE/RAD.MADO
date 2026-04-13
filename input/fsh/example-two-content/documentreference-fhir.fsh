@@ -5,14 +5,19 @@ Description: "DocumentReference Example for FHIR manifests"
 Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
-  * use = #usual
-  * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+  * value = "koewopfwjqoddasf"
+
+* identifier[+]
+  * system = "http://www.example.com/identifiers/documentreference"
+  * value = "koewopfwjqoddasf"
 
 * status = #current
 * date = "2025-05-08T00:00:00Z"
 
 * subject = Reference(pat-mrn-1538098370)
 // * custodian = Reference(OrganizationSemiStructuredReport)
+* insert DocumentReferenceDefaults
+
 
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR
 
@@ -40,6 +45,8 @@ Usage: #example
     * creation = "2025-05-08T00:00:00Z"
 
 * context
+  * period
+    * start = "2018-02-27T09:48:29+01:00"
   * related[study-instance-uid].identifier
     * type
       * coding[dcm] = $dicomOntology#110180 "Study Instance UID"

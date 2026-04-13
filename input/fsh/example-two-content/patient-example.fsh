@@ -8,6 +8,7 @@ Usage: #example
 * identifier.type = $v2-0203#MR "Medical Record number"
 * identifier.system = "http://example.org/hospital/mrn"
 * identifier.value = "PID_666"
+* gender = #male
 * name[+]
   * given = "Pietje"
   * family = "Puk"
