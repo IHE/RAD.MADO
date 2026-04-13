@@ -8,6 +8,10 @@ of this profile.
 """
 * insert SetFmmAndStatusRule( 1, "draft" )
 
+* extension contains XcWadoRetrieveLocationUIDExtension named locationUid 1..1
+* address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named dataAbsentReason 0..1
+  * ^short = "This extension is present when the address value is a placeholder and should not be used."
+
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs "DICOM WADO-RS"
 
 * payloadType.text = "DICOM WADO-RS" // GET proper code for this

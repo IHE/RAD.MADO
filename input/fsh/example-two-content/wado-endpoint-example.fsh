@@ -3,7 +3,7 @@ Instance: wado-url-endpoint-84713519
 InstanceOf: MadoWadoEndpoint
 Title: "Endpoint: WADO"
 Description: "Example of a DICOM web endpoint supporting WADO."
-Usage: #example
+Usage: #inline
 * status = #active
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs "DICOM WADO-RS"
 * name = "WADO endpoint"

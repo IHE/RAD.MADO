@@ -2,7 +2,7 @@ Instance: ExampleImagingStudy
 InstanceOf: MadoImagingStudy
 Title: "ImagingStudy: example of an FHIR imaging study in a MADO manifest"
 Description: "ImagingStudy in a MADO manifest providing information on the structure and content of a DICOM study."
-Usage: #example
+Usage: #inline
 * identifier[study-instance-uid]
   * type = $dicomOntology#110180 "Study Instance UID"
   * system = "urn:dicom:uid"

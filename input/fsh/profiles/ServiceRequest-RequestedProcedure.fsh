@@ -9,17 +9,17 @@ Description: """A profile for the ServiceRequest resource that represents the Re
 * identifier[accessionNumber] only MadoAccessionNumberIdentifier
 * identifier[placer]
   * type
-  * coding
-    * insert SliceElement( #value, $this )
-  * coding contains placer 1..1
-  * coding[placer] = $v2-0203#PLAC
+    * coding
+      * insert SliceElement( #value, $this )
+    * coding contains placer 1..1
+    * coding[placer] = $v2-0203#PLAC
 
 * identifier[filler]
   * type
-  * coding
-    * insert SliceElement( #value, $this )
-  * coding contains placer 1..1
-  * coding[filler] = $v2-0203#FILL
+    * coding
+      * insert SliceElement( #value, $this )
+    * coding contains filler 1..1
+    * coding[filler] = $v2-0203#FILL
 
 * code
   * ^short = "Requested procedure"

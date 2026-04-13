@@ -31,22 +31,19 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
 * endpoint 
   * insert SliceElement( #profile, [[$this.resolve()]] )
-* endpoint contains webviewer 0..* and iid 0..* and wado 0..* and xcwado 0..*
+* endpoint contains webviewer 0..* 
 * endpoint[webviewer] only Reference(MadoWebViewerEndpoint)
-* endpoint[iid] only Reference(MadoIidEndpoint)
-* endpoint[wado] only Reference(MadoWadoEndpoint)
-* endpoint[xcwado] only Reference(MadoXcWadoEndpoint)
 
 * series
   * uid 1..1
   * extension contains MadoRepresentativeInstanceExtension named representative-instance 0..1
   * extension[representative-instance] ^short = "Indicates that a referenced instance on and ImagingStudy series is a representative instance for that series."
 
-  * endpoint 
+  * endpoint 1..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
-  * endpoint contains wado 0..* and xcwado 0..*
+  * endpoint contains wado 0..* and wado-with-location-uid 0..*
   * endpoint[wado] only Reference(MadoWadoEndpoint)
-  * endpoint[xcwado] only Reference(MadoXcWadoEndpoint)
+  * endpoint[wado-with-location-ui] only Reference(MadoXcWadoEndpoint)
 
   * instance
     * uid 1..1
