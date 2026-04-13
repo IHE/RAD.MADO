@@ -13,19 +13,6 @@
 
 ### Open Issues
 
-#### Improve overview picture
-
-The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
-
-**Initial resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with a error coming from the study.
-
-BvdH: Although this is modelling the location these endpoints exist in DICOM, the choice of placing the viewer endpoint at study level and the WADO endpoint at series level is a DICOM artifact that does not need to be repeated in the FHIR representation. I suggest to allow the WADO one to appear on study level as well.
-
-**Resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with a error coming from the study. Allow WADO and XC-WADO endpoint on study as well as series level.
-
-TBD: add MADO WADO - with location uid in picture 
-add <<resourceType>> where not clear from the name
-add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
 
 #### Circular dependencies between mapping and definition
 
@@ -110,3 +97,9 @@ Does the document remain a collection bundle or move to a document bundle.
 XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
 
 **Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the MADO FHIR manifest.
+
+#### Improve overview picture
+
+The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
+
+**Resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with an arrow coming from the study. Add MADO WADO - with location uid in picture. Add <<resourceType>> where not clear from the name. Add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
