@@ -29,13 +29,6 @@ Option 1 = description--> series.instance.title / extension for title-code
 Option 2 = Basic+cross version imaging selection with this info.
 ==> Bas will proposal - topic for face-2-face
 
-#### Query parameter optionality
-
-The use of the term “optional” in relationship with the query parameters, need to be made clearer when MHD is grouped with MADO.  In the context of MADO, the support by MHD Doc Responder and MHD Doc Source has to be required, but optional for the MHD Document consumer.
-
-
-AP BvdH: make the relation with MHD more apparent in the the spec.
-
 #### Try-out example 
 
 Does the document remain a collection bundle or move to a document bundle.
@@ -105,3 +98,9 @@ The comprehensive includes relevant fields that are needed in this context such 
 The Examples should be “complete examples” not piece-wise resources as listed in: https://build.fhir.org/ig/IHE/RAD.ADO/branches/call20260402/artifacts.html#example-example-instances
  
 **Resolution:** These were included to show examples of the individual artifacts. We can remove them and only support the Bundles.
+
+#### Query parameter optionality
+
+The use of the term “optional” in relationship with the query parameters, need to be made clearer when MHD is grouped with MADO.  In the context of MADO, the support by MHD Doc Responder and MHD Doc Source has to be required, but optional for the MHD Document consumer.
+
+**Resolution:** make the relation with MHD more apparent in the the spec.
