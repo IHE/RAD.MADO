@@ -1,6 +1,6 @@
 Profile:  MadoXcWadoEndpoint
 Parent: MadoWadoEndpoint
-Title: "Endpoint: IHE-XC-WADO"
+Title: "Endpoint: MADO profile for XC-WADO endpoints"
 Description: """
 This profile defines the XC-WADO endpoint for accessing imaging study content.
 It is a regular WADO endpoint with an additional extension that holds the `locationUID` of the domain where the content can be 

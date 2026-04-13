@@ -12,12 +12,18 @@ The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profi
 
 {% include stunote.html text="Feedback is requested from the implementer community whether we need to highlight these fields more explicitly and how (e.g. using FHIR obligations)."%}
 
-{{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies two different {{Endpoint}}s:
+{{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 
-* The {{MadoWadoEndpoint}} endpoint which provides a WADO endpoint corresponding the WADO profile defined in this specification.
-* The {{MadoXcWadoEndpoint}} endpoint which provides an {{iheXcWado}} endpoint corresponding the {{iheXcWado}} specification.
+* On study level, the manifest can contain:
+  * The {{MadoIidEndpoint}} endpoint which provides an {{iheIid}} endpoint corresponding the IHE-IID specification.
+  * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint.
+* For each series, the manifest can contain
+  * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding the WADO profile defined in this specification.
+  * The {{MadoXcWadoEndpoint}} endpoint which provides an {{iheXcWado}} endpoint corresponding the {{iheXcWado}} specification.
 
-The {{DeviceAuthor}} profile provides information on the system that generated the manifest.
+As the purpose of the manifest is to provide access to the imaging study content, inclusion of an endpoint at study level or at each series level is REQUIRED.
+
+The {{MadoCreator}} profile provides information on the system that generated the manifest.
 
 Besides the {{ImagingStudy}} and {{Endpoint}} resources, also additional resources are present that reflect information present in DICOM such as information on the patient, performer, procedure and imaging device. What resources to include depends on the information to be included, see [DICOM KOS <-> FHIR mappings](mapping.html) for more information on when to include what resource.
 

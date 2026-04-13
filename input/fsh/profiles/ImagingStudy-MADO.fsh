@@ -23,6 +23,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 * extension[creator] ^short = "The creator of the MADO, which is the device that created the ImagingStudy resource in the MADO context."
 
 * subject 1..1
+
 * basedOn
   * insert SliceElement( #type, $this )
 * basedOn contains order 0..1
@@ -30,7 +31,9 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
 * endpoint 
   * insert SliceElement( #profile, [[$this.resolve()]] )
-* endpoint contains wado 0..* and xcwado 0..*
+* endpoint contains webviewer 0..* and iid 0..* and wado 0..* and xcwado 0..*
+* endpoint[webviewer] only Reference(MadoWebViewerEndpoint)
+* endpoint[iid] only Reference(MadoIidEndpoint)
 * endpoint[wado] only Reference(MadoWadoEndpoint)
 * endpoint[xcwado] only Reference(MadoXcWadoEndpoint)
 

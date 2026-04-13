@@ -1,8 +1,10 @@
 Profile: MadoWadoEndpoint
 Parent: Endpoint
-Title: "Endpoint: WADO"
+Title: "Endpoint: MADO WADO endpoint"
 Description: """
-This profile defines the WADO endpoint for accessing imaging study content.
+This profile defines the definition of a WADO endpoint for accessing imaging study content. Note that in
+the case the endpoint supports XC-WADO, the derived MADO profile for XC-WADO endpoints should be used instead 
+of this profile.
 """
 * insert SetFmmAndStatusRule( 1, "draft" )
 
