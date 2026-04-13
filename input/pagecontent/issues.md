@@ -13,15 +13,7 @@
 
 ### Open Issues
 
-#### Comments meeting 2026-04-09 
-
-##### XC WADO endpoint
-
-XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
-
-**Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the MADO FHIR manifest.
-
-##### Improve overview picture
+#### Improve overview picture
 
 The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
 
@@ -35,7 +27,7 @@ TBD: add MADO WADO - with location uid in picture
 add <<resourceType>> where not clear from the name
 add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
 
-##### Circular dependencies between mapping and definition
+#### Circular dependencies between mapping and definition
 
 Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specific the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
 
@@ -94,10 +86,9 @@ The comprehensive includes relevant fields that are needed in this context such 
 **Proposed Resolution:** Take over the fields from comprehensive except `securityLabel`.
 Add period
 
-
 #### What examples to include
 
-The Examples should be “complete examples” not piece-wise resources as listed in: https://build.fhir.org/ig/IHE/RAD.MADO/branches/call20260402/artifacts.html#example-example-instances
+The Examples should be “complete examples” not piece-wise resources as listed in: https://build.fhir.org/ig/IHE/RAD.ADO/branches/call20260402/artifacts.html#example-example-instances
  
 **Resolution:** These were included to show examples of the individual artifacts. We can remove them and only support the Bundles.
 
@@ -105,8 +96,17 @@ The Examples should be “complete examples” not piece-wise resources as liste
 
 The use of the term “optional” in relationship with the query parameters, need to be made clearer when MHD is grouped with MADO.  In the context of MADO, the support by MHD Doc Responder and MHD Doc Source has to be required, but optional for the MHD Document consumer.
 
+
 AP BvdH: make the relation with MHD more apparent in the the spec.
+
+#### Try-out example 
+
+Does the document remain a collection bundle or move to a document bundle.
 
 ### Closed Issues
 
-- ToDo_002: this is closed issue 2
+#### XC WADO endpoint
+
+XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
+
+**Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the MADO FHIR manifest.

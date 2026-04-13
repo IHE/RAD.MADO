@@ -15,11 +15,9 @@ The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profi
 {{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 
 * On study level, the manifest can contain:
-  * The {{MadoIidEndpoint}} endpoint which provides an {{iheIid}} endpoint corresponding the IHE-IID specification.
   * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint.
 * For each series, the manifest can contain
   * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding the WADO profile defined in this specification.
-  * The {{MadoXcWadoEndpoint}} endpoint which provides an {{iheXcWado}} endpoint corresponding the {{iheXcWado}} specification.
 
 As the purpose of the manifest is to provide access to the imaging study content, inclusion of an endpoint at study level or at each series level is REQUIRED.
 

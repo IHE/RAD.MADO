@@ -4,7 +4,5 @@
 {% assign MadoFhirBundle                       = "[MADO FHIR Bundle](./StructureDefinition-MadoFhirBundle.html)" %}
 {% assign MadoImagingStudy                     = "[MADO FHIR ImagingStudy](./StructureDefinition-MadoImagingStudy.html)" %}
 {% assign MadoWadoEndpoint                     = "[MADO FHIR WADO Endpoint](./StructureDefinition-MadoWadoEndpoint.html)" %}
-{% assign MadoXcWadoEndpoint                   = "[MADO FHIR XC-WADO Endpoint](./StructureDefinition-MadoXcWadoEndpoint.html)" %}
-{% assign MadoIidEndpoint                      = "[MADO FHIR IID Endpoint](./StructureDefinition-MadoIidEndpoint.html)" %}
 {% assign MadoWebViewerEndpoint                = "[MADO FHIR WebViewer Endpoint](./StructureDefinition-MadoWebViewerEndpoint.html)" %}
 

@@ -23,14 +23,15 @@ Usage: #inline
 
 * extension[anatomical-region].valueCodeableConcept = $sct#67734004
 
-* endpoint = Reference(wado-url-endpoint-84713519) "WADO endpoint"
-* endpoint.type = "Endpoint"
+
 * numberOfSeries = 1
 * numberOfInstances = 46
 
 * series.uid = "1.2.392.200140.2.1.1.1.3.799008771.2076.1519721309.449"
 * series.modality = $dicomOntology#SM
 * series.numberOfInstances = 46
+* series.endpoint = Reference(wado-url-endpoint-84713519) "WADO endpoint"
+* series.endpoint.type = "Endpoint"
 * series.instance[+].extension[number-of-frames].valueInteger = 49
 * series.instance[=].uid = "1.2.392.200140.2.1.1.1.4.799008771.2076.1519721320.457"
 * series.instance[=].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.77.1.6

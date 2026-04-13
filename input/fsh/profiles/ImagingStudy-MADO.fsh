@@ -41,10 +41,9 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
   * endpoint 1..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
-  * endpoint contains wado 0..* and wado-with-location-uid 0..*
+  * endpoint contains wado 0..*
   * endpoint[wado] only Reference(MadoWadoEndpoint)
-  * endpoint[wado-with-location-ui] only Reference(MadoXcWadoEndpoint)
-
+  
   * instance
     * uid 1..1
     * extension contains 
