@@ -13,14 +13,6 @@
 
 ### Open Issues
 
-
-
-#### Where to define the anatomical regions
-
-Anatomical Regions in section https://build.fhir.org/ig/IHE/RAD.MADO/branches/call20260402/ValueSet-im-anatomical-region-valueset.html#root duplicate the value set defined in the MADO Profile.  Should reference the MADO TI Table 6.X.6.4-1: CID IHE-MADO1 High-Level Anatomic Regions and Systems.  This would avoid different display strings that are aligned with SNOMED (but not identical) and DICOM.
-
-**Resolution**: Make comment in the ValueSet that the definition in the pdf has prevelance and that we plan to move this to IHE terminology.
-
 #### Need for a Accession Number Identifier profile
 
 The spec introduces a Data Type Profile: MADO Accession Number Identifier.  Why is this needed when it as not needed for the imaging report ?
@@ -105,3 +97,9 @@ The Figure: FHIR Manifest Overview should be refined because some Bundle resourc
 Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specific the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
 
 **Resolution**: Flag them using MustSupport - add definition to manifest definition page.
+
+#### Where to define the anatomical regions
+
+Anatomical Regions in section https://build.fhir.org/ig/IHE/RAD.MADO/branches/call20260402/ValueSet-im-anatomical-region-valueset.html#root duplicate the value set defined in the MADO Profile.  Should reference the MADO TI Table 6.X.6.4-1: CID IHE-MADO1 High-Level Anatomic Regions and Systems.  This would avoid different display strings that are aligned with SNOMED (but not identical) and DICOM.
+
+**Resolution**: Make comment in the ValueSet that the definition in the pdf has prevelance and that we plan to move this to IHE terminology.
