@@ -50,9 +50,6 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
   * specimen MS
   * started MS
   
-  * extension contains MadoRepresentativeInstanceExtension named representative-instance 0..1 MS
-  * extension[representative-instance] ^short = "Indicates that a referenced instance on and ImagingStudy series is a representative instance for that series."
-
   * endpoint 1..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
   * endpoint contains wado 0..* MS
@@ -64,9 +61,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
     * number MS
 
     * extension contains 
-        MadoRepresentativeInstanceExtension named representative-instance 0..1 MS and
         MadoNumberOfFrames named number-of-frames 0..1 MS
-    * extension[representative-instance] ^short = "Indicates that a referenced instance on and ImagingStudy series is a representative instance for that series."
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
 
 Invariant: MadoImagingStudy-endpoint-required

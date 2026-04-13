@@ -41,7 +41,11 @@ Parent: IHE.MHD.Minimal.DocumentReference
 Title: "MADO MHD DocumentReference Profile for DICOM KOS Imaging Manifests"
 Description: """
 MADO specific profile for the IHE-MHD Minimal Document Reference for MADO DICOM KOS Manifests that includes the MADO specific content format, the extensions
-related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
+related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored. 
+
+This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
+profiles (except `securityLabel`) and requires `context.period`.
+
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
@@ -66,7 +70,7 @@ related to body-site and modality, and the definition on where `StudyInstanceUID
 RuleSet: CommonMhdDocumentReferenceFields
 * obeys mado-documentreference-masterIdentifier-also-identifier
 // bodysite
-* extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 
+* extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 MS
 * extension[bodysite].extension[concept] 1..1
 * extension[bodysite].extension[concept]
   * valueCodeableConcept from ValueSetAnatomicalRegion (extensible)
@@ -74,13 +78,25 @@ RuleSet: CommonMhdDocumentReferenceFields
   * ^definition = "This field may be used to provide additional information about the anatomical region of interest for the imaging manifest."
 
 // // modality
-* extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 
+* extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 MS
+
+* type 1..1 MS
+* category 1..1 MS
+* subject 1..1 MS
+* content
+  * attachment
+    * language 1..1 MS
+    * creation 1..1 MS 
 
 // study Instance UID and accession number
 * context 1..1
+  * facilityType 1..1 MS 
+  * practiceSetting 1..1 MS
+  * period 1..1 MS
+    * start 1..1
   * related 
     * insert SliceElement( #profile, identifier )
-  * related contains study-instance-uid 1..1 and accession-number 0..1
+  * related contains study-instance-uid 1..1 MS and accession-number 0..1 MS
   * related[study-instance-uid] only MadoReferencedStudyInstanceUidIdentifier
     * ^short = "The Study Instance UID of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Study Instance UID."
   * related[accession-number] only MadoReferencedAccessionNumberIdentifier

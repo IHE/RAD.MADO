@@ -17,6 +17,8 @@ Usage: #example
 * subject = Reference(pat-mrn-1538098370)
 // * custodian = Reference(OrganizationSemiStructuredReport)
 
+* insert DocumentReferenceDefaults
+
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR
 
 * extension[bodysite]
@@ -37,6 +39,8 @@ Usage: #example
   * format = http://dicom.nema.org/resources/ontology/DCMUID#1.2.840.10008.5.1.4.1.1.88.59	"Key Object Selection Document"
 
 * context
+  * period
+    * start = "2018-02-27T09:48:29+01:00"
   * related[study-instance-uid].identifier
     * type
       * coding[dcm] = $dicomOntology#110180 "Study Instance UID"

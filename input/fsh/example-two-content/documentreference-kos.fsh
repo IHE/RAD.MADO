@@ -16,6 +16,7 @@ Usage: #example
 
 * subject = Reference(pat-mrn-1538098370)
 // * custodian = Reference(OrganizationSemiStructuredReport)
+* insert DocumentReferenceDefaults
 
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR
 
@@ -31,12 +32,14 @@ Usage: #example
 * content[+]
   * attachment[+]
     * contentType = #application/dicom
-    * url = "Binary/mado-kos-manifest-binary"
+    * url = "Bundle/mado-bundle-589331894518000"
     * language = #de-DE
     * creation = "2025-05-08T00:00:00Z"
   * format = http://dicom.nema.org/resources/ontology/DCMUID#1.2.840.10008.5.1.4.1.1.88.59	"Key Object Selection Document"
 
 * context
+  * period
+    * start = "2018-02-27T09:48:29+01:00"
   * related[study-instance-uid].identifier
     * type
       * coding[dcm] = $dicomOntology#110180 "Study Instance UID"

@@ -21,41 +21,13 @@ The spec introduces a Data Type Profile: MADO Accession Number Identifier.  Why 
 
 **OPEN ISSUE:** Discuss during the face-2-face whether and how to include urn:ihe:iti:xds:2013 as a third option.
 
-#### MadoRepresentativeInstanceExtension
+#### Representation of KIN information
 
-Not sure what this extension is about ?
+The MADO profile allows for inclusion of KIN - key object information. The information elements include the KIN Document Title Code and description (at instance level) (see the text in line 1195 and lower).
 
-MadoRepresentativeInstanceExtension
-
-```
-Extension: Representative Instance
-An extension to indicate that a referenced instance on and ImagingStudy series is a representative instance for that series. This extension is used in the MADO context to indicate that a referenced instance on an ImagingStudy series is a representative instance for that series, which can be used for display purposes in the MADO context.
-In the Manifest Envelope, the descriptive text (first five sentences and the text below the figure) for MHD needs a structure that sets a context about the MHD profile to better understand these technical statements (e.g. using the MHD actor profile names and associated MHD transactions).
-```
-
-**Resolution:** In (an earlier?) version of the MADO spec, in the the KOS list of images, there was a remark that this should contain the representative images to be shown first. This extension was added to support those. I cannot find that text the current spec anymore. I these are indeed no longer in the spec, we will remove this extension.
-
-Additional issue: KIN - key object information
-TBD: BvdH will provide a proposal for this based on the text in line 1195 and lower. KIN Document Title Code and description (at instance level).
 Option 1 = description--> series.instance.title / extension for title-code
 Option 2 = Basic+cross version imaging selection with this info.
 ==> Bas will proposal - topic for face-2-face
-
-#### Base resource for MHD DocumentReference
-
-In the Manifest Envelope, section related FHIR Profile, it speaks about the related “MHD Minimal Document Reference”.  However, in the use of MHD for imaging studies sharing, the “comprehensive MHD metadata” is used.  That is clear in the “MADO MHD DocumentReference Profile for FHIR Imaging Manifests”. The rest of the section, that only list the imaging specific.
- 
-**Answer:** Minimal Document Reference has been chosen as this is the minimal MHD requirement and the one used in the EU Health Access API specification. I do not see a reason to add the restrictions in this profile to all deployments of MADO.
-
-The comprehensive includes relevant fields that are needed in this context such as time, ...
-**Proposed Resolution:** Take over the fields from comprehensive except `securityLabel`.
-Add period
-
-#### What examples to include
-
-The Examples should be “complete examples” not piece-wise resources as listed in: https://build.fhir.org/ig/IHE/RAD.ADO/branches/call20260402/artifacts.html#example-example-instances
- 
-**Resolution:** These were included to show examples of the individual artifacts. We can remove them and only support the Bundles.
 
 #### Query parameter optionality
 
@@ -103,3 +75,33 @@ The imaging Manifest includes both:
 which is not consistent, as this distinction does not appear explicitly in the DICOM Manifest? Nor in the mapping table with: “Procedure (scheduled or performed) procedureCode” which is correct at the study level, with a zero or more “Procedure” at the Study level.
 
 **Resolution:** Remove the reference to performed procedure from the Bundle (we just need a procedure code)
+
+#### MadoRepresentativeInstanceExtension
+
+Not sure what this extension is about ?
+
+MadoRepresentativeInstanceExtension
+
+```
+Extension: Representative Instance
+An extension to indicate that a referenced instance on and ImagingStudy series is a representative instance for that series. This extension is used in the MADO context to indicate that a referenced instance on an ImagingStudy series is a representative instance for that series, which can be used for display purposes in the MADO context.
+In the Manifest Envelope, the descriptive text (first five sentences and the text below the figure) for MHD needs a structure that sets a context about the MHD profile to better understand these technical statements (e.g. using the MHD actor profile names and associated MHD transactions).
+```
+
+**Resolution:** In (an earlier?) version of the MADO spec, in the the KOS list of images, there was a remark that this should contain the representative images to be shown first. This extension was added to support those. I cannot find that text the current spec anymore. I these are indeed no longer in the spec, we will remove this extension.
+
+#### Base resource for MHD DocumentReference
+
+In the Manifest Envelope, section related FHIR Profile, it speaks about the related “MHD Minimal Document Reference”.  However, in the use of MHD for imaging studies sharing, the “comprehensive MHD metadata” is used.  That is clear in the “MADO MHD DocumentReference Profile for FHIR Imaging Manifests”. The rest of the section, that only list the imaging specific.
+ 
+**Answer:** Minimal Document Reference has been chosen as this is the minimal MHD requirement and the one used in the EU Health Access API specification. I do not see a reason to add the restrictions in this profile to all deployments of MADO.
+
+The comprehensive includes relevant fields that are needed in this context such as time, practiseSetting and facilityType
+
+**Resolution:** Take over the fields from comprehensive except `securityLabel` and add Period.
+
+#### What examples to include
+
+The Examples should be “complete examples” not piece-wise resources as listed in: https://build.fhir.org/ig/IHE/RAD.ADO/branches/call20260402/artifacts.html#example-example-instances
+ 
+**Resolution:** These were included to show examples of the individual artifacts. We can remove them and only support the Bundles.
