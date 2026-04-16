@@ -2,9 +2,7 @@ Profile: MadoWadoEndpoint
 Parent: Endpoint
 Title: "Endpoint: MADO WADO endpoint"
 Description: """
-This profile defines the definition of a WADO endpoint for accessing imaging study content. Note that in
-the case the endpoint supports XC-WADO, the derived MADO profile for XC-WADO endpoints should be used instead 
-of this profile. [MADO WADO Endpoint](Endpoint-wado-endpoint-with-url.html) holds an example of a endpoint with a 
+This profile defines the definition of a WADO endpoint for accessing imaging study content. [MADO WADO Endpoint](Endpoint-wado-endpoint-with-url.html) holds an example of a endpoint with a 
 `RetrieveLocationUid`and an address.
 
 In the case only the `RetrieveLocationUID` is known and the `address` is unknown, a placeholder field for the `address` 
