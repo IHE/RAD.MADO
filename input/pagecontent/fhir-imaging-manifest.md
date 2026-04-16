@@ -2,13 +2,14 @@
 
 The FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study as is stored in a PACS expressed in FHIR. It is the FHIR equivalent of the DICOM KOS manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content. 
 
-### FHIR Manifest overview
+### FHIR Manifest 
 
 The figure below presents an overview of the data that is part of the imaging-manifest. In order to keep the diagram readable, not all references are included.
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
 
 The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, at least one {{Endpoint}} and additional resources.
+
 
 The profiles for the {{MadoFhirBundle}} and the resources it contained have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which means that within this specification, fields marked as `MS` SHALL be populated if the value is known.
 

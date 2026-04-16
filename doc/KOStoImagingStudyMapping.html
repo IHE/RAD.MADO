@@ -1,0 +1,177 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+<!--
+*
+	{box-sizing:border-box;
+	margin:0;
+	padding:0}
+body
+	{font-family:system-ui,sans-serif;
+	font-size:12px;
+	background:#f9fafb;
+	padding:14px;
+	color:#111}
+h2
+	{font-size:17px;
+	font-weight:700;
+	color:#1e3a5f}
+.subtitle
+	{color:#6b7280;
+	font-size:11px;
+	margin:3px 0 10px}
+.summary-box
+	{background:#fff;
+	border:1px solid #e5e7eb;
+	border-radius:8px;
+	padding:8px 12px;
+	margin-bottom:10px}
+.summary-box .label
+	{font-weight:700;
+	font-size:11px;
+	color:#374151;
+	margin-bottom:6px}
+.chips
+	{display:flex;
+	flex-wrap:wrap;
+	align-items:center}
+.chip
+	{border-radius:6px;
+	padding:3px 10px;
+	display:flex;
+	align-items:center;
+	border:2px solid transparent;
+	font-size:11px;
+	font-weight:600}
+.chip.active
+	{border-color:#374151}
+.controls
+	{display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	margin-bottom:10px}
+input[type=text]
+	{padding:4px 9px;
+	border-radius:5px;
+	border:1px solid #d1d5db;
+	font-size:11px;
+	width:220px}
+.cat-btn
+	{padding:3px 9px;
+	border-radius:5px;
+	border:1px solid #d1d5db;
+	background:#fff;
+	color:#374151;
+	font-size:11px}
+.cat-btn.active
+	{background:#1e3a5f;
+	color:#fff}
+.export-btn
+	{margin-left:auto;
+	padding:4px 13px;
+	border-radius:5px;
+	border:none;
+	background:#059669;
+	color:#fff;
+	font-weight:600;
+	font-size:11px}
+.table-wrap
+	{overflow-x:auto;
+	border-radius:8px;
+	box-shadow:0 1px 4px rgba(0,0,0,.1);
+	margin-bottom:10px}
+table
+	{width:100%;
+	border-collapse:collapse;
+	background:#fff}
+thead tr
+	{background:#1e3a5f;
+	color:#fff}
+th
+	{padding:6px 7px;
+	text-align:left;
+	font-size:10px;
+	font-weight:700;
+	border-right:1px solid #2d5285;
+	white-space:nowrap}
+td
+	{padding:4px 7px;
+	border-bottom:1px solid #e5e7eb;
+	vertical-align:top}
+.mono
+	{font-family:monospace;
+	font-size:10px;
+	word-break:break-word}
+.fhir-col
+	{color:#1e40af}
+.kos-col
+	{color:#7c3aed}
+.mod-col
+	{color:#0f766e;
+	font-size:10px}
+.card-col
+	{font-family:monospace;
+	font-size:11px;
+	font-weight:600;
+	color:#0f172a;
+	white-space:nowrap;
+	text-align:center}
+.req-r
+	{color:#dc2626;
+	font-weight:700}
+.req-o
+	{color:#6b7280;
+	font-weight:700}
+.more-btn
+	{background:none;
+	border:none;
+	color:#3b82f6;
+	font-size:10px;
+	padding:0;
+	margin-left:4px}
+.footer
+	{font-size:11px;
+	color:#9ca3af;
+	margin-top:6px}
+.footer strong
+	{color:#6b7280}
+-->
+</style>
+</head>
+<body>
+<h2>MADO: DICOM KOS ↔ FHIR ImagingStudy Mapping Validation</h2>
+<p class="subtitle">IHE RAD MADO v1.1 (2026-03-16) · FHIR IG v0.1.0-SNAPSHOT · Cardinalities from MadoImagingStudy StructureDefinition · KOS fields cross-checked against PDF §6.X.2.x</p>
+<div class="summary-box">
+<div class="label">KOS Field Verification (vs. IHE MADO PDF) — click to filter</div>
+<div class="chips" id="kosChips"></div>
+</div>
+<div class="controls"><input type="text" id="searchBox">
+<div id="catBtns" class="chips"></div>
+<button class="export-btn">⬇ Export CSV</button> </div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>FHIR Element</th>
+<th>Card.</th>
+<th>DICOM Module (KOS IOD)</th>
+<th>Concept</th>
+<th>DICOM KOS Field</th>
+<th>IHE Ref</th>
+<th>Req</th>
+<th>KOS ✓</th>
+<th>KOS Verification Note (vs PDF)</th>
+</tr>
+</thead>
+<tbody id="tbody">
+</tbody>
+</table>
+</div>
+<p class="footer"><strong>KOS Verified:</strong> ✅ Confirmed in PDF §6.X.2.x · ⚠️ Partially confirmed / caveats · ❌ NOT found or incorrect in PDF &nbsp;|&nbsp;
+<strong>Req:</strong> R = Required · O = Optional &nbsp;|&nbsp; <strong>Card.:</strong> from MadoImagingStudy StructureDefinition (FHIR R4)
+</p>
+</body>
+</html>

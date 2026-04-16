@@ -29,9 +29,16 @@ Option 1 = description--> series.instance.title / extension for title-code
 Option 2 = Basic+cross version imaging selection with this info.
 ==> Bas will proposal - topic for face-2-face
 
-#### Try-out example 
+#### Bundle type to use - `collection` or `document`
 
 Does the document remain a collection bundle or move to a document bundle.
+
+Argumentation:
+
+* A renderable version of the manifest would have information that is not in DICOM
+* Making a manifest a document bundle would allow clients to treat all documents in the same way, no need for specific renderers for manifest.
+  * The composition could reflect the module structure.
+* We could leave the Bundle.type open - and/or define the Composition.
 
 ### Closed Issues
 
@@ -46,7 +53,6 @@ XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box 
 The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
 
 **Resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with an arrow coming from the study. Add MADO WADO - with location uid in picture. Add <<resourceType>> where not clear from the name. Add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
-
 
 #### Circular dependencies between mapping and definition
 
