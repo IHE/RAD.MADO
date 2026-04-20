@@ -50,7 +50,7 @@ SHALL also be supported.
       * type = #token
       * extension[+]
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #MAY
+        * valueCode = #SHOULD
       * documentation = "Study Instance UID of the related imaging study"   
     * searchParam[+]
       * name = "accession-number"
@@ -58,5 +58,5 @@ SHALL also be supported.
       * type = #token
       * extension[+]
         * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-        * valueCode = #MAY
+        * valueCode = #SHOULD
       * documentation = "Accession Number of the related imaging study"   

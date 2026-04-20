@@ -1,0 +1,21 @@
+# Encoding of the procedureCode
+
+ImagingStudy -> Procedure needed
+ImagingStudy.procedureCode is where we code the procedureCode 
+We can choose to follow R5 and Encode this in procedure and additional in ImagingStudy.
+
+In TID1600 - ProcedureCode -> scheduled or performed
+    at study level --> maps to ImagingStudy.procedureCode (or PerformedProcedure.code)
+
+The need from the MADO perspective is to be able to indicate the procedure that was performed and potentially search/filter on it.
+
+**The code always represents the performed procedure.**
+
+The advantage of using the Procedure resource direction would be to pre-adopt the future pattern. Making future changes easier.
+
+--> Topic for discussion/homework
+
+
+# WADO endpoint at the study level
+
+If all the series point to the same WADO base url, it should be allowed at the study level as well.

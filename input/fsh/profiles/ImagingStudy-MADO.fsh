@@ -65,6 +65,6 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
 
 Invariant: MadoImagingStudy-endpoint-required
-Description: "An endpoint reference is required for each series in the ImagingStudy, or for the ImagingStudy itself if there are no series."
+Description: "An study level endpoint reference is required. or an endpoint is required on each series in the ImagingStudy."
 Severity: #error
 Expression: "endpoint.exists() or series.endpoint.all($this.exists())"

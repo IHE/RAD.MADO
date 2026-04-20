@@ -4,6 +4,9 @@ Title: "MADO MHD DocumentReference Profile for FHIR Imaging Manifests"
 Description: """
 MADO specific profile for the IHE-MHD Minimal Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
+
+This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
+profiles (except `securityLabel`) and requires `context.period`.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields

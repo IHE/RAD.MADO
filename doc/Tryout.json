@@ -1,0 +1,693 @@
+{
+    "_comment": [
+        "FHIR R4 Bundle of type 'document' representing the equivalent of a MADO DICOM KOS object.",
+        "",
+        "KOS IOD → Bundle mapping:",
+        "  SOP Common Module        → Bundle.identifier (KOS SOP Instance UID)",
+        "  SOP Common Content Date/Time → Composition.date (= KOS Content Date + Time)",
+        "  Patient Module           → Patient entry",
+        "  General Study Module     → ImagingStudy (study-level fields)",
+        "  General Equipment Module → Device entry (MadoCreator)",
+        "  Key Object Document Module (Referenced Request Sequence)",
+        "                           → ServiceRequest entry (Accession Number + Placer Order)",
+        "  SR Document Content (TID 2010 root + TID 1600 Image Library)",
+        "                           → Composition.section + ImagingStudy.series",
+        "  TID 1601/1602 per series → ImagingStudy.series[] including series descriptors",
+        "  TID 1601 per instance    → ImagingStudy.series[].instance[]",
+        "  Current Requested Procedure Evidence Sequence (Retrieve URL / Location UID)",
+        "                           → Endpoint entries (WADO + XC-WADO)",
+        "",
+        "NOTE: MadoFhirBundle profile fixes Bundle.type to 'collection'.",
+        "This example uses type 'document' as requested, which requires a Composition",
+        "as the first entry. The Composition mirrors the KOS SR Document header",
+        "(Document Title, Observation DateTime, referenced instances summary).",
+        "All resources are contained in full (no external references)."
+    ],
+    "resourceType": "Bundle",
+    "id": "mado-kos-document-bundle-example",
+    "meta": {
+        "profile": [
+            "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoFhirBundle"
+        ]
+    },
+    "identifier": {
+        "_comment": "KOS SOP Common: SOP Instance UID (0008,0018) — the UID of the KOS object itself",
+        "system": "urn:dicom:uid",
+        "value": "urn:oid:2.16.124.113543.6003.189642796.63084.16748.2599092903"
+    },
+    "type": "document",
+    "timestamp": "2024-11-14T09:32:00+01:00",
+    "entry": [
+        {
+            "_comment": "─── 1. COMPOSITION ───────────────────────────────────────────────────────",
+            "_comment2": "Mirrors the KOS SR Document header (Key Object Document Module + SR Document Content root).",
+            "_comment3": "KOS mapping:",
+            "_comment4": "  Content Date (0008,0023) + Content Time (0008,0033) → Composition.date",
+            "_comment5": "  TID 2010 Document Title EV (MADOTEMP001, 99IHE, 'Manifest with Description') → Composition.type",
+            "_comment6": "  Key Object Description (0040,A992) / free text description → Composition.title + section.text",
+            "_comment7": "  General Equipment Manufacturer (0008,0070) → Composition.author → Device",
+            "_comment8": "  Patient (0010,0020) → Composition.subject → Patient",
+            "fullUrl": "urn:uuid:composition-mado-kos-001",
+            "resource": {
+                "resourceType": "Composition",
+                "id": "composition-mado-kos-001",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/StructureDefinition/Composition"
+                    ]
+                },
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns='http://www.w3.org/1999/xhtml'>MADO Imaging Study Manifest — CT Chest/Abdomen — 2024-11-14</div>"
+                },
+                "status": "final",
+                "type": {
+                    "_comment": "KOS Document Title: (MADOTEMP001, 99IHE, 'Manifest with Description')",
+                    "_comment2": "When CP-2595 is approved this will become the finalised DCM code.",
+                    "coding": [
+                        {
+                            "system": "urn:iso:std:iso:11073:10101",
+                            "code": "MADOTEMP001",
+                            "display": "Manifest with Description"
+                        },
+                        {
+                            "_comment": "Closest current LOINC equivalent for a KOS-style manifest",
+                            "system": "http://loinc.org",
+                            "code": "55113-5",
+                            "display": "Key images Document Radiology"
+                        }
+                    ]
+                },
+                "subject": {
+                    "_comment": "KOS Patient Module → Patient entry below",
+                    "reference": "urn:uuid:patient-example-001"
+                },
+                "date": "2024-11-14T09:32:00+01:00",
+                "author": [
+                    {
+                        "_comment": "KOS General Equipment Module: Manufacturer (0008,0070) + Institution Name (0008,0080)",
+                        "reference": "urn:uuid:device-creator-001"
+                    }
+                ],
+                "title": "MADO Imaging Study Manifest — CT Chest/Abdomen",
+                "attester": [
+                    {
+                        "_comment": "KOS SOP Common: Content Date/Time of manifest creation",
+                        "mode": "professional",
+                        "time": "2024-11-14T09:32:00+01:00"
+                    }
+                ],
+                "section": [
+                    {
+                        "_comment": "─ Imaging Study section ─────────────────────────────────────────────────",
+                        "_comment2": "KOS SR Document Content (TID 2010 / TID 1600 Image Library):",
+                        "_comment2a": "  Modalities (EV 121139) + Target Region (EV 123014) + Number of Series (MADOTEMP009)",
+                        "_comment2b": "  → captured in ImagingStudy resource referenced here",
+                        "title": "Imaging Study Manifest",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://dicom.nema.org/resources/ontology/DCM",
+                                    "code": "121181",
+                                    "display": "DICOM Object Catalog"
+                                }
+                            ]
+                        },
+                        "text": {
+                            "status": "generated",
+                            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>CT study of chest and abdomen acquired 2024-11-14. Two series: 1) Chest CT (72 instances), 2) Abdomen CT (98 instances). Key image flagged for clinical review.</div>"
+                        },
+                        "entry": [
+                            {
+                                "_comment": "Reference to the ImagingStudy resource in this bundle (SR Document Content IE → series/instance inventory)",
+                                "reference": "urn:uuid:imagingstudy-example-001"
+                            }
+                        ]
+                    },
+                    {
+                        "_comment": "─ Requested Procedure section ───────────────────────────────────────────",
+                        "_comment2": "KOS Referenced Request Sequence (0040,A370):",
+                        "_comment2a": "  Accession Number (0008,0050) + Placer Order Number (0040,2016) → ServiceRequest",
+                        "title": "Requested Procedure",
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "55111-9",
+                                    "display": "Current imaging procedure descriptions Document"
+                                }
+                            ]
+                        },
+                        "text": {
+                            "status": "generated",
+                            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Accession Number: ACC-2024-11-14-001. Placer Order: ORD-78342.</div>"
+                        },
+                        "entry": [
+                            {
+                                "reference": "urn:uuid:servicerequest-example-001"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_comment": "─── 2. PATIENT ────────────────────────────────────────────────────────────",
+            "_comment2": "KOS Patient Module (C.7.1.1) — MADO §6.X.2.5",
+            "_comment3": "  Patient ID (0010,0020) + Issuer of Patient ID Qualifiers Sequence (0010,0024) → identifier",
+            "_comment4": "  Other Patient IDs Sequence (0010,1002) → additional identifiers",
+            "_comment5": "  Patient Name (0010,0010) → name",
+            "_comment6": "  Patient Birth Date (0010,0030) → birthDate (not profiled by MADO but standard DICOM)",
+            "_comment7": "  Patient Sex (0010,0040) → gender",
+            "fullUrl": "urn:uuid:patient-example-001",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "patient-example-001",
+                "identifier": [
+                    {
+                        "_comment": "Primary: Patient ID (0010,0020) scoped by Issuer (0010,0024) Universal Entity ID",
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "MR",
+                                    "display": "Medical Record Number"
+                                }
+                            ]
+                        },
+                        "system": "urn:oid:2.16.840.1.113883.3.1234.5.1",
+                        "value": "PAT-20241114-7783"
+                    },
+                    {
+                        "_comment": "Other Patient IDs Sequence (0010,1002) — national identifier",
+                        "use": "secondary",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "NI",
+                                    "display": "National unique individual identifier"
+                                }
+                            ]
+                        },
+                        "system": "urn:oid:2.16.840.1.113883.2.4.6.3",
+                        "value": "NL-BSN-123456782"
+                    }
+                ],
+                "name": [
+                    {
+                        "_comment": "Patient Name (0010,0010) — DICOM PN format: Doe^John^A^Dr^^",
+                        "use": "official",
+                        "family": "Doe",
+                        "given": [
+                            "John",
+                            "A"
+                        ],
+                        "prefix": [
+                            "Dr"
+                        ]
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1968-03-22"
+            }
+        },
+        {
+            "_comment": "─── 3. IMAGING STUDY ──────────────────────────────────────────────────────",
+            "_comment2": "This resource carries the SR Document Content IE (TID 2010 / TID 1600 / TID 1602 / TID 1601).",
+            "_comment3": "General Study Module fields:",
+            "_comment4": "  Study Instance UID (0020,000D) → identifier[studyInstanceUid]",
+            "_comment5": "  Study Date (0008,0020) + Study Time (0008,0030) → started",
+            "_comment6": "  Accession Number (0008,0050) → basedOn[order].identifier",
+            "_comment7": "TID 1600 Image Library (study-level):",
+            "_comment8": "  Modality (EV 121139) → modality",
+            "_comment9": "  Target Region (EV 123014) → extension:anatomical-region",
+            "_comment10": "  Number of Study Related Series (MADOTEMP009) → numberOfSeries",
+            "_comment11": "TID 1602 per series + TID 1601 per instance → series[]",
+            "_comment12": "Current Requested Procedure Evidence Sequence:",
+            "_comment13": "  Retrieve URL (0008,1190) → endpoint:wado",
+            "_comment14": "  Retrieve Location UID (0040,E011) → endpoint:xcwado + extension:locationUid",
+            "fullUrl": "urn:uuid:imagingstudy-example-001",
+            "resource": {
+                "resourceType": "ImagingStudy",
+                "id": "imagingstudy-example-001",
+                "meta": {
+                    "profile": [
+                        "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoImagingStudy"
+                    ]
+                },
+                "extension": [
+                    {
+                        "_comment": "TID 1600: EV (123014, DCM, 'Target Region') — anatomical region at study level",
+                        "_comment2": "MADO extension:anatomical-region (MadoAnatomicalRegionExtension)",
+                        "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoAnatomicalRegionExtension",
+                        "valueCodeableConcept": {
+                            "coding": [
+                                {
+                                    "system": "http://snomed.info/sct",
+                                    "code": "816094009",
+                                    "display": "Chest and Abdomen"
+                                },
+                                {
+                                    "system": "http://dicom.nema.org/resources/ontology/DCM",
+                                    "code": "123014",
+                                    "display": "Target Region"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "_comment": "General Equipment Module: MadoCreator extension — points to Device entry",
+                        "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoCreatorExtension",
+                        "valueReference": {
+                            "reference": "urn:uuid:device-creator-001"
+                        }
+                    }
+                ],
+                "identifier": [
+                    {
+                        "_comment": "Study Instance UID (0020,000D) — MadoStudyInstanceUidIdentifier slice",
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://dicom.nema.org/resources/ontology/DCM",
+                                    "code": "110180",
+                                    "display": "Study Instance UID"
+                                }
+                            ]
+                        },
+                        "system": "urn:dicom:uid",
+                        "value": "urn:oid:1.2.840.113619.2.55.3.604688119.971.1700000000.100"
+                    }
+                ],
+                "status": "available",
+                "modality": [
+                    {
+                        "_comment": "TID 1600: EV (121139, DCM, 'Modality') — study-level modality list",
+                        "system": "http://dicom.nema.org/resources/ontology/DCM",
+                        "code": "CT",
+                        "display": "Computed Tomography"
+                    }
+                ],
+                "subject": {
+                    "reference": "urn:uuid:patient-example-001"
+                },
+                "started": "2024-11-14T08:15:00+01:00",
+                "basedOn": [
+                    {
+                        "_comment": "Referenced Request Sequence (0040,A370): Accession Number + Placer Order",
+                        "_comment2": "MadoReferencedAccessionNumberIdentifier slice",
+                        "reference": "urn:uuid:servicerequest-example-001"
+                    }
+                ],
+                "endpoint": [
+                    {
+                        "_comment": "WADO-RS Retrieve URL endpoint (Retrieve URL 0008,1190)",
+                        "reference": "urn:uuid:endpoint-wado-001"
+                    },
+                    {
+                        "_comment": "XC-WADO endpoint with Retrieve Location UID (0040,E011)",
+                        "reference": "urn:uuid:endpoint-xcwado-001"
+                    }
+                ],
+                "numberOfSeries": 2,
+                "numberOfInstances": 170,
+                "procedureCode": [
+                    {
+                        "_comment": "TID 2010: EV (121023, DCM, 'Procedure Code') — pending DICOM CP-2595",
+                        "coding": [
+                            {
+                                "system": "http://www.rsna.org/RadLex_Playbook.aspx",
+                                "code": "RPID2709",
+                                "display": "CT chest and abdomen with contrast"
+                            }
+                        ]
+                    }
+                ],
+                "reasonCode": [
+                    {
+                        "_comment": "GeneralStudy ReasonForPerformedProcedureCodeSequence (0040,1012) — not profiled by MADO",
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "271860004",
+                                "display": "Suspected malignant neoplasm"
+                            }
+                        ]
+                    }
+                ],
+                "description": "CT chest and abdomen with IV contrast — staging",
+                "series": [
+                    {
+                        "_comment": "─ Series 1: Chest CT ──────────────────────────────────────────────────",
+                        "_comment2": "TID 1602 Image Library Entry Descriptors (series level):",
+                        "_comment3": "  Series Instance UID (EV 112002) → uid",
+                        "_comment4": "  Series Number (EV 113607) → number",
+                        "_comment5": "  Modality (EV 121139) → modality",
+                        "_comment6": "  Series Description (MADOTEMP002) → description",
+                        "_comment7": "  Number of Series Related Instances (MADOTEMP007) → numberOfInstances",
+                        "_comment8": "  Series Date (MADOTEMP003) + Series Time (MADOTEMP004) → started",
+                        "_comment9": "  Target Region (EV 123014) → bodySite",
+                        "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.101",
+                        "number": 1,
+                        "modality": {
+                            "system": "http://dicom.nema.org/resources/ontology/DCM",
+                            "code": "CT",
+                            "display": "Computed Tomography"
+                        },
+                        "description": "Chest CT — portal venous phase",
+                        "numberOfInstances": 72,
+                        "endpoint": [
+                            {
+                                "reference": "urn:uuid:endpoint-wado-001"
+                            }
+                        ],
+                        "bodySite": {
+                            "_comment": "TID 1602: EV (123014, DCM, 'Target Region') — series-level body site",
+                            "system": "http://snomed.info/sct",
+                            "code": "43799004",
+                            "display": "Thorax"
+                        },
+                        "started": "2024-11-14T08:17:22+01:00",
+                        "instance": [
+                            {
+                                "_comment": "─ Instance 1.1 (regular image) ──────────────────────────────────────",
+                                "_comment2": "TID 1601 / TID 1602 instance-level:",
+                                "_comment3": "  SOP Class (Referenced SOP Class UID 0008,1150) → sopClass",
+                                "_comment4": "  SOP Instance UID (Referenced SOP Instance UID 0008,1155) → uid",
+                                "_comment5": "  Instance Number (EV 113609) → number",
+                                "_comment6": "  Number of Frames (EV 121140) — single frame, omitted",
+                                "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.201",
+                                "sopClass": {
+                                    "system": "urn:ietf:rfc:3986",
+                                    "code": "urn:oid:1.2.840.10008.5.1.4.1.1.2",
+                                    "display": "CT Image Storage"
+                                },
+                                "number": 1,
+                                "title": "Chest CT image 1"
+                            },
+                            {
+                                "_comment": "─ Instance 1.2 (representative key image) ───────────────────────────",
+                                "_comment2": "TID 16XX (Key Object Selection extension):",
+                                "_comment3": "  KOS Document Title (EV 121144) → flagged via representative-instance extension",
+                                "_comment4": "  Key Object Description (EV 113012) → title",
+                                "extension": [
+                                    {
+                                        "_comment": "MadoRepresentativeInstanceExtension — marks this as a key/representative image",
+                                        "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoRepresentativeInstanceExtension",
+                                        "valueBoolean": true
+                                    }
+                                ],
+                                "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.202",
+                                "sopClass": {
+                                    "system": "urn:ietf:rfc:3986",
+                                    "code": "urn:oid:1.2.840.10008.5.1.4.1.1.2",
+                                    "display": "CT Image Storage"
+                                },
+                                "number": 36,
+                                "title": "For Referring Provider — tumour visible near right hilum"
+                            },
+                            {
+                                "_comment": "─ Instance 1.3 (multi-frame CT localiser) ───────────────────────────",
+                                "extension": [
+                                    {
+                                        "_comment": "MadoNumberOfFrames extension — TID 1602: EV (121140, DCM, 'Number of Frames')",
+                                        "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoNumberOfFrames",
+                                        "valueInteger": 512
+                                    }
+                                ],
+                                "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.210",
+                                "sopClass": {
+                                    "system": "urn:ietf:rfc:3986",
+                                    "code": "urn:oid:1.2.840.10008.5.1.4.1.1.2",
+                                    "display": "CT Image Storage"
+                                },
+                                "number": 72,
+                                "title": "CT localiser — 512 frames"
+                            }
+                        ]
+                    },
+                    {
+                        "_comment": "─ Series 2: Abdomen CT ────────────────────────────────────────────────",
+                        "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.102",
+                        "number": 2,
+                        "modality": {
+                            "system": "http://dicom.nema.org/resources/ontology/DCM",
+                            "code": "CT",
+                            "display": "Computed Tomography"
+                        },
+                        "description": "Abdomen CT — portal venous phase",
+                        "numberOfInstances": 98,
+                        "endpoint": [
+                            {
+                                "reference": "urn:uuid:endpoint-wado-001"
+                            }
+                        ],
+                        "bodySite": {
+                            "system": "http://snomed.info/sct",
+                            "code": "818983003",
+                            "display": "Abdomen"
+                        },
+                        "started": "2024-11-14T08:23:11+01:00",
+                        "instance": [
+                            {
+                                "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.301",
+                                "sopClass": {
+                                    "system": "urn:ietf:rfc:3986",
+                                    "code": "urn:oid:1.2.840.10008.5.1.4.1.1.2",
+                                    "display": "CT Image Storage"
+                                },
+                                "number": 1,
+                                "title": "Abdomen CT image 1"
+                            },
+                            {
+                                "uid": "1.2.840.113619.2.55.3.604688119.971.1700000000.350",
+                                "sopClass": {
+                                    "system": "urn:ietf:rfc:3986",
+                                    "code": "urn:oid:1.2.840.10008.5.1.4.1.1.2",
+                                    "display": "CT Image Storage"
+                                },
+                                "number": 50,
+                                "title": "Abdomen CT image 50"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_comment": "─── 4. WADO-RS ENDPOINT ───────────────────────────────────────────────────",
+            "_comment2": "KOS Current Requested Procedure Evidence Sequence → Retrieve URL (0008,1190)",
+            "_comment3": "MadoWadoEndpoint profile",
+            "fullUrl": "urn:uuid:endpoint-wado-001",
+            "resource": {
+                "resourceType": "Endpoint",
+                "id": "endpoint-wado-001",
+                "meta": {
+                    "profile": [
+                        "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoWadoEndpoint"
+                    ]
+                },
+                "status": "active",
+                "connectionType": {
+                    "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+                    "code": "dicom-wado-rs",
+                    "display": "DICOM WADO-RS"
+                },
+                "name": "PACS WADO-RS endpoint — Radiology Dept",
+                "address": "https://pacs.example-hospital.org/wado-rs",
+                "payloadType": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                                "code": "any"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_comment": "─── 5. XC-WADO ENDPOINT ───────────────────────────────────────────────────",
+            "_comment2": "KOS Current Requested Procedure Evidence Sequence → Retrieve Location UID (0040,E011)",
+            "_comment3": "MadoXcWadoEndpoint profile — used for cross-community access",
+            "fullUrl": "urn:uuid:endpoint-xcwado-001",
+            "resource": {
+                "resourceType": "Endpoint",
+                "id": "endpoint-xcwado-001",
+                "meta": {
+                    "profile": [
+                        "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoXcWadoEndpoint"
+                    ]
+                },
+                "extension": [
+                    {
+                        "_comment": "XcWadoLocationUIDExtension — Retrieve Location UID (0040,E011)",
+                        "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/XcWadoLocationUIDExtension",
+                        "valueString": "1.2.840.113619.6.99.1.57.1700000000.1"
+                    }
+                ],
+                "status": "active",
+                "connectionType": {
+                    "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+                    "code": "dicom-wado-rs",
+                    "display": "DICOM WADO-RS (XC-WADO cross-community)"
+                },
+                "name": "XC-WADO cross-community endpoint",
+                "address": "https://xcwado-gateway.regional-hie.org/wado",
+                "payloadType": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                                "code": "any"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_comment": "─── 6. DEVICE (MADO CREATOR) ──────────────────────────────────────────────",
+            "_comment2": "KOS General Equipment Module (C.7.5.1) — MADO §6.X.2.7",
+            "_comment3": "  Manufacturer (0008,0070) → manufacturer",
+            "_comment4": "  Institution Name (0008,0080) → owner.display",
+            "_comment5": "  Institution Code Sequence (0008,0082) — not profiled by MADO, included informatively",
+            "fullUrl": "urn:uuid:device-creator-001",
+            "resource": {
+                "resourceType": "Device",
+                "id": "device-creator-001",
+                "meta": {
+                    "profile": [
+                        "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoCreator"
+                    ]
+                },
+                "manufacturer": "Acme PACS Systems BV",
+                "deviceName": [
+                    {
+                        "name": "Acme PACS Manifest Creator",
+                        "type": "manufacturer-name"
+                    }
+                ],
+                "version": [
+                    {
+                        "value": "3.4.1"
+                    }
+                ],
+                "owner": {
+                    "_comment": "Institution Name (0008,0080) — formatted per HL7 XON as recommended in MADO §6.X.2.7",
+                    "reference": "urn:uuid:organization-creator-001"
+                }
+            }
+        },
+        {
+            "_comment": "─── 7. ORGANIZATION (INSTITUTION) ─────────────────────────────────────────",
+            "_comment2": "KOS General Equipment Module: Institution Name (0008,0080)",
+            "_comment3": "Institution ID embedded in identifier (as XON format recommends in MADO §6.X.2.7)",
+            "fullUrl": "urn:uuid:organization-creator-001",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "organization-creator-001",
+                "identifier": [
+                    {
+                        "_comment": "Institution identifier — corresponds to Institution ID / XON OID",
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.1",
+                        "value": "ORG-RADIOLOGY-DEPT-001"
+                    }
+                ],
+                "name": "Radiology Department — Example Hospital",
+                "type": [
+                    {
+                        "_comment": "Institution Code Sequence (0008,0082) — not profiled by MADO but informatively included",
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                                "code": "dept",
+                                "display": "Hospital Department"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "_comment": "─── 8. SERVICE REQUEST (REQUESTED PROCEDURE) ──────────────────────────────",
+            "_comment2": "KOS Referenced Request Sequence (0040,A370) + General Study Module",
+            "_comment3": "  Accession Number (0008,0050) + Issuer of Accession Number Seq (0008,0051) → identifier",
+            "_comment4": "  Placer Order Number (0040,2016) → identifier (second slice)",
+            "_comment5": "  Referring Physician's Name (0008,0090) → requester",
+            "_comment6": "  Reason for Performed Procedure Code Seq (0040,1012) → reasonCode",
+            "fullUrl": "urn:uuid:servicerequest-example-001",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "servicerequest-example-001",
+                "identifier": [
+                    {
+                        "_comment": "Accession Number (0008,0050) + Issuer of Accession Number Sequence (0008,0051)",
+                        "_comment2": "MadoAccessionNumberIdentifier profile",
+                        "use": "official",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "ACSN",
+                                    "display": "Accession ID"
+                                }
+                            ]
+                        },
+                        "system": "urn:oid:2.16.840.1.113883.3.1234.5.2",
+                        "value": "ACC-2024-11-14-001"
+                    },
+                    {
+                        "_comment": "Placer Order Number (0040,2016) — order placed by referring physician",
+                        "use": "secondary",
+                        "type": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                    "code": "PLAC",
+                                    "display": "Placer Identifier"
+                                }
+                            ]
+                        },
+                        "system": "urn:oid:2.16.840.1.113883.3.1234.5.3",
+                        "value": "ORD-78342"
+                    }
+                ],
+                "status": "completed",
+                "intent": "order",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://www.rsna.org/RadLex_Playbook.aspx",
+                            "code": "RPID2709",
+                            "display": "CT chest and abdomen with contrast"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "urn:uuid:patient-example-001"
+                },
+                "requester": {
+                    "_comment": "Referring Physician's Name (0008,0090) — not profiled by MADO, included informatively",
+                    "display": "Dr. A. Smith, Internal Medicine"
+                },
+                "reasonCode": [
+                    {
+                        "_comment": "Reason for Performed Procedure Code Sequence (0040,1012) — not profiled by MADO",
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "271860004",
+                                "display": "Suspected malignant neoplasm"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

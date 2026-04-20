@@ -1,6 +1,6 @@
 {% include aliases.md %}
 
-The FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study as is stored in a PACS expressed in FHIR. It is the FHIR equivalent of the DICOM KOS manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content. 
+The FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study as it is stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
 
 ### FHIR Manifest overview
 
@@ -19,13 +19,11 @@ The {{MadoRequestedProcedure}} provides information on the order for the imaging
 {{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 
 * On study level, the manifest can contain:
-  * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint.
-* For each series, the manifest can contain
-  * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding the WADO profile defined in this specification.
+  * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
+* For each series, the manifest can contain:
+  * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding  to the WADO profile defined in this specification. The `address` represents that WADO base url of the WADO service that allows access to the series information.
 
 As the purpose of the manifest is to provide access to the imaging study content, inclusion of an endpoint at study level or at each series level is REQUIRED.
-
-The {{MadoCreator}} profile provides information on the system that generated the manifest.
 
 Besides the {{ImagingStudy}} and {{Endpoint}} resources, also additional resources are present that reflect information present in DICOM such as information on the patient, performer, procedure and imaging device. What resources to include depends on the information to be included, see [DICOM KOS <-> FHIR mappings](mapping.html) for more information on when to include what resource.
 

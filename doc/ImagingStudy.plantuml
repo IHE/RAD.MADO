@@ -1,0 +1,19 @@
+class ImagingStudy {
+    procedureCode
+}
+class RequestedProcedure <<ServiceRequest>>{
+    code
+}
+class ScheduledProcedure <<ServiceRequest>>{
+    code
+}
+class PerformedProcedure <<Procedure>>{
+    code
+}
+
+ImagingStudy ->"0..1" RequestedProcedure
+ScheduledProcedure -up->"0..*" RequestedProcedure: basedOn
+ImagingStudy -down->"0..1" PerformedProcedure
+PerformedProcedure --> RequestedProcedure: basedOn
+PerformedProcedure --> ScheduledProcedure: basedOn
+ 

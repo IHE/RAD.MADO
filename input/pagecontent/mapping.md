@@ -9,30 +9,30 @@ expected that the concept will be present in each of them.
 {:.grid}
 | Concept  | FHIR   | KOS      | Notes |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| Study Study Instance UID | MadoImagingStudy.identifier[studyInstanceUid]  | GeneralStudy StudyInstanceUID  +  KeyObjectDocument-Referenced Request Sequence-Study Instance UID   |  |
-| Study Modalities | MadoImagingStudy.modality  | GeneralStudy Modality     |  |
-| Study Started | MadoImagingStudy.started  | GeneralStudy StudyDate  +  StudyTime   |  |
-| Study anatomicalRegion | MadoImagingStudy.extension[anatomicalRegion]  |  SR-TID1600:EV (123014, DCM, "Target Region")     |  |
+| Study Study Instance UID | MadoImagingStudy.identifier[studyInstanceUid]  | GeneralStudy StudyInstanceUID  |  |
+| Study Modalities         | MadoImagingStudy.modality  | GeneralStudy Modality     |  |
+| Study Started            | MadoImagingStudy.started  | GeneralStudy StudyDate  +  StudyTime   |  |
+| Study anatomicalRegion | MadoImagingStudy.extension[anatomicalRegion]  |  TID 1600:EV (123014, DCM, "Target Region")     |  |
 | Study Description | MadoImagingStudy.description  | GeneralStudy StudyDescription     |  |
 | Study endpoint | MadoImagingStudy.endpoint -> XcWadoEndpoint  |     |  |
 | Study endpoint.locationUid | MadoImagingStudy.endpoint -> XcWadoEndpoint.extension[locationUid]  | KeyObjectDocument-CurrentRequestedProcedureEvidenceSequence-Retrieve Location UID |  |
-| Study endpoint.url | MadoImagingStudy.endpoint -> XcWadoEndpoint.address  | KeyObjectDocument-CurrentRequestedProcedureEvidenceSequence-Retrieve URL      |  |
+| Study endpoint.url | MadoImagingStudy.endpoint -> MadoWebViewerEndpoint.address  | KeyObjectDocument-DisplayURI      |  |
 | Study  series | MadoImagingStudy.series  |       |  |
-| Study  series.seriesUid | MadoImagingStudy.series.uid  |  SR-TID1602:EV (112002, DCM, “Series Instance UID”)     |  |
-| Study  series.number | MadoImagingStudy.series.number  |  SR-TID1602:EV (113607, DCM, “Series Number”)     |  |
-| Study  series.seriesModality | MadoImagingStudy.series.modality  |  SR-TID1602:EV (121139, DCM, "Modality")     |  |
-| Study  series.description | MadoImagingStudy.series.description  |  SR-TID1602:EV (MADOTEMP002, 99IHE, “Series Description”)     |  |
-| Study  series.numberOfInstances | MadoImagingStudy.series.numberOfInstances  |  SR-TID1602:EV (MADOTEMP007, 99IHE, “Number of Series Related Instances”)      |  |
+| Study  series.seriesUid | MadoImagingStudy.series.uid  |  TID 1602:EV (112002, DCM, “Series Instance UID”)     |  |
+| Study  series.number | MadoImagingStudy.series.number  |  TID 1602:EV (113607, DCM, “Series Number”)     |  |
+| Study  series.seriesModality | MadoImagingStudy.series.modality  |  TID 1602:EV (121139, DCM, "Modality")     |  |
+| Study  series.description | MadoImagingStudy.series.description  |  TID 1602:EV (MADOTEMP002, 99IHE, “Series Description”)     |  |
+| Study  series.numberOfInstances | MadoImagingStudy.series.numberOfInstances  |  TID 1602:EV (MADOTEMP007, 99IHE, “Number of Series Related Instances”)      |  |
 | Study  series.seriesEndpoint | MadoImagingStudy |       |  |
-| Study  series.bodySite | MadoImagingStudy.series.bodySite  |  SR-TID1602:EV (123014, DCM, "Target Region")     |  |
+| Study  series.bodySite | MadoImagingStudy.series.bodySite  |  TID 1602:EV (123014, DCM, "Target Region")     |  |
 | Study  series.specimen | MadoImagingStudy.series.specimen  |       |  |
-| Study  series.started | MadoImagingStudy.series.started  |  SR-TID1602:EV (MADOTEMP003, 99IHE, "Series Date")  +  SR-TID1602:EV (MADOTEMP004, 99IHE, "Series Time")   |  |
+| Study  series.started | MadoImagingStudy.series.started  |  TID 1602:EV (MADOTEMP003, 99IHE, "Series Date")  +  TID 1602:EV (MADOTEMP004, 99IHE, "Series Time")   |  |
 | Study  series.instancesInTheSeries | MadoImagingStudy.series.instance  |       |  |
 | Study  series.instancesInTheSeries.instanceTitle | MadoImagingStudy.series.instance.title  |       |  |
-| Study  series.instancesInTheSeries.instanceUid | MadoImagingStudy.series.instance.uid  |  SR-TID1601:EV (112002, DCM, “Instance Number”)     |  |
+| Study  series.instancesInTheSeries.instanceUid | MadoImagingStudy.series.instance.uid  |  TID 1601:EV (112002, DCM, “Instance Number”)     |  |
 | Study  series.instancesInTheSeries.sopClass | MadoImagingStudy.series.instances.sopClass  |       |  |
-| Study  series.instancesInTheSeries.instanceNumber | MadoImagingStudy.series.instance.number  |  SR-TID1601:EV (112002, DCM, “Instance Number”)     |  |
-| Study  series.instancesInTheSeries.numberOfFrames | MadoImagingStudy.series.instance.extension[numberOfFrames]  |  SR-TID1601:EV (121140, DCM, “Number of Frames”)     |  |
+| Study  series.instancesInTheSeries.instanceNumber | MadoImagingStudy.series.instance.number  |  TID 1601:EV (112002, DCM, “Instance Number”)     |  |
+| Study  series.instancesInTheSeries.numberOfFrames | MadoImagingStudy.series.instance.extension[numberOfFrames]  |  TID 1601:EV (121140, DCM, “Number of Frames”)     |  |
 |   |    |       |  |
 |   |    |       |  |
 | Patient Name | MadoImagingStudy.subject->Patient.name  | PatientModule PatientName     |  |
@@ -46,7 +46,7 @@ expected that the concept will be present in each of them.
 | RequestedProcedure reason | MadoImagingStudy.basedOn[order] -> ServiceRequest. reasonCode  | GeneralStudy ReasonForPerformedProcedureCodeSequence     |  |
 | RequestedProcedure code | MadoImagingStudy.procedureCode | GeneralStudy ProcedureCodeSequence     |  |
 |   |    |       |  |
-| Procedure (scheduled or performed) procedureCode | MadoImagingStudy.procedureCode  |  SR-TID 2010: EV (121023, DCM “Procedure Code”)     | Pending DICOM approval |
+| Procedure (scheduled or performed) procedureCode | MadoImagingStudy.procedureCode  |  TID 2010: EV (121023, DCM “Procedure Code”)     | Pending DICOM approval |
 |   |    |       |  |
 | MADO Author manufacturer | MadoAuthor.manufacturer  | GeneralEquipment Manufacturer     |  |
 | MADO Author institution name | MadoAuthor.owner -> Organization. name  | GeneralEquipment InstitutionName     |  |

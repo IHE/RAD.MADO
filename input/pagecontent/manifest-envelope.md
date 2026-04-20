@@ -5,9 +5,9 @@ The following MHD DocumentReferences SHALL be used when distributing a MADO Imag
 * {{MadoFhirMinimalDocumentReference}} for FHIR Manifests 
 * {{MadoDicomKosMinimalDocumentReference}} for DICOM KOS Manifests
 
-An IHE-MHD infrastructure may choose or not a mapping service between the two manifest formats. In the case it supports a mapping service, the address field in the unsupported DocumentReference to the mapping service that will return the translated document.
+An IHE-MHD infrastructure may choose to implement an mapping service between the two manifest formats. When such a mapping service is supported, the address field in the unsupported DocumentReference MAY include a fully populated url to the mapping service that will return the translated document.
 
-In the case the manifest is available in multiple formats, the Document Consumer SHOULD show to the user a single entry representing all possible formats.
+In the case the manifest is available in multiple formats, the Document Consumer SHOULD show to the user a single entry chosen by the implementation.
 
 As is stated in section X.6.1, Manifest Creators SHALL create the manifest in the format of their choice. The selection is made at deployment time (see section X.6.1 for more detail).
 
@@ -19,16 +19,17 @@ The figure below shows the `MHD DocumentReference`s including the most relevant 
 The main choices illustrated in the figure are:
 
 * There are two different DocumentReferences, one for the FHIR and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
-* A FHIR manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile {{MadoFhirBundle}}. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
-* The FHIR DocumentReference SHALL have the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
-* A KOS manifest is represented as a DICOM encoded DICOM instance following the MADO KOS profile.
-* The KOS manifest DocumentReference SHALL have include the SOPInstanceUid of the KOS instance as as `masterIdentifier`.
+* FHIR manifest:
+  * A FHIR manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile {{MadoFhirBundle}}. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
+  * The FHIR DocumentReference SHALL have the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
+* DICOM KOS manifest:
+  * A KOS manifest is represented as a `application/dicom` encoded DICOM instance (see [8.7.3.1 Instance Media Types](https://dicom.nema.org/medical/dicom/current/output/html/part18.html#table_8.7.3-2)) following the MADO KOS profile.
+  * The KOS manifest DocumentReference SHALL have include the `SOPInstanceUid` of the KOS instance as `masterIdentifier`.
 * The `masterIdentifier` SHALL be part of the `identifier` list as well.
-
 
 The FHIR-manifest can be translated into the KOS-manifest and vice-versa allowing applications to change the representation when needed.
 
-{% include stunote.html text="In this specification the choice for presenting the manifest in an IHE-MHD environment is representing them as two separate DocumentReference instances. Feedback is requested from the implementer community whether this is the approach is correct and adequate."%}
+{% include stunote.html text="In this specification the choice for presenting the manifest in an IHE-MHD environment is representing them as two separate DocumentReference instances. Feedback is requested from the implementer community whether this approach is correct and adequate."%}
 
 ### Related FHIR profiles
 
