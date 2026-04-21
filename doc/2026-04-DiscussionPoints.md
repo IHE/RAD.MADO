@@ -1,3 +1,4 @@
+
 # Encoding of the procedureCode
 
 ImagingStudy -> Procedure needed
@@ -19,3 +20,4 @@ The advantage of using the Procedure resource direction would be to pre-adopt th
 # WADO endpoint at the study level
 
 If all the series point to the same WADO base url, it should be allowed at the study level as well.
+
