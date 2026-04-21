@@ -33,6 +33,8 @@ expected that the concept will be present in each of them.
 | Study  series.instancesInTheSeries.sopClass | MadoImagingStudy.series.instances.sopClass  |       |  |
 | Study  series.instancesInTheSeries.instanceNumber | MadoImagingStudy.series.instance.number  |  TID 1601:EV (112002, DCM, “Instance Number”)     |  |
 | Study  series.instancesInTheSeries.numberOfFrames | MadoImagingStudy.series.instance.extension[numberOfFrames]  |  TID 1601:EV (121140, DCM, “Number of Frames”)     |  |
+| Study  series.instancesInTheSeries.koDocumentTitle | MadoImagingStudy.series.instance.extension[ko-document-title]  |  SR-TID1602:EV (121144, DCM, "Document Title")     |  |
+| Study  series.instancesInTheSeries.koDescription | MadoImagingStudy.series.instance.description  |  SR-TID1602:EV (113012, DCM, "Key Object Description")     |  |
 |   |    |       |  |
 |   |    |       |  |
 | Patient Name | MadoImagingStudy.subject->Patient.name  | PatientModule PatientName     |  |

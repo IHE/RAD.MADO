@@ -8,7 +8,7 @@ constraints and extensions specific to the MADO context, such as the type of ima
 When a instance in the study represents a Key Object Selection document [TID 2010](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_tid_2010.html), the `ImagingStudy.series.instance.extension[ko-document-title]` contains the document title code of the referenced document, using the `MadoKoDocumentTitle` extension and the `ImagingStudy.series.instance.description` field the contents of the KeyObjectSelectionDescription field.
 """
 * insert SetFmmAndStatusRule( 1, draft )
-* obeys MadoImagingStudy-endpoint-required
+
 * identifier 1..*
 * identifier
   * insert SliceElement( #profile, $this )
@@ -64,11 +64,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.serie.
 
     * extension contains 
         MadoNumberOfFrames named number-of-frames 0..1 MS and 
-        MadoKoDocumentTitle named ko-document-title 0..1 MS
+        MadoKeyObjectDocumentTitle named ko-document-title 0..1 MS
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
     * extension[ko-document-title] ^short = "When this instance represents a Key Object Selection document, this extension contains the document title code of the referenced document."
 
-Invariant: MadoImagingStudy-endpoint-required
-Description: "An study level endpoint reference is required. or an endpoint is required on each series in the ImagingStudy."
-Severity: #error
-Expression: "endpoint.exists() or series.endpoint.all($this.exists())"

@@ -1,6 +1,9 @@
 {% include aliases.md %}
 
-The FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study as it is stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
+The MADO FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study. It contains the information stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
+
+This section specifies the structure and format of an Imaging Study Manifest for the MADO Profile using the DICOM standards. It is based on the DICOM Key Object Selection (KOS) Document Information Object Definition (IOD) as specified in DICOM PS3.3 Section A.35.4 
+Key Object Selection Document IOD.
 
 ### FHIR Manifest overview
 
@@ -8,9 +11,11 @@ The figure below presents an overview of the data that is part of the imaging-ma
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
 
-The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, at least one {{Endpoint}} and additional resources.
+The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
 
-The profiles for the {{MadoFhirBundle}} and the resources it contained have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which means that within this specification, fields marked as `MS` SHALL be populated if the value is known.
+The profiles for the {{MadoFhirBundle}} and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
+
+The {{MadoPatient}} resource holds the patient information.
 
 The {{MadoCreator}} and {{MadoCreatorOrganization}} resources provide information on the device and organization that created the manifest.
 
@@ -18,14 +23,10 @@ The {{MadoRequestedProcedure}} provides information on the order for the imaging
 
 {{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 
-* On study level, the manifest can contain:
-  * The {{MadoWebViewerEndpoint}} endpoint which provides an web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
-* For each series, the manifest can contain:
-  * The {{MadoWadoEndpoint}} endpoint which provides a {{iheXcWado}} endpoint corresponding  to the WADO profile defined in this specification. The `address` represents that WADO base url of the WADO service that allows access to the series information.
-
-As the purpose of the manifest is to provide access to the imaging study content, inclusion of an endpoint at study level or at each series level is REQUIRED.
-
-Besides the {{ImagingStudy}} and {{Endpoint}} resources, also additional resources are present that reflect information present in DICOM such as information on the patient, performer, procedure and imaging device. What resources to include depends on the information to be included, see [DICOM KOS <-> FHIR mappings](mapping.html) for more information on when to include what resource.
+* On study level, the manifest MAY contain:
+  * The {{MadoWebViewerEndpoint}} which provides a web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
+* For each series, the manifest SHALL contain:
+  * The {{MadoWadoEndpoint}} which `address` field holds the WADO base url that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
 
 ### Related FHIR profiles
 
@@ -35,8 +36,7 @@ The following links are provided for convenience.
   "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='StructureDefinition' AND ( Name NOT LIKE '%DocumentReference' ) ORDER BY name ASC",
   "class" : "lines",
   "columns" : [
-    { "name" : "Title"      , "type" : "link"     , "source" : "Name", "target" : "Web"},
-    { "name" : "Name"       , "type" : "markdown" , "source" : "Title" },
+    { "name" : "Title"      , "type" : "link"     , "source" : "Title", "target" : "Web"},
     { "name" : "Description", "type" : "markdown" , "source" : "Description"}
   ]
 } %}

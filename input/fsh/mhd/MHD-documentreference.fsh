@@ -71,7 +71,7 @@ profiles (except `securityLabel`) and requires `context.period`.
 
 
 RuleSet: CommonMhdDocumentReferenceFields
-* obeys mado-documentreference-masterIdentifier-also-identifier
+* obeys mado-docref-1
 // bodysite
 * extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 MS
 * extension[bodysite].extension[concept] 1..1
@@ -106,7 +106,7 @@ RuleSet: CommonMhdDocumentReferenceFields
     * ^short = "The Accession Number of the imaging study that is the focus of the imaging manifest, represented as an Identifier with a fixed system and a value that corresponds to the Accession Number."
 
 
-Invariant:   mado-documentreference-masterIdentifier-also-identifier
+Invariant:   mado-docref-1
 Description: "masterIdentifier, when used, need to be present as an identifier as well"
 Severity:    #error
 Expression:  "masterIdentifier.exists() implies identifier.where( %resource.masterIdentifier.system = system and %resource.masterIdentifier.value = value ).exists()"
