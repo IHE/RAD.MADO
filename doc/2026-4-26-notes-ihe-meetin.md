@@ -112,3 +112,4 @@ Study endpoint --> webviewer  -> DisplayURI
 
 
 Is it a list of where the concept reside or where the main field location is.
+

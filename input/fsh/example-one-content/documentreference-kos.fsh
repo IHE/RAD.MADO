@@ -6,10 +6,12 @@ Usage: #example
 * masterIdentifier[+]
   * system = "urn:dicom:uid"
   * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+  * use = #usual
 
 * identifier[+]
   * system = "urn:dicom:uid"
   * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
+  * use = #usual
 
 * status = #current
 * date = "2025-05-08T00:00:00Z"

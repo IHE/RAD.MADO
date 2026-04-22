@@ -1,8 +1,10 @@
 ValueSet:    ValueSetAnatomicalRegion
 Id:	         im-anatomical-region-valueset
 Title:	     "Anatomical Region"
-Description: """A shortlist of anatomical regions that can be used for searching reports and manifests. This set is defined in Table 6.X.6.4-1. In this case discrepancies, the values in the table have prevalence. It is planned to
-move this ValueSet to IHE terminologies. When that is done, this definition will be removed."""
+Description: """
+A shortlist of anatomical regions that can be used for searching reports and manifests. This set is defined in Table 6.X.6.4-1. In this case discrepancies, the values in the table have prevalence. It is planned to
+move this ValueSet to IHE terminologies. When that is done, this definition will be removed.
+"""
 * ^experimental = false
 * $sct#63337009   // Lower trunk Abdominopelvic segment of trunk
 * $sct#38266002   // Whole body Entire body as a whole

@@ -3,12 +3,13 @@ Parent: Bundle
 Title: "MADO Imaging Study Manifest FHIR Bundle"
 Description: """
 Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. It includes constraints and extensions specific to imaging study manifests, such as the type of study, the clinical specialty, and the anatomical region of interest.
+
 """
 * insert SetFmmAndStatusRule( 1, draft )
 
 * identifier 1..1 MS
 
-// * timestamp 1..1 MS
+* timestamp 1..1 MS
 
 * type = #collection
 
@@ -20,6 +21,7 @@ Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. I
 * entry ^slicing.discriminator[+].type = #profile
 * entry ^slicing.discriminator[=].path = "resource"
 * entry ^slicing.rules = #open
+
 * entry contains
     imaging-study 1..1 MS and
     patient 0..1 MS and
@@ -27,7 +29,8 @@ Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. I
     web-endpoint 0..* MS and
     creator 1..1 MS and
     creator-organization 0..1 MS and
-    requested-procedure 0..* MS
+    requested-procedure 0..* MS and
+    provenance 1..1 MS
 
 * entry[imaging-study].resource only MadoImagingStudy
   * ^short = "ImagingStudy holding information on the structure of the study."
@@ -49,3 +52,7 @@ Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. I
 
 * entry[requested-procedure].resource only MadoRequestedProcedure
   * ^short = "ServiceRequest of the order for the study (Requested Procedure)."
+
+* entry[provenance].resource only MadoProvenance
+  * ^short = "Defines who created the Manifest."
+

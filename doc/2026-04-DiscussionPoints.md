@@ -70,3 +70,25 @@ Making the mapping part of the requirement makes sense.
 # slicing 
 
 draft or trial-use
+
+
+# Authr for the manifest
+Options  are:
+ 1. ImagingStudy.extension[creator]
+ 2. ImagingStudy.meta.source
+ 3. Bundle.meta.source
+ 4. Bundle.link[author]
+ **5. Provenance** <====
+
+"meta": {      "source": "urn:oid:2.16.840.1.113883.3.example.hospital-a"
+
+Bundle
+* link
+  * relation = #author
+  * url = "http://example.org/fhir/Device/device-creator"
+
+link would work but is not a standard pattern (execpt for stylesheet).
+
+Provenance is more standard and understandable (and needed anyway if we want to sign the document).
+
+**AP BvdH - come with proposal**

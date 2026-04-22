@@ -19,7 +19,7 @@ Usage: #inline
 * basedOn.identifier.system = "http://hospital.org/acc"
 * basedOn.identifier.value = "2017092101"
 
-* extension[creator].valueReference.reference = "urn:Device/device-creator"
+// * extension[creator].valueReference.reference = "urn:Device/device-creator"
 
 * extension[anatomical-region].valueCodeableConcept = $sct#67734004
 

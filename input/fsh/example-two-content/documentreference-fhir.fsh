@@ -6,10 +6,12 @@ Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
   * value = "koewopfwjqoddasf"
+  * use = #usual
 
 * identifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
   * value = "koewopfwjqoddasf"
+  * use = #usual
 
 * status = #current
 * date = "2025-05-08T00:00:00Z"
