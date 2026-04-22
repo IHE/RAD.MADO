@@ -1,8 +1,8 @@
 {
   "resourceType": "Bundle",
-  "id": "mado-bundle-1617444129983000",
+  "id": "mado-bundle--2047166865",
   "type": "collection",
-  "timestamp": "2026-04-22T14:17:15.316+02:00",
+  "timestamp": "2026-04-22T16:31:42.942+02:00",
   "entry": [ {
     "fullUrl": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.102",
     "resource": {
@@ -428,13 +428,13 @@
       }
     }
   }, {
-    "fullUrl": "urn:Provenance/mado-provenance-mado-bundle-1617444129983000",
+    "fullUrl": "urn:Provenance/mado-provenance-mado-bundle--2047166865",
     "resource": {
       "resourceType": "Provenance",
-      "id": "mado-provenance-mado-bundle-1617444129983000",
+      "id": "mado-provenance-mado-bundle--2047166865",
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>mado-provenance-mado-bundle-1617444129983000</td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Study B</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">John DOE</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">WADO endpoint</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">SIEMENS</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">http://example.org/fhir/ris-ids|8529258169397744</span></td></tr><tr><td><b>recorded</b></td><td>2026-04-22T14:17:15.293+02:00</td></tr><tr><td><b>agent</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>type</b></td><td>Assembler</td></tr><tr><td><b>who</b></td><td><span class=\"imr-ref-null\">IHEeu XtEHR projecthaton imaging converter</span></td></tr></tbody></table></div></td></tr></tbody></table></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>mado-provenance-mado-bundle--2047166865</td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Study B</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">John DOE</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">WADO endpoint</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">SIEMENS</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">http://example.org/fhir/ris-ids|8529258169397744</span></td></tr><tr><td><b>recorded</b></td><td>2026-04-22T16:31:42.920+02:00</td></tr><tr><td><b>agent</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>type</b></td><td>Assembler</td></tr><tr><td><b>who</b></td><td><span class=\"imr-ref-null\">IHEeu XtEHR projecthaton imaging converter</span></td></tr></tbody></table></div></td></tr></tbody></table></div>"
       },
       "target": [ {
         "reference": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.102",
@@ -457,7 +457,7 @@
         "type": "ServiceRequest",
         "display": "http://example.org/fhir/ris-ids|8529258169397744"
       } ],
-      "recorded": "2026-04-22T14:17:15.293+02:00",
+      "recorded": "2026-04-22T16:31:42.920+02:00",
       "agent": [ {
         "type": {
           "coding": [ {

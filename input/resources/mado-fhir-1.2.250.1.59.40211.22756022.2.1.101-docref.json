@@ -54,9 +54,9 @@
     } ],
     "attachment": {
       "contentType": "application/fhir+json",
-      "url": "Bundle/mado-bundle-1617424618059200",
+      "url": "Bundle/mado-bundle--2047166866",
       "title": "FHIR Imaging Manifest for Imaging Study",
-      "creation": "2026-04-22T14:16:57+02:00"
+      "creation": "2026-04-22T16:31:42+02:00"
     },
     "format": {
       "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",

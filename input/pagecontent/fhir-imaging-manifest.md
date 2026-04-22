@@ -41,3 +41,35 @@ The following links are provided for convenience.
   ]
 } %}
 
+### Examples
+
+The sections below show the various MADO data elements that are generated based based on a DICOM study.
+
+The `Binary` resource contains the DICOM KOS Manifest for the study. The `Bundle` resource the FHIR Imaging Study Manifest. The `DocumentReference` instances provide MHD DocumentReference instances that point to these manifests.
+
+#### Study A
+
+Based on the DICOM study A, ([Study_A.zip](Study_A.zip)), the following resources are created:
+
+{% sql {
+  "query" : "SELECT type AS Type, id AS Id, name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE ( Id LIKE '%65' ) ORDER BY id ASC",
+  "class" : "lines",
+  "columns" : [
+    { "name" : "Resource Type" , "type" : "markdown" , "source" : "Type"},
+    { "name" : "Id"            , "type" : "link"     , "source" : "Id", "target" : "Web"}
+  ]
+} %}
+
+#### Study B
+
+Based on the DICOM study A, ([Study_B.zip](Study_B.zip)), the following resources are created:
+
+{% sql {
+  "query" : "SELECT type AS Type, id AS Id, name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE ( Id LIKE '%66' ) ORDER BY id ASC",
+  "class" : "lines",
+  "columns" : [
+    { "name" : "Resource Type" , "type" : "markdown" , "source" : "Type"},
+    { "name" : "Id"            , "type" : "link"     , "source" : "Id", "target" : "Web"}
+  ]
+} %}
+
