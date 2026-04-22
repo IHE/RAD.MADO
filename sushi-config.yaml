@@ -36,13 +36,15 @@ copyrightYear: 2025+
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
-  ihe.iti.mhd: current
+  # ihe.iti.mhd: current
+  ihe.iti.mhd: 4.2.3
   hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2 
   fhir.dicom: 
     id: DICOM
     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
     version: 2025.3.20250714
-  ihe.formatcode.fhir: current
+  ihe.formatcode.fhir: 1.5.0
+  # ihe.formatcode.fhir: current
 
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/index.html
   path-resource:
