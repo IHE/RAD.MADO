@@ -12,3 +12,4 @@ Usage: #inline
 * agent[mado-creator][+]
   * type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
   * who = Reference(device-creator)      
+  * onBehalfOf = Reference( device-organization )

@@ -1,7 +1,9 @@
 Profile: MadoPatient
 Parent: Patient
 Title: "MADO Patient"
-Description: """A profile on Patient that marks the fields with MS that must be supported."""
+Description: """
+Profile on Patient that specifies the required elements for the patient that is the subject of the manifest.
+"""
 * insert SetFmmAndStatusRule( 1, draft )
 * identifier MS
 * name MS
