@@ -18,7 +18,7 @@ In DICOM KOS this information (and the referred MadoCreator) corresponds to the 
 * agent[mado-creator]
   * type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler
   * who only Reference( MadoCreator )
-  * onBehalfOf 1..1
+  * onBehalfOf 1..1 MS
   * onBehalfOf only Reference( MadoCreatorOrganization )
     * ^short = "The owner of the MadoCreator device."
 

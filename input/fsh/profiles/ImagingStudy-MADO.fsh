@@ -40,7 +40,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.series
 * started MS
 * description MS
 * procedureCode MS
-
+  * ^short = "The `ProcedureCode`s associated with the study."
 * numberOfSeries 1..1 MS
 
 * series
@@ -70,3 +70,10 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.series
         MadoKeyObjectDocumentTitle named ko-document-title 0..1 MS
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
     * extension[ko-document-title] ^short = "When this instance represents a Key Object Selection document, this extension contains the document title code of the referenced document."
+
+// Invariant: procedureCode.text.exists() or  procedureCode.coding.display.exists()
+
+// Invariant:   mado-docref-1
+// Description: "masterIdentifier, when used, need to be present as an identifier as well"
+// Severity:    #error
+// Expression:  "masterIdentifier.exists() implies identifier.where( %resource.masterIdentifier.system = system and %resource.masterIdentifier.value = value ).exists()"

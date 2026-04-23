@@ -4,10 +4,16 @@ Title: "MADO Accession Number Identifier"
 Description: """
 Profile for the Accession Number Identifier used in the MADO context. This profile is used for the Identifier that represents the Accession Number in the MADO context. It includes additional
 constraints and extensions specific to the MADO context, such as the value set for the type of identifier and the fixed value for the system of the identifier.
+
+The combination of the `Identifier.value` of the identifier and the `Identifier.system` of the identifier should be globally unique. The `Identifier.value` of the identifier should be locally unique within the context of the system that assigns the accession number.
+
+the `Identifier.system` SHALL be consistent with the content of the DICOM sequence "Issuer of Accession Number Sequence" (0008,0051).
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * system 1..1 
+  * ^short = "The issuer of the accession number."
 * value 1..1
+  * ^short = "The value of the accession number."
 * type 1..1
 * type
   * coding
