@@ -1,5 +1,5 @@
 Instance: DocumentReferenceFHIR
-InstanceOf: MadoFhirMinimalDocumentReference
+InstanceOf: MadoFhirDocumentReference
 Title: "DocumentReference Example for FHIR manifests"
 Description: "DocumentReference Example for FHIR manifests"
 Usage: #example

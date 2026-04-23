@@ -1,35 +1,32 @@
 {% include aliases.md %}
 
-The following MHD DocumentReferences SHALL be used when distributing a MADO Imaging Manifest in an {{iheMHD}} environment:
+When distributing a MADO imaging manifest in an {{iheMHD}} environment the `DocumentReference` profiles defined below:
 
-* {{MadoFhirMinimalDocumentReference}} for FHIR Manifests 
-* {{MadoDicomKosMinimalDocumentReference}} for DICOM KOS Manifests
+* FHIR Imaging Study Manifest SHALL be packaged with an envelope defined in {{MadoFhirDocumentReference}}.
+* DICOM KOS Manifest envelopes SHALL be packaged with an envelope defined in  {{MadoDicomKosDocumentReference}}.
 
-An IHE-MHD infrastructure may choose to implement an mapping service between the two manifest formats. When such a mapping service is supported, the address field in the unsupported DocumentReference MAY include a fully populated url to the mapping service that will return the translated document.
+An IHE-MHD infrastructure may choose to provide one manifest format and implement a mapping service to the alternate format. When such a mapping service is provided, the `address` field in the alternate `DocumentReference` includes a fully populated url to the mapping service that, when called, will return the manifest in the alternate format.
 
-In the case the manifest is available in multiple formats, the Document Consumer SHOULD show to the user a single entry chosen by the implementation.
+In the case the manifest is available in multiple formats, the Document Consumer SHOULD show to the user a single entry.
 
-As is stated in section X.6.1, Manifest Creators SHALL create the manifest in the format of their choice. The selection is made at deployment time (see section X.6.1 for more detail).
+As is stated in section X.6.1, Manifest Creators will create the manifest in the format of their choice. The selection is made at deployment time.
 
 The figure below shows the `MHD DocumentReference`s including the most relevant restrictions and its relationship with the manifests and each other.
 
 {% include img.html img="manifest-envelope.drawio.svg" caption="Figure: IHE-MHD envelope" %}
 
-
 The main choices illustrated in the figure are:
 
-* There are two different DocumentReferences, one for the FHIR and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
-* FHIR manifest:
+* There are two different `DocumentReferences`, one for the FHIR ImagingStudy and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
+* FHIR Imaging Study manifest:
   * A FHIR manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile {{MadoFhirBundle}}. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
-  * The FHIR DocumentReference SHALL have the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
+  * The FHIR DocumentReference SHALL include the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
 * DICOM KOS manifest:
   * A KOS manifest is represented as a `application/dicom` encoded DICOM instance (see [8.7.3.1 Instance Media Types](https://dicom.nema.org/medical/dicom/current/output/html/part18.html#table_8.7.3-2)) following the MADO KOS profile.
-  * The KOS manifest DocumentReference SHALL have include the `SOPInstanceUid` of the KOS instance as `masterIdentifier`.
+  * The DICOM KOS manifest DocumentReference SHALL include the `SOPInstanceUid` of the KOS instance as `masterIdentifier`.
 * The `masterIdentifier` SHALL be part of the `identifier` list as well.
 
-The FHIR-manifest can be translated into the KOS-manifest and vice-versa allowing applications to change the representation when needed.
-
-{% include stunote.html text="In this specification the choice for presenting the manifest in an IHE-MHD environment is representing them as two separate DocumentReference instances. Feedback is requested from the implementer community whether this approach is correct and adequate."%}
+The FHIR-manifest can be translated into the KOS-manifest and vice-versa, allowing applications to provide alternate representations when needed (see [Mapping](mapping.html)).
 
 ### Related FHIR profiles
 
@@ -37,20 +34,18 @@ The FHIR-manifest can be translated into the KOS-manifest and vice-versa allowin
   "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='StructureDefinition' AND ( Name LIKE '%DocumentReference' )",
   "class" : "lines",
   "columns" : [
-    { "name" : "Title"      , "type" : "link"     , "source" : "Name", "target" : "Web"},
-    { "name" : "Name"       , "type" : "markdown" , "source" : "Title" },
+    { "name" : "Title"       , "type" : "link" , "source" : "Title", "target" : "Web"},
     { "name" : "Description", "type" : "markdown" , "source" : "Description"}
   ]
 } %}
 
-### Capability Statements
+### Capability Statements for MADO MHD Actors
 
 {% sql {
   "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='CapabilityStatement'",
   "class" : "lines",
   "columns" : [
-    { "name" : "Title"      , "type" : "link"     , "source" : "Name", "target" : "Web"},
-    { "name" : "Name"       , "type" : "markdown" , "source" : "Title" },
+    { "name" : "Title"       , "type" : "link" , "source" : "Title", "target" : "Web"},
     { "name" : "Description", "type" : "markdown" , "source" : "Description"}
   ]
 } %}

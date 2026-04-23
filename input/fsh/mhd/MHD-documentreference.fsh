@@ -1,8 +1,8 @@
-Profile: MadoFhirMinimalDocumentReference
+Profile: MadoFhirDocumentReference
 Parent: IHE.MHD.Minimal.DocumentReference
 Title: "MADO MHD DocumentReference Profile for FHIR Imaging Manifests"
 Description: """
-MADO specific profile for the IHE-MHD Minimal Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
+MADO specific profile for the IHE-MHD Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
 
 This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
@@ -21,7 +21,7 @@ profiles (except `securityLabel`) and requires `context.period`.
 * relatesTo[kosReference] 
   * ^short = "Reference to the DocumentReference resource that contains the DICOM KOS manifest that corresponds to this imaging report in FHIR format"
   * code = #transforms
-  * target only Reference( MadoDicomKosMinimalDocumentReference )
+  * target only Reference( MadoDicomKosDocumentReference )
 // category EU EEHRxFDocumentTypeMedicalImagingVS#Medical-Imaging
 // type $loinc 18748-4/
 //    $loinc#18748-4 "Diagnostic imaging study"
@@ -39,11 +39,11 @@ profiles (except `securityLabel`) and requires `context.period`.
     * extension[value[x]]
       * valueCanonical = Canonical( MadoFhirBundle )
 
-Profile: MadoDicomKosMinimalDocumentReference
+Profile: MadoDicomKosDocumentReference
 Parent: IHE.MHD.Minimal.DocumentReference
 Title: "MADO MHD DocumentReference Profile for DICOM KOS Imaging Manifests"
 Description: """
-MADO specific profile for the IHE-MHD Minimal Document Reference for MADO DICOM KOS Manifests that includes the MADO specific content format, the extensions
+MADO specific profile for the IHE-MHD Document Reference for MADO DICOM KOS Manifests that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored. 
 
 This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
@@ -63,7 +63,7 @@ profiles (except `securityLabel`) and requires `context.period`.
 * relatesTo[fhirReference] 
   * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging report in DICOM KOS format"
   * code = #transforms
-  * target only Reference( MadoFhirMinimalDocumentReference )
+  * target only Reference( MadoFhirDocumentReference )
 * content
   * attachment 1..1
     * contentType = #application/dicom

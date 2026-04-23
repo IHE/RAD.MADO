@@ -23,6 +23,8 @@ Usage: #inline
 
 * extension[anatomical-region].valueCodeableConcept = $sct#67734004
 
+* procedureCode
+  * text = "CT of the head without contrast"
 
 * numberOfSeries = 1
 * numberOfInstances = 46

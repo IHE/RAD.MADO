@@ -1,5 +1,5 @@
 Instance: DocumentReferenceKOSNoRelated
-InstanceOf: MadoDicomKosMinimalDocumentReference
+InstanceOf: MadoDicomKosDocumentReference
 Title: "DocumentReference Example for DICOM KOS manifests and no related reference to the FHIR manifest example"
 Description: "DocumentReference Example for DICOM KOS manifests with no related reference to the FHIR manifest example"
 Usage: #example

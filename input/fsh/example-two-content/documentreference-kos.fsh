@@ -1,5 +1,5 @@
 Instance: DocumentReferenceKOS
-InstanceOf: MadoDicomKosMinimalDocumentReference
+InstanceOf: MadoDicomKosDocumentReference
 Title: "DocumentReference Example for DICOM KOS manifests"
 Description: "DocumentReference Example for DICOM KOS manifests"
 Usage: #example

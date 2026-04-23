@@ -1,5 +1,5 @@
 Instance: DocumentReferenceFHIRwithTransform
-InstanceOf: MadoFhirMinimalDocumentReference
+InstanceOf: MadoFhirDocumentReference
 Title: "DocumentReference Example for FHIR manifests with transform"
 Description: "DocumentReference Example for FHIR manifests with transform service called to transform the KOS manifest into a FHIR manifest"
 Usage: #example
