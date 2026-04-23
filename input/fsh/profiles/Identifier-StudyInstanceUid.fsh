@@ -13,7 +13,7 @@ constraints and extensions specific to the MADO context, such as the value set f
   * coding
     * insert SliceElement( #value, $this )
   * coding contains dcm 1..1
-  * coding[dcm] = $dicomOntology#110180 "Study Instance UID"
+  * coding[dcm] = $dicomOntology#110180 //"Study Instance UID"
 
 Profile: MadoReferencedStudyInstanceUidIdentifier
 Parent: Reference

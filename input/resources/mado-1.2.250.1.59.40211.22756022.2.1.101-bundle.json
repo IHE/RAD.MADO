@@ -9,7 +9,7 @@
     "value": "mado-bundle--2047166866"
   },
   "type": "collection",
-  "timestamp": "2026-04-23T10:28:57.372+02:00",
+  "timestamp": "2026-04-23T11:02:18.851+02:00",
   "entry": [ {
     "fullUrl": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.101",
     "resource": {
@@ -747,6 +747,21 @@
       } ]
     }
   }, {
+    "fullUrl": "urn:Organization/creator-organization",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "creator-organization",
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>Organization/creator-organization</td></tr><tr><td><b>identifier</b></td><td><span>akdjiefef [http://example.org/fhir/organization-ids]</span></td></tr><tr><td><b>name</b></td><td>Example Hospital</td></tr></tbody></table></div>"
+      },
+      "identifier": [ {
+        "system": "http://example.org/fhir/organization-ids",
+        "value": "akdjiefef"
+      } ],
+      "name": "Example Hospital"
+    }
+  }, {
     "fullUrl": "urn:Patient/pat-mrn--1097192655",
     "resource": {
       "resourceType": "Patient",
@@ -804,13 +819,13 @@
       "address": "http://example.com/wado"
     }
   }, {
-    "fullUrl": "urn:Device/creator-device--765331672",
+    "fullUrl": "urn:Device/creator-device",
     "resource": {
       "resourceType": "Device",
-      "id": "creator-device--765331672",
+      "id": "creator-device",
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>Device/creator-device--765331672</td></tr><tr><td><b>manufacturer</b></td><td>Philips IP&amp;S</td></tr><tr><td><b>manufactureDate</b></td><td>2026-03-17T00:00:00+01:00</td></tr><tr><td><b>deviceName</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>name</b></td><td>IHEeu XtEHR projecthaton imaging converter</td></tr><tr><td><b>type</b></td><td>user-friendly-name</td></tr></tbody></table></div></td></tr><tr><td><b>type</b></td><td>MADO Creator</td></tr></tbody></table></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>Device/creator-device</td></tr><tr><td><b>manufacturer</b></td><td>Philips IP&amp;S</td></tr><tr><td><b>manufactureDate</b></td><td>2026-03-17T00:00:00+01:00</td></tr><tr><td><b>deviceName</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>name</b></td><td>IHEeu XtEHR projecthaton imaging converter</td></tr><tr><td><b>type</b></td><td>user-friendly-name</td></tr></tbody></table></div></td></tr><tr><td><b>type</b></td><td>MADO Creator</td></tr><tr><td><b>owner</b></td><td><span class=\"imr-ref-null\">Example Hospital</span></td></tr></tbody></table></div>"
       },
       "manufacturer": "Philips IP&S",
       "manufactureDate": "2026-03-17T00:00:00+01:00",
@@ -824,6 +839,11 @@
           "code": "mado-creator",
           "display": "MADO Creator"
         } ]
+      },
+      "owner": {
+        "reference": "urn:Organization/creator-organization",
+        "type": "Organization",
+        "display": "Example Hospital"
       }
     }
   }, {
@@ -896,7 +916,7 @@
       "id": "mado-provenance-mado-bundle--2047166866",
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>mado-provenance-mado-bundle--2047166866</td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">John DOE</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">WADO endpoint</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">SIEMENS</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">http://example.org/fhir/ris-ids|1731954284869428</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Study A</span></td></tr><tr><td><b>recorded</b></td><td>2026-04-23T10:28:56.377+02:00</td></tr><tr><td><b>agent</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>type</b></td><td>Assembler</td></tr><tr><td><b>who</b></td><td><span class=\"imr-ref-null\">IHEeu XtEHR projecthaton imaging converter</span></td></tr></tbody></table></div></td></tr></tbody></table></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>mado-provenance-mado-bundle--2047166866</td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">John DOE</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">WADO endpoint</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">SIEMENS</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">http://example.org/fhir/ris-ids|1731954284869428</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Study A</span></td></tr><tr><td><b>recorded</b></td><td>2026-04-23T11:02:17.938+02:00</td></tr><tr><td><b>agent</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>type</b></td><td>Assembler</td></tr><tr><td><b>who</b></td><td><span class=\"imr-ref-null\">IHEeu XtEHR projecthaton imaging converter</span></td></tr><tr><td><b>onBehalfOf</b></td><td><span class=\"imr-ref-null\">Example Hospital</span></td></tr></tbody></table></div></td></tr></tbody></table></div>"
       },
       "target": [ {
         "reference": "urn:Patient/pat-mrn--1097192655",
@@ -919,7 +939,7 @@
         "type": "ImagingStudy",
         "display": "Study A"
       } ],
-      "recorded": "2026-04-23T10:28:56.377+02:00",
+      "recorded": "2026-04-23T11:02:17.938+02:00",
       "agent": [ {
         "type": {
           "coding": [ {
@@ -929,9 +949,14 @@
           } ]
         },
         "who": {
-          "reference": "urn:Device/creator-device--765331672",
+          "reference": "urn:Device/creator-device",
           "type": "Device",
           "display": "IHEeu XtEHR projecthaton imaging converter"
+        },
+        "onBehalfOf": {
+          "reference": "urn:Organization/creator-organization",
+          "type": "Organization",
+          "display": "Example Hospital"
         }
       } ]
     }
