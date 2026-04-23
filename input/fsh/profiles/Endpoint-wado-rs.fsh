@@ -25,7 +25,7 @@ Note that we do not require population of the `payloadMimeType` as this informat
   * ^short = "This extension is present when the address value is a placeholder and should not be used (a RetrieveLocationUID lookup is needed)."
 * address.extension[dataAbsentReason].valueCode = #unknown
 
-* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs "DICOM WADO-RS"
+* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs //"DICOM WADO-RS"
 
 * payloadType.text = "DICOM WADO-RS" // GET proper code for this
 

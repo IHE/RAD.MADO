@@ -10,7 +10,7 @@ The `address` field in the endpoint corresponds to the `Display URI` in the DICO
 The endpoint MAY be encoded using the format defined in [IHE-RAD-IID](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_IID.pdf).
 """
 * insert SetFmmAndStatusRule( 1, "draft" )
-* payloadType =  http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none "NONE"
+* payloadType =  http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none //"NONE"
 * payloadMimeType = #text/html
 
 // Profile: MadoIidEndpoint

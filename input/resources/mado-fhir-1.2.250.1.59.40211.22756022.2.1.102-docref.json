@@ -42,6 +42,14 @@
       }
     } ]
   } ],
+  "masterIdentifier": {
+    "system": "http://example.org/fhir/document-ids",
+    "value": "mado-bundle--2047166865"
+  },
+  "identifier": [ {
+    "system": "http://example.org/fhir/document-ids",
+    "value": "mado-bundle--2047166865"
+  } ],
   "status": "current",
   "type": {
     "coding": [ {
@@ -62,7 +70,7 @@
     "type": "Patient",
     "display": "John DOE"
   },
-  "date": "2022-08-22T08:31:17.658+02:00",
+  "date": "2022-08-22T08:31:17.000+02:00",
   "description": "Imaging Manifest for Imaging Study urn:oid:1.2.250.1.59.40211.22756022.2.1.102",
   "content": [ {
     "extension": [ {
@@ -76,7 +84,7 @@
       "contentType": "application/fhir+json",
       "url": "Bundle/mado-bundle--2047166865",
       "title": "FHIR Imaging Manifest for Imaging Study",
-      "creation": "2026-04-22T20:25:46+02:00"
+      "creation": "2026-04-23T10:19:48+02:00"
     },
     "format": {
       "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
