@@ -5,21 +5,24 @@ Description: """
 MADO specific profile for the IHE-MHD Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
 
-This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
-profiles (except `securityLabel`) and requires `context.period`.
+This profile requires `context.period` and copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
+profiles (except `securityLabel`).
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
 
+// * masterIdentifier
+//   * ^short = "The identifier of the FHIR bundle manifest."
+//   * ^definition = "This field is used to store the identifier of the FHIR bundle manifest."
 * masterIdentifier
   * ^short = "The identifier of the FHIR bundle manifest."
-  * ^definition = "This field is used to store the identifier of the FHIR bundle manifest."
+  * ^definition = "An OID according to the DICOM value representation UI. Note this format is used so the same value is used as the SOP Instance UID of the corresponding DICOM KOS manifest."
 
 * relatesTo 
   * insert SliceElement( #value, code )
 * relatesTo contains kosReference 0..1
 * relatesTo[kosReference] 
-  * ^short = "Reference to the DocumentReference resource that contains the DICOM KOS manifest that corresponds to this imaging report in FHIR format"
+  * ^short = "Reference to the DocumentReference resource that contains the DICOM KOS manifest that corresponds to this imaging manifest in FHIR format"
   * code = #transforms
   * target only Reference( MadoDicomKosDocumentReference )
 // category EU EEHRxFDocumentTypeMedicalImagingVS#Medical-Imaging
@@ -46,8 +49,8 @@ Description: """
 MADO specific profile for the IHE-MHD Document Reference for MADO DICOM KOS Manifests that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored. 
 
-This profile copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
-profiles (except `securityLabel`) and requires `context.period`.
+This profile requires `context.period` and copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
+profiles (except `securityLabel`).
 
 """
 * insert SetFmmAndStatusRule( 1, draft )
@@ -55,13 +58,13 @@ profiles (except `securityLabel`) and requires `context.period`.
 
 * masterIdentifier
   * ^short = "The SOP Instance UID of the DICOM KOS manifest."
-  * ^definition = "This field is used to store the SOP Instance UID of the DICOM KOS manifest."
+  * ^definition = "An OID according to the DICOM value representation UI."
 
 * relatesTo 
   * insert SliceElement( #value, code )
 * relatesTo contains fhirReference 0..1
 * relatesTo[fhirReference] 
-  * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging report in DICOM KOS format"
+  * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging manifest in DICOM KOS format"
   * code = #transforms
   * target only Reference( MadoFhirDocumentReference )
 * content
@@ -72,6 +75,7 @@ profiles (except `securityLabel`) and requires `context.period`.
 
 RuleSet: CommonMhdDocumentReferenceFields
 * obeys mado-docref-1
+* identifier 1..*
 // bodysite
 * extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 MS
 * extension[bodysite].extension[concept] 1..1
@@ -84,9 +88,28 @@ RuleSet: CommonMhdDocumentReferenceFields
 * extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 MS
 
 * type 1..1 MS
+  * ^short = "Kind of document (LOINC if possible), see section 6.X.6 of volume 3."
 * category 1..1 MS
+  * ^short = "Categorization of document, see section 6.X.6 of volume 3."
+
 * subject 1..1 MS
+
+* author
+  * ^short = "Who and/or what authored the document (i.e. manifest)"
+  * insert SliceElement( #profile, [[$this.resolve()]] )
+* author contains source-organization 0..1 and source-device 0..1
+* author[source-device] only Reference( MadoCreator )
+  * ^short = "The device that generated the manifest."
+* author[source-organization] only Reference( MadoCreatorOrganization )
+  * ^short = "The organization that generated the manifest."
+
+* authenticator
+  * ^short = "Who/what authenticated the document (i.e. manifest)"
+* custodian
+  * ^short = "Organization which maintains the document (i.e. manifest)"
+
 * content
+  * ^short = "Clinical context of the manifest"
   * attachment
     * language 1..1 MS
     * creation 1..1 MS 
@@ -94,9 +117,13 @@ RuleSet: CommonMhdDocumentReferenceFields
 // study Instance UID and accession number
 * context 1..1
   * facilityType 1..1 MS 
+    * ^short = ""
   * practiceSetting 1..1 MS
+  * event
+    * ^short = "Main clinical acts documented, could include the study procedure codes."
   * period 1..1 MS
     * start 1..1
+      * ^short = "The start time of the study referred to by the manifest"
   * related 
     * insert SliceElement( #profile, identifier )
   * related contains study-instance-uid 1..1 MS and accession-number 0..1 MS

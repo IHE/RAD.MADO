@@ -60,7 +60,7 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.series
   * endpoint contains wado 1..* MS
   * endpoint[wado] only Reference(MadoWadoEndpoint)
   
-  * instance
+  * instance 1..*
     * uid 1..1 MS
     * sopClass MS
     * number MS
