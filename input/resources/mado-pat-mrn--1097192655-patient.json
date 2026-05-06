@@ -2,7 +2,7 @@
   "resourceType": "Patient",
   "id": "pat-mrn--1097192655",
   "identifier": [ {
-    "use": "usual",
+    "use": "official",
     "type": {
       "coding": [ {
         "system": "http://terminology.hl7.org/CodeSystem/v2-0203",

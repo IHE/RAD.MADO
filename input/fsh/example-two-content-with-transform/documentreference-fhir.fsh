@@ -6,10 +6,12 @@ Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
   * value = "koewopfwjqoddasf"
+  * use = #usual
 
 * identifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
   * value = "koewopfwjqoddasf"
+  * use = #usual
 
 * status = #current
 * date = "2025-05-08T00:00:00Z"
@@ -37,7 +39,7 @@ Usage: #example
     * extension[value[x]]
       * url = "value[x]"
       * valueCanonical = Canonical( MadoFhirBundle )
-  * format =  http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  * format =  http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
   * attachment[+]
     * contentType = #application/fhir+json
     * url = "http://kos2FhirTranformService.example.com/transform?url=http://mhdserver.example.com/Binary/mado-kos-manifest-binary" 

@@ -12,3 +12,44 @@ A definition for CodeSystem 'urn:ietf:rfc:3986' could not be found, so the code 
 
 # This codesystem has not been updated yet.
 Unknown code 'urn:ihe:rad:MADO:fhir-manifest:2026"' in the CodeSystem%
+
+# These resources are generated and do not (and should not) have a description
+%Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+
+# Example URL that does not point to a real endpoint
+No definition could be found for URL value 'http://hospital.org/acc'
+No definition could be found for URL value 'http://example.org:8041/dcm4chee-arc/aets/DCM4CHEE/rs'
+No definition could be found for URL value 'Bundle/fhir-manifest-bundle'
+No definition could be found for URL value 'Binary/mado-kos-manifest-binary'
+No definition could be found for URL value 'Bundle/mado-bundle-589331894518000'
+No definition could be found for URL value 'Bundle/mado-bundle--2047166865'
+No definition could be found for URL value 'Bundle/mado-bundle--2047166866'
+No definition could be found for URL value 'Binary/dicom-kos-mado--2047166866'
+No definition could be found for URL value 'Binary/dicom-kos-mado--2047166865'
+
+# URL that indicates the URL does not exists
+No definition could be found for URL value 'http://notapplicable'	
+
+# RADlex has not published a FHIR CodeSystem so it does not resolved
+ValueSet 'http://www.rsna.org/RadLex_Playbook.aspx' not found
+A definition could not be found for Canonical URL 'http://www.rsna.org/RadLex_Playbook.aspx'
+
+# DICOM publishes this ValueSet without a CodeSystem
+A definition could not be found for Canonical URL 'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1'
+A definition for CodeSystem 'http://dicom.nema.org/resources/CodeSystem/DICOM_UIDs' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://dicom.nema.org/resources/ontology/DCMUID' could not be found, so the code cannot be validated%
+
+# IHE-MHD 5.0.0 is the FHIR R5 version of the IG
+The ImplementationGuide uses package ihe.iti.mhd#4.2.3 released on 2025-10-31, but the most recent appropriate version is 5.0.0. This reference is getting old and the more recent version should be considered
+
+# Source profile issue that cannot be resolved in this spec.
+Reference to draft CodeSystem http://hl7.org/fhir/document-reference-status|4.0.1
+
+# Extension package issue outside the scope of this spec.
+The packageId hl7.fhir.uv.xver-r5.r4 points to the canonical http://hl7.org/fhir/uv/xver which is inconsistent with the stated canonical of http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4
+
+# Issue in the FHIR release, not this spec
+The definition for the element 'ImagingStudy.series.performer.function' binds to the value set 'http://hl7.org/fhir/ValueSet/series-performer-function|4.0.1' which is experimental, but this structure is not labeled as experimental
+
+# EU codesystem used in example, did not want to polute the dependency tree with codesystem.
+A definition for CodeSystem 'http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs' could not be found, so the code cannot be validated

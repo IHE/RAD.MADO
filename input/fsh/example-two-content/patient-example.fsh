@@ -4,7 +4,7 @@ InstanceOf: Patient
 Title: "Example patient"
 Description: "Example patient"
 Usage: #example
-* identifier.use = #usual
+* identifier.use = #official
 * identifier.type = $v2-0203#MR "Medical Record number"
 * identifier.system = "http://example.org/hospital/mrn"
 * identifier.value = "PID_666"

@@ -11,6 +11,6 @@ Instance: device-organization
 InstanceOf: MadoCreatorOrganization
 Title: "Example of an orgnization that generated the manifest"
 * identifier
-  * system = "http:/asask/aa"
+  * system = "http:/example.org/asask/aa"
   * value = "32478378429"
 * name = "ACME"

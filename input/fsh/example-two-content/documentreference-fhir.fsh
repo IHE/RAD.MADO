@@ -39,7 +39,7 @@ Usage: #example
     * extension[value[x]]
       * url = "value[x]"
       * valueCanonical = Canonical( MadoFhirBundle )
-  * format =  http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  * format =  http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
   * attachment[+]
     * contentType = #application/fhir+json
     * url = "Bundle/fhir-manifest-bundle"

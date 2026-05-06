@@ -35,7 +35,8 @@ profiles (except `securityLabel`).
 * content 1..1
   * attachment 1..1
     * contentType = #application/fhir+json
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode|1.5.0
+  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
   * extension contains  http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
