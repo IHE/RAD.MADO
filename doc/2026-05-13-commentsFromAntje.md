@@ -7,22 +7,21 @@
 I would  make the third Paragraph (this section specifies..) the Introduction to the section and list the requirements afterwards. Also I think it would be good, to sort the requirements by Creator and Consumer.
 
 Response:
-  * CP: OK I moved the third paragraph first.  I know Wim and Kevin prefer the hard requirement first, but your proposal makes the reading easier.
+  * **CP:** OK I moved the third paragraph first.  I know Wim and Kevin prefer the hard requirement first, but your proposal makes the reading easier.
   
 With regards to the Consumer text, “If a Consumer claims support for processing a FHIR-based Imaging Study Manifest, it shall process its content as specified in this section. Was it meant to related to the paragraph: “Within the MADO Profile, these specifications are part of the Profile requirements (see Section X.1, MADO Actors, Transactions, and Content Modules).”? Then I would write those two sentences closer to each other. Because otherwise it is not clear, what these specifications refers to.
 
 Response:
-  * CP: I added the title of the specifications to remove the ambiguity.
- 
+  * **CP:** I added the title of the specifications to remove the ambiguity.
 
 ### Section 6.x.4
 
 I think the sentence is misleading: "This MADO HL7 FHIR Envelope specification shall be used in conjunction with the IHE MHD or MHDS Profiles when the Imaging Study Manifest is shared in either FHIR-based format or DICOM KOS-based format (see Sections X.6.1 and X.6.2)." Does this mean, that I need to use a the FHIR envelope also, when operating KOS based?
 
 Response:
-  * CP: Absolutely.  The Doc Reference resource is required and includes in Base64 the Part 10 wrapped DICOM KOS SOP Class.
+* CP: Absolutely.  The Doc Reference resource is required and includes in Base64 the Part 10 wrapped DICOM KOS SOP Class.
+* BvdH: Remove the shall and/or list the related actors - include IHE-MHD-Document Publisher and/or Provider actor there.
 
- 
 ## FHIR comments
 
 ### imaging manifest
@@ -41,17 +40,17 @@ Response:
 https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/fhir-imaging-manifest.html> Examples: The word based occurs twice
 
 Response:
-* CP: OK.
-* BvdH: V
+* **CP**: OK.
+* **BvdH**: V
 
 #### Comment
 
 https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/fhir-imaging-manifest.html> Examples: The second sentence in the second paragrah (The Bundle Resource the FHIR Imaging Study Manifest) is incomplete. Either add a verb, or make this sentence continuation of the previous sentence.
 
 Response:
-* CP: Correct: “The sections below show the various MADO data elements that are generated based based on a DICOM study.
+* **CP**: Correct: “The sections below show the various MADO data elements that are generated based based on a DICOM study.
 The Binary resource contains the DICOM KOS Manifest for the study. The Bundle resource contains the FHIR Imaging Study Manifest. The DocumentReference instances provide MHD DocumentReference instances that point to these manifests.”
-* BvdH: V
+* **BvdH**: V
  
 #### Comment
 
