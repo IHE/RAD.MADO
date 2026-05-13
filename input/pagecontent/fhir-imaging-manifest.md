@@ -30,7 +30,7 @@ The {{MadoRequestedProcedure}} provides information on the order for the imaging
 
 ### Related FHIR profiles
 
-The following links are provided for convenience.
+The following links are provided for convenience as they are explicitly required in the MADO Manifest FHIR Bundle profile.
 
 {% sql {
   "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='StructureDefinition' AND ( Name NOT LIKE '%DocumentReference' ) ORDER BY name ASC",
