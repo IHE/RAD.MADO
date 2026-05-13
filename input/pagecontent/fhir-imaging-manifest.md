@@ -45,7 +45,7 @@ The following links are provided for convenience as they are explicitly required
 
 The sections below show the various MADO data elements that are generated based on a DICOM study.
 
-The `Binary` resource contains the DICOM KOS Manifest for the study. The `Bundle` resource the FHIR Imaging Study Manifest. The `DocumentReference` instances provide MHD DocumentReference instances that point to these manifests.
+The Binary resource contains the DICOM KOS Manifest for the study. The `Bundle` resource contains the FHIR Imaging Study Manifest. The `DocumentReference` instances provide MHD DocumentReference instances that point to these manifests.
 
 #### Study A
 
