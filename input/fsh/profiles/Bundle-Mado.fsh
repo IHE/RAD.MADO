@@ -8,7 +8,7 @@ Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. I
 * insert SetFmmAndStatusRule( 1, draft )
 
 * identifier 1..1 MS
-  * ^short = "An OID according to the DICOM value representation UI. This field will hold the same value that is used as the SOP Instance UID of the corresponding DICOM KOS manifest."
+  * ^short = "An OID according for a FHIR-Based formatted Imaging Study Manifest. The OID is structured according to the DICOM UI value representation. In the case that a DICOM KOS manifest is present, this field will hold the same value as the SOP Instance UID of the corresponding translated DICOM KOS manifest."
 
 * timestamp 1..1 MS
 

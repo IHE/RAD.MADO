@@ -11,7 +11,7 @@ The figure below presents an overview of the data that is part of the imaging-ma
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
 
-The manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
+The imaging study manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
 
 The profiles for the {{MadoFhirBundle}} and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
 
@@ -30,7 +30,7 @@ The {{MadoRequestedProcedure}} provides information on the order for the imaging
 
 ### Related FHIR profiles
 
-The following links are provided for convenience.
+The following links are provided for convenience, they list the different profiles defined in this IG as well as their descriptions. Please note this copies the description text from the profile, please interpret any normative language in these descriptions within the scope of the profile.
 
 {% sql {
   "query" : "SELECT name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE Type='StructureDefinition' AND ( Name NOT LIKE '%DocumentReference' ) ORDER BY name ASC",
@@ -43,9 +43,9 @@ The following links are provided for convenience.
 
 ### Examples
 
-The sections below show the various MADO data elements that are generated based based on a DICOM study.
+The sections below show the various MADO data elements that are generated based on a DICOM study.
 
-The `Binary` resource contains the DICOM KOS Manifest for the study. The `Bundle` resource the FHIR Imaging Study Manifest. The `DocumentReference` instances provide MHD DocumentReference instances that point to these manifests.
+The Binary resource contains the DICOM KOS Manifest for the study. The `Bundle` resource contains the FHIR Imaging Study Manifest. The `DocumentReference` instances provide MHD DocumentReference instances that point to these manifests.
 
 #### Study A
 
