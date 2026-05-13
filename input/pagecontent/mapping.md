@@ -2,9 +2,11 @@
 
 The mapping between the DICOM KOS and FHIR format is presented in the table below. In order to make it clear what concept is addressed, the first column contains a short characterization of the concept. The other two columns show the corresponding FHIR and DICOM KOS fields. In the case that more than one field is presented, it is expected that the concept will be present in each of them.
 
-In the FHIR column, the expression `Resource.field1.field2` means within the resource `Resource`, there is an element called `field1` that contains the element `field1`. The expression `field1->resource` means that `field1` is reference that points to the resource `resource`.
+In the FHIR column, the expression `Resource.field1.field2` means within the resource `Resource`, there is an element called `field1` that contains the element `field2`. The expression `field1->resource` means that `field1` is reference that points to the resource `resource`.
 
 In the KOS column the expression `sequence->field` means that within the sequence `sequence` there is a field called `field`. The expression `SR:EV(aaa,DCM,"name")->EV(bbb,DCM,"name")` means that within the DICOM SR ContentSequence there is a SR node with the code `aaa` that contains the SR node `bbb`.
+
+The Note columns labels those codes for which temporary values are defined with `Temp Code`, see section [6.X.2.9 SR Document Content Module](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_MADO.pdf#page=49).
 
 **Table 4.3-1: MADO DICOM KOS <-> FHIR mapping**
 

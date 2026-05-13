@@ -89,7 +89,7 @@ Remove MADO Creator resource.
 
 (https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/StructureDefinition-MadoCreator.html: What Instance is the Device.Identifier referring to? Is this meant to be an instance of the device? Is this the actual Resource identifier? But that one I thought would be presented in th Device.ID. Please note, this is not in the Key Elements view but in the snapshot view, which I accidentally landed at).
 
-* CP: With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance resource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
 Remove MADO Creator resource.
 * BvdH: See reaction to similar comment above. I do not think the profile should be removed.
 * BvdH: The Device.identifier, in FHIR, represents an identifier for the Device. The Device.id represents the primary key of the resource in the FHIR server it is stored in. 
@@ -111,7 +111,7 @@ https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType. Device.type.coding 
 Remove MADO Creator resource.
 * BvdH: See reaction to similar comment above. I do not think the profile should be removed.
 * BvdH: Not sure what is meant with the comment. The restriction requires that at least one CodeableConcept is required with the value `https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType#mado-creator`.
- 
+
 #### Comment
 
 https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType. Device.type.system refers to https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType
