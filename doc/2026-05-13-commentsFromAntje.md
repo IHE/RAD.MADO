@@ -81,47 +81,46 @@ In https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/StructureDefinition-Ma
 
 https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/StructureDefinition-MadoCreator.html: "A profile for the Device resource that represents the creator of an ImagingStudy in the MADO context." What does ImagingStudy mean? The actual study that was created by an Acquisition device or the MADO Imaging Study Resource
 
-With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance resource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
 Remove MADO Creator resource.
-
+* BvdH: If we remove the profile we can no longer indicate that manufacturer, type and owner are required fields. Would renaming it/improving the description help?
+  * A profile for the Device resource that represents the creator of an **FHIR imaging study manifest**." 
  
+#### Comment
 
 (https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/StructureDefinition-MadoCreator.html: What Instance is the Device.Identifier referring to? Is this meant to be an instance of the device? Is this the actual Resource identifier? But that one I thought would be presented in th Device.ID. Please note, this is not in the Key Elements view but in the snapshot view, which I accidentally landed at).
 
-With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
 Remove MADO Creator resource.
+* BvdH: See reaction to similar comment above. I do not think the profile should be removed.
+* BvdH: The Device.identifier, in FHIR, represents an identifier for the Device. The Device.id represents the primary key of the resource in the FHIR server it is stored in. 
 
- 
+#### Comment
 
 https://build.fhir.org/ig/IHE/RAD.MADO/branches/master/StructureDefinition-MadoCreator.html: Device.type list a binding to a very Long list, from looking at it, I think none of the codes is applicable. I assume the device type refers to the content creator of the FHIR Manifest. So none of the codes I saw in that list seems to make sense.
 
-With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance resource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest.
 Remove MADO Creator resource.
-
+* BvdH: See reaction to similar comment above. I do not think the profile should be removed.
+* BvdH: The restriction requires that at least one CodeableConcept is required with the value `https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType#mado-creator`. No need to consider the list. The rendering could be improved here.
  
+#### Comment
 
-https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType. Device.type.coding madates to use a fixed value of complex. But how is complex encoded?
+https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType. Device.type.coding mandates to use a fixed value of complex. But how is complex encoded?
 
-With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance resource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
 Remove MADO Creator resource.
-
+* BvdH: See reaction to similar comment above. I do not think the profile should be removed.
+* BvdH: Not sure what is meant with the comment. The restriction requires that at least one CodeableConcept is required with the value `https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType#mado-creator`.
  
+#### Comment
 
 https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType. Device.type.system refers to https://profiles.ihe.net/RAD/MADO/CodeSystem/MadoDeviceType
 
 However this link does not exist
 
-With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
+* CP: With the introduction of the provenance ressource it is not clear why the MADO Creator resource is present.  There is no need to have in the imaging manifest information about the acquisition device that acquired the imaging study referenced by the MADO imaging study manifest. 
 Remove MADO Creator resource.
-
+* BvdH: See reaction to similar comment above. I do not think the profile should be removed.
+* BvdH: This code system is used as the mandatory Device.type for MadoCreator devices.
  
-
-I gave up for now, because at this point, I feel there may be potential issues with the specifications, however I cannot clearly judge and it is taking me a lot of time
-
-Please let me know what you think
-
- 
-
-Best regards
-
-Antje
