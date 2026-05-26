@@ -1,6 +1,6 @@
 {% include aliases.md %}
 
-When distributing a MADO imaging manifest in an {{iheMHD}} environment the `DocumentReference` profiles defined below:
+When distributing a MADO imaging manifest in an {{iheMHD}} environment the `DocumentReference` profiles defined below apply.
 
 * FHIR Imaging Study Manifest SHALL be packaged with an envelope defined in {{MadoFhirDocumentReference}}.
 * DICOM KOS Manifest envelopes SHALL be packaged with an envelope defined in  {{MadoDicomKosDocumentReference}}.

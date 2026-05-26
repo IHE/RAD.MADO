@@ -8,10 +8,6 @@ Usage: #definition
 Description: """
 IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Consumer (client). It extends MHD  [Document Consumer (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentConsumer.html). 
 
-Please note that this CapabilityStatement representation only shows the delta of this instance with the 
-MHD [Document Responder (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentResponder.html). All the
-functionality specified by the [Document Consumer (client)](https://build.fhir.org/ig/IHE/ITI.MHD/CapabilityStatement-IHE.MHD.DocumentConsumer.html)
-SHALL also be supported.
 """
 * name = "IHE_RAD_MADO_DocumentConsumer"
 * status = #active

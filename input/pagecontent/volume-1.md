@@ -1,2 +1,2 @@
-{% include redirect.html redirect="IHE_RAD_Suppl_MADO.pdf#page=10" %}
+{% include embed.html redirect="IHE_RAD_Suppl_MADO.pdf#page=10" %}
 

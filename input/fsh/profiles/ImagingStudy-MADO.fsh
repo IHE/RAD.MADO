@@ -3,8 +3,6 @@ Parent: ImagingStudy
 Title: "MADO Imaging Study"
 Description: """
 Profile for ImagingStudy resources that represent the imaging studies manifest in the MADO context. It includes additional constraints and extensions specific to the MADO context, such as the study modality, the clinical specialty, the anatomical region of interest, the presence of significant images.
-
-In the case significant images are present, an instance referenced in the `ImagingStudy` is a Key Object Selection document [TID 2010](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_tid_2010.html), the `ImagingStudy.series.instance.extension[ko-document-title]` SHALL contain the Document Title code of the referenced document, and the `ImagingStudy.series.instance.description` field contains the contents of the KeyObjectSelectionDescription field.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 

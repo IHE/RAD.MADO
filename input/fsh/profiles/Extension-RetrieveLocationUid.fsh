@@ -1,7 +1,7 @@
 Extension: MadoRetrieveLocationUIDExtension
 Title: "Extension: Retrieve Location UID"
 Description: """
-The location UID of the source of the WADO URL. See XC-WADO and https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.4.3.html#table_A.35.4-1.
+The location UID of the source of the WADO URL. See XC-WADO and [Part03 table_A.35.4-1](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_A.35.4.3.html#table_A.35.4-1).
 """
 Context: Endpoint
 * insert SetFmmAndStatusRule( 1, draft )
