@@ -11,22 +11,22 @@ The figure below presents an overview of the data that is part of the imaging-ma
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Imaging Study Manifest Overview" %}
 
-The FHIR Imaging Study Manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
+The FHIR Imaging Study Manifest is a FHIR bundle that SHALL conform to the [[[MadoFhirBundle]]] profile. This {{Bundle}} includes the [[[MadoImagingStudy]]] resource, the [[[MadoPatient]]], [[[MadoCreator]]] and [[[MadoCreatorOrganization]]], the [[[MadoRequestedProcedure]]], and the [[[MadoWadoEndpoint]]] and [[[MadoWebViewerEndpoint]]]s.
 
-The profiles for the {{MadoFhirBundle}} and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
+The profiles for the [[[MadoFhirBundle]]] and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
 
-The {{MadoPatient}} resource holds the patient information.
+The [[[MadoPatient]]] resource holds the patient information.
 
-The {{MadoCreator}} and {{MadoCreatorOrganization}} resources provide information on the device and organization that created the manifest.
+The [[[MadoCreator]]] and [[[MadoCreatorOrganization]]] resources provide information on the device and organization that created the manifest.
 
-The {{MadoRequestedProcedure}} provides information on the order for the imaging study, including the order specific identifiers: Accession Number, Placer Number and Filler number.
+The [[[MadoRequestedProcedure]]] provides information on the order for the imaging study, including the order specific identifiers: Accession Number, Placer Number and Filler number.
 
 {{Endpoint}} resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
 
 * On study level, the manifest MAY contain:
-  * The {{MadoWebViewerEndpoint}} which provides a web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
+  * The [[[MadoWebViewerEndpoint]]] which provides a web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
 * For each series, the manifest SHALL contain:
-  * The {{MadoWadoEndpoint}} which `address` field holds the WADO base url that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
+  * The [[[MadoWadoEndpoint]]] which `address` field holds the WADO base url that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
 
 ### Related FHIR profiles
 
