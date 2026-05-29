@@ -1,7 +1,7 @@
 Instance: DocumentReferenceKOSNoRelated
 InstanceOf: MadoDicomKosDocumentReference
-Title: "DocumentReference Example for DICOM KOS manifests and no related reference to the FHIR manifest example"
-Description: "DocumentReference Example for DICOM KOS manifests with no related reference to the FHIR manifest example"
+Title: "DocumentReference Example for DICOM KOS manifests and no related reference to the FHIR Imaging Study Manifest example"
+Description: "DocumentReference Example for DICOM KOS manifests with no related reference to the FHIR Imaging Study Manifest example"
 Usage: #example
 * masterIdentifier[+]
   * system = "urn:dicom:uid"

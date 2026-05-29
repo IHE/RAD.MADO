@@ -1,8 +1,8 @@
 Profile: MadoFhirBundle
 Parent: Bundle
-Title: "MADO Imaging Study Manifest FHIR Bundle"
+Title: "MADO FHIR Imaging Study Manifest Bundle"
 Description: """
-Profile for FHIR Bundles used as a imaging study Manifest in the MADO context. It includes constraints and extensions specific to imaging study manifests, such as the type of study, the clinical specialty, and the anatomical region of interest.
+Profile for FHIR Bundles used as an FHIR Imaging Study Manifest in the MADO context. It includes constraints and extensions specific to FHIR Imaging Study Manifest, such as the type of study, the clinical specialty, and the anatomical region of interest.
 
 """
 * insert SetFmmAndStatusRule( 1, draft )

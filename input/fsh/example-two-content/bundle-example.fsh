@@ -1,7 +1,7 @@
 Instance: mado-bundle-589331894518000
 InstanceOf: MadoFhirBundle
 Title: "Bundle: MADO FHIR document"
-Description: "An example of a MADO FHIR manifest."
+Description: "An example of an FHIR Imaging Study Manifest."
 Usage: #example
 * type = #document
 * identifier

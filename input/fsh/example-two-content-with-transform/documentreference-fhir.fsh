@@ -1,7 +1,7 @@
 Instance: DocumentReferenceFHIRwithTransform
 InstanceOf: MadoFhirDocumentReference
-Title: "DocumentReference Example for FHIR manifests with transform"
-Description: "DocumentReference Example for FHIR manifests with transform service called to transform the KOS manifest into a FHIR manifest"
+Title: "DocumentReference Example for FHIR Imaging Study Manifest with transform"
+Description: "DocumentReference Example for FHIR Imaging Study Manifest with transform service called to transform the KOS manifest into an FHIR Imaging Study Manifest"
 Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"

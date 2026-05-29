@@ -1,7 +1,7 @@
 Instance: DocumentReferenceFHIR
 InstanceOf: MadoFhirDocumentReference
-Title: "DocumentReference Example for FHIR manifests"
-Description: "DocumentReference Example for FHIR manifests"
+Title: "DocumentReference Example for FHIR Imaging Study Manifest"
+Description: "DocumentReference Example for FHIR Imaging Study Manifest"
 Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"

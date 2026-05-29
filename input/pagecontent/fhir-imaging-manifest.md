@@ -1,17 +1,17 @@
 {% include aliases.md %}
 
-The MADO FHIR imaging manifest represents a summary of the data stored in a DICOM imaging study. It contains the information stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
+The FHIR Imaging Study Manifest represents a summary of the data stored in a DICOM imaging study. It contains the information stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
 
 This section specifies the structure and format of an Imaging Study Manifest for the MADO Profile using the DICOM standards. It is based on the DICOM Key Object Selection (KOS) Document Information Object Definition (IOD) as specified in DICOM PS3.3 Section A.35.4 
 Key Object Selection Document IOD.
 
-### FHIR Manifest overview
+### FHIR Imaging Study Manifest overview
 
 The figure below presents an overview of the data that is part of the imaging-manifest. In order to keep the diagram readable, not all references are included.
 
-{% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Manifest Overview" %}
+{% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Imaging Study Manifest Overview" %}
 
-The imaging study manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
+The FHIR Imaging Study Manifest is a FHIR bundle that SHALL conform to the {{MadoFhirBundle}} profile. This {{Bundle}} includes the {{MadoImagingStudy}} resource, the {{MadoPatient}}, {{MadoCreator}} and {{MadoCreatorOrganization}}, the {{MadoRequestedProcedure}}, and the {{MadoWadoEndpoint}} and {{MadoWebViewerEndpoint}}s.
 
 The profiles for the {{MadoFhirBundle}} and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
 

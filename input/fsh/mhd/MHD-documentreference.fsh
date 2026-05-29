@@ -1,8 +1,8 @@
 Profile: MadoFhirDocumentReference
 Parent: IHE.MHD.Minimal.DocumentReference
-Title: "MADO MHD DocumentReference Profile for FHIR Imaging Manifests"
+Title: "MADO MHD DocumentReference Profile for FHIR Imaging Study Manifest"
 Description: """
-MADO specific profile for the IHE-MHD Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
+MADO specific profile for the IHE-MHD Document Reference for FHIR Imaging Study Manifest that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
 
 This profile requires `context.period` and copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
@@ -12,10 +12,10 @@ profiles (except `securityLabel`).
 * insert CommonMhdDocumentReferenceFields
 
 // * masterIdentifier
-//   * ^short = "The identifier of the FHIR bundle manifest."
-//   * ^definition = "This field is used to store the identifier of the FHIR bundle manifest."
+//   * ^short = "The identifier of the FHIR Imaging Study Manifest."
+//   * ^definition = "This field is used to store the identifier of the FHIR Imaging Study Manifest."
 * masterIdentifier
-  * ^short = "The identifier of the FHIR bundle manifest."
+  * ^short = "The identifier of the FHIR Imaging Study Manifest."
   * ^definition = "An OID according to the DICOM value representation UI. Note this format is used so the same value is used as the SOP Instance UID of the corresponding DICOM KOS manifest."
 
 * relatesTo 
@@ -65,7 +65,7 @@ profiles (except `securityLabel`).
   * insert SliceElement( #value, code )
 * relatesTo contains fhirReference 0..1
 * relatesTo[fhirReference] 
-  * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging manifest in DICOM KOS format"
+  * ^short = "Reference to the DocumentReference resource that contains the FHIR Imaging Study Manifest that corresponds to this imaging manifest in DICOM KOS format"
   * code = #transforms
   * target only Reference( MadoFhirDocumentReference )
 * content

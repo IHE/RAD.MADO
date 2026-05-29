@@ -37,13 +37,13 @@ Does the document remain a collection bundle or move to a document bundle.
 
 #### XC WADO endpoint
 
-XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
+XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Imaging Study Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
 
-**Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the MADO FHIR manifest.
+**Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the FHIR Imaging Study Manifest.
 
 #### Improve overview picture
 
-The Figure: FHIR Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
+The Figure: FHIR Imaging Study Manifest Overview should be refined because some Bundle resources are referenced by the Imaging Study Resource (study-level part) other at the Series instance level (such as WADO Endpoint).
 
 **Resolution:** The arrows to the WADO endpoint will come from the Series boxes. We will add a new box representing a viewer with an arrow coming from the study. Add MADO WADO - with location uid in picture. Add <<resourceType>> where not clear from the name. Add LocationUID to WADO endpoint - remove XC-WADO endpoint definition - add example for WADO with no URL and mention it in the text.
 
@@ -85,7 +85,7 @@ In the Manifest Envelope, the descriptive text (first five sentences and the tex
 
 #### Base resource for MHD DocumentReference
 
-In the Manifest Envelope, section related FHIR Profile, it speaks about the related “MHD Minimal Document Reference”.  However, in the use of MHD for imaging studies sharing, the “comprehensive MHD metadata” is used.  That is clear in the “MADO MHD DocumentReference Profile for FHIR Imaging Manifests”. The rest of the section, that only list the imaging specific.
+In the Manifest Envelope, section related FHIR Profile, it speaks about the related “MHD Minimal Document Reference”.  However, in the use of MHD for imaging studies sharing, the “comprehensive MHD metadata” is used.  That is clear in the “MADO MHD DocumentReference Profile for FHIR Imaging Study Manifest”. The rest of the section, that only list the imaging specific.
  
 **Answer:** Minimal Document Reference has been chosen as this is the minimal MHD requirement and the one used in the EU Health Access API specification. I do not see a reason to add the restrictions in this profile to all deployments of MADO.
 

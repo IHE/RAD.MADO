@@ -1,7 +1,7 @@
 Profile: MadoCreator
 Parent: Device
 Title: "MADO Creator"
-Description: """A profile for the Device resource that represents the creator of an imaging study manifest. The primary goal is to communicate the fields:
+Description: """A profile for the Device resource that represents the creator of an FHIR Imaging Study Manifest. The primary goal is to communicate the fields:
 
 * type = MadoDeviceType#mado-creator "MADO Creator"
 * manufacturer

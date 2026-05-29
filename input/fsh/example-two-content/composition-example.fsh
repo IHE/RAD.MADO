@@ -1,7 +1,7 @@
 Instance: MadoCompositionExample
 InstanceOf: MadoComposition
-Title: "Composition Example for FHIR manifests"
-Description: "Composition Example for FHIR manifests"
+Title: "Composition Example for FHIR Imaging Study Manifest"
+Description: "Composition Example for FHIR Imaging Study Manifest"
 Usage: #inline
 * status = #final
 * date = "2025-05-08T00:00:00Z"
