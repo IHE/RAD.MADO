@@ -8,7 +8,7 @@ It also provides fields that allow communication of typical document related inf
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * text 1..1 MS
-  * status = #generated
+  * status from MadoNarrativeNotEmpty (required)
 * identifier 1..1 MS
   * ^short = "An OID according for a FHIR-Based formatted Imaging Study Manifest. The OID is structured according to the DICOM UI value representation. In the case that a DICOM KOS manifest is present, this field will hold the same value as the SOP Instance UID of the corresponding translated DICOM KOS manifest."
 
@@ -35,6 +35,12 @@ It also provides fields that allow communication of typical document related inf
 * custodian
   * ^short = "The organization that is the custodian of the manifest."
 
+* event
+  * insert SliceElement( #profile, [[detail.resolve()]] )
+* event contains imaging-study 1..1 MS
+* event[imaging-study].detail only Reference( MadoImagingStudy )
+  * ^short = "Reference to the ImagingStudy that contains the details of the study that is being described in the manifest."
+
 * section 0..* MS
   * ^short = "Optionally, one or more sections. Each section provides information on a series in the study." 
   * text 1..1 MS
@@ -44,8 +50,9 @@ It also provides fields that allow communication of typical document related inf
     * the series description
     * the number of instances in the series
     * the modality
-    * the body site and laterality    
+    * the body site and laterality
     """
+    * status from MadoNarrativeNotEmpty (required)
   * entry 0..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
   * entry contains wado-endpoint 0..*

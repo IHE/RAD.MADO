@@ -1,5 +1,4 @@
 ValueSet: ProcedureEuImagingType
-Id: im-procedure-type
 Title: "ValueSet: Imaging Procedure Type"
 Description: """
 This value set includes all imaging procedure types defined in SNOMED CT. The codes represent
