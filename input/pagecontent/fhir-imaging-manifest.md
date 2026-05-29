@@ -10,7 +10,7 @@ The FHIR Imaging Study Manifest is a FHIR document [[[Bundle]]]. The figure belo
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Imaging Study Manifest Overview" %}
 
-The FHIR Imaging Study Manifest is a FHIR bundle of type 'document' that SHALL conform to the [[[MadoFhirBundle]]] profile. This {{Bundle}} includes the [[[MadoComposition]]] resource, the [[[MadoImagingStudy]]] resource, the [[[MadoPatient]]], [[[MadoCreator]]] and [[[MadoCreatorOrganization]]], the [[[MadoRequestedProcedure]]], and the endpoints [[[MadoWadoEndpoint]]] and [[[MadoWebViewerEndpoint]]].
+The FHIR Imaging Study Manifest is a FHIR bundle of type 'document' that SHALL conform to the [[[MadoFhirBundle]]] profile. This [[[Bundle]]] includes the [[[MadoComposition]]] resource, the [[[MadoImagingStudy]]] resource, the [[[MadoPatient]]], [[[MadoCreator]]] and [[[MadoCreatorOrganization]]], the [[[MadoRequestedProcedure]]], and the endpoints [[[MadoWadoEndpoint]]] and [[[MadoWebViewerEndpoint]]].
 
 The profiles for the [[[MadoFhirBundle]]] and the resources it contains have fields marked as `Must Support` (`MS`) (marked with an S in the _Flags_ column), which SHALL be populated if the value is known.
 
@@ -24,7 +24,7 @@ The [[[MadoCreator]]] and [[[MadoCreatorOrganization]]] resources provide inform
 
 The [[[MadoRequestedProcedure]]] provides information on the order for the imaging study, including the order specific identifiers: Accession Number, Placer Number and Filler number.
 
-[[[Endpoint]]] resources contain the information that allows the client to access the DICOM data. The current model identifies different {{Endpoint}}s:
+[[[Endpoint]]] resources contain the information that allows the client to access the DICOM data. The current model identifies different [[[Endpoint]]]s:
 
 * On study level, the manifest MAY contain:
   * The [[[MadoWebViewerEndpoint]]] which provides a web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.

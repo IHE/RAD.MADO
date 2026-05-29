@@ -19,7 +19,7 @@ The main choices illustrated in the figure are:
 
 * There are two different `DocumentReferences`, one for the FHIR ImagingStudy and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
 * FHIR Imaging Study Manifest:
-  * An FHIR Imaging Study Manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile [[[MadoFhirBundle]]]. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
+  * An FHIR Imaging Study Manifest is represented as a FHIR json encoded FHIR [[[Bundle]]] following the profile [[[MadoFhirBundle]]]. This Bundle contains the [[[ImagingStudy]]] resource as well other resources such as the [[[Patient]]] and various [[[Endpoint]]]s.
   * The FHIR DocumentReference SHALL include the identifier of the [[[MadoFhirBundle]]] as `masterIdentifier`.
 * DICOM KOS manifest:
   * A KOS manifest is represented as a `application/dicom` encoded DICOM instance (see [8.7.3.1 Instance Media Types](https://dicom.nema.org/medical/dicom/current/output/html/part18.html#table_8.7.3-2)) following the MADO KOS profile.
