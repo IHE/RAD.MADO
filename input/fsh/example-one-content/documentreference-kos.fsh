@@ -18,7 +18,7 @@ Usage: #example
 
 * insert DocumentReferenceDefaults
 
-* subject = Reference(pat-mrn-1538098370)
+* subject = Reference(ExamplePatient)
 // * custodian = Reference(OrganizationSemiStructuredReport)
 
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR

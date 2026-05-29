@@ -11,7 +11,7 @@ This profile defines a WADO endpoint for accessing imaging study content. [MADO 
 
 * address
   * ^short = "The base URL of the WADO service. When unknown it SHALL be set to \"http://notspecified\""
-* address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.2.0 named dataAbsentReason 0..1
+* address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.3.0 named dataAbsentReason 0..1
   * ^short = "This extension is present when the address value is a placeholder and should not be used (a RetrieveLocationUID lookup is needed)."
 * address.extension[dataAbsentReason].valueCode = #unknown
 

@@ -1,5 +1,5 @@
 
-Instance: wado-url-endpoint-84713519
+Instance: MadoWadoEndpointExample
 InstanceOf: MadoWadoEndpoint
 Title: "Endpoint: WADO"
 Description: "Example of a DICOM web endpoint supporting WADO."

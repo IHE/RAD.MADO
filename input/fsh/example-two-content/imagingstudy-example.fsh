@@ -9,7 +9,7 @@ Usage: #inline
   * value = "1.2.392.200140.2.1.1.1.2.799008771.2076.1519721309.448"
 * status = #available
 * modality = $dicomOntology#SM
-* subject = Reference(pat-mrn-1538098370) "http://hospital.org/mrn|PID_666"
+* subject = Reference(ExamplePatient) 
 * subject.type = "Patient"
 * started = "2018-02-27T09:48:29+01:00"
 
@@ -32,7 +32,7 @@ Usage: #inline
 * series.uid = "1.2.392.200140.2.1.1.1.3.799008771.2076.1519721309.449"
 * series.modality = $dicomOntology#SM
 * series.numberOfInstances = 46
-* series.endpoint = Reference(wado-url-endpoint-84713519) "WADO endpoint"
+* series.endpoint = Reference(MadoWadoEndpointExample) "WADO endpoint"
 * series.endpoint.type = "Endpoint"
 * series.instance[+].extension[number-of-frames].valueInteger = 49
 * series.instance[=].uid = "1.2.392.200140.2.1.1.1.4.799008771.2076.1519721320.457"
