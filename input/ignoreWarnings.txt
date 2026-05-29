@@ -51,5 +51,5 @@ The packageId hl7.fhir.uv.xver-r5.r4 points to the canonical http://hl7.org/fhir
 # Issue in the FHIR release, not this spec
 The definition for the element 'ImagingStudy.series.performer.function' binds to the value set 'http://hl7.org/fhir/ValueSet/series-performer-function|4.0.1' which is experimental, but this structure is not labeled as experimental
 
-# EU codesystem used in example, did not want to polute the dependency tree with codesystem.
+# EU codesystem used in example, did not want to pollute the dependency tree with codesystem.
 A definition for CodeSystem 'http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs' could not be found, so the code cannot be validated

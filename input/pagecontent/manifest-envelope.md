@@ -107,4 +107,4 @@ The [DocumentReference Example for FHIR Imaging Study Manifest with transform](D
 
 {% fragment DocumentReference/DocumentReferenceFHIRwithTransform JSON BASE:content.attachment %}
 
-The url points to a transform service and passes the link to the KOS manifest. This is just one example of such service. This specification does not specify the interface. Alternative implementations could could pass the StudyInstanceUID and wado URL parameters, or some other set of data.
+The url points to a transform service and passes the link to the KOS manifest. This is just one example of such service. This specification does not specify the interface. Alternative implementations could pass the StudyInstanceUID and wado URL parameters, or some other set of data.

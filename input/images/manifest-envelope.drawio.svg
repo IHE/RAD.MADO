@@ -12,13 +12,13 @@
                         <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 303px; margin-left: 172px;">
                             <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; background-color: #ffffff; ">
                                 <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); white-space: nowrap; ">
-                                    content[kos].attachement.url
+                                    content[kos].attachment.url
                                 </div>
                             </div>
                         </div>
                     </foreignObject>
                     <text x="172" y="307" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">
-                        content[kos].attachement.url
+                        content[kos].attachment.url
                     </text>
                 </switch>
             </g>
@@ -35,14 +35,14 @@
                             <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; background-color: #ffffff; ">
                                 <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); white-space: nowrap; ">
                                     <span style="color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));">
-                                        content[fhir].attachement.url
+                                        content[fhir].attachment.url
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </foreignObject>
                     <text x="636" y="295" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">
-                        content[fhir].attachement.url
+                        content[fhir].attachment.url
                     </text>
                 </switch>
             </g>

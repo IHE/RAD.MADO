@@ -36,7 +36,7 @@ It also provides fields that allow communication of typical document related inf
   * ^short = "The organization that is the custodian of the manifest."
 
 * section 0..* MS
-  * ^short = "Optionally, one or more sections. Each section provides informtion on a series in the study." 
+  * ^short = "Optionally, one or more sections. Each section provides information on a series in the study." 
   * text 1..1 MS
     * ^short = """
     A human readable narrative that contains the information about the section. This narrative should contain at least:
@@ -44,8 +44,7 @@ It also provides fields that allow communication of typical document related inf
     * the series description
     * the number of instances in the series
     * the modality
-    * the body site and laterality 
-    
+    * the body site and laterality    
     """
   * entry 0..*
     * insert SliceElement( #profile, [[$this.resolve()]] )
