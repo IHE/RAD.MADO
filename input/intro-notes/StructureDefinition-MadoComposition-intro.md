@@ -2,14 +2,15 @@ The `Composition.text` field SHALL include a description of the study level info
 
 * subject (identifiers and name)
 * author (identifiers and name) of device as well as organization
+* StudyInstanceUID
 * manifest creation date
 * type and categories
 * study date and time
 * modalities in the study
 * anatomical regions
-* accession number(s) (if present)
+* accession number(s)
 * the number of series in the study
-* when present, a link to the webviewer endpoint for the study
+* a link to the webviewer endpoint for the study (if present)
   
 Optionally, each section in the Composition may provide information on each series.
 
