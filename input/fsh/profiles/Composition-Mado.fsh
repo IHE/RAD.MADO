@@ -1,13 +1,12 @@
 Profile: MadoComposition
 Parent: Composition
 Title: "MADO Composition"
-Description: """This profile is needed as 
-FHIR Bundles of type `document` require a `Composition` resource as the first entry. Instances of this profile can be rendered in normal document based system without the need for the Client to understand the MADO-specific profiles, while still allowing to capture the necessary information about the creator of the manifest in a structured way.
+Description: """A FHIR Composition profile for MADO manifests is needed as FHIR Bundles of type `document` require a `Composition` resource as the first entry. Instances of this profile can be rendered in normal document based system without the need for the Client to understand the MADO-specific profiles, while still allowing to represent the essential information of the manifest such as patient, modality, and anatomical region.
 
-It also provides fields that allow communication of typical document related information such as author.
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * text 1..1 MS
+  * ^short = "A human readable narrative that contains information about the manifest."
   * status from MadoNarrativeNotEmpty (required)
 * identifier 1..1 MS
   * ^short = "An OID according for a FHIR-Based formatted Imaging Study Manifest. The OID is structured according to the DICOM UI value representation. In the case that a DICOM KOS manifest is present, this field will hold the same value as the SOP Instance UID of the corresponding translated DICOM KOS manifest."
@@ -45,16 +44,7 @@ It also provides fields that allow communication of typical document related inf
   * ^short = "Optionally, one or more sections. Each section provides information on a series in the study." 
   * text 1..1 MS
     * ^short = """
-    A human readable narrative that contains the information about the section. This narrative should contain at least:
-    * the series instance UID
-    * the series description
-    * the number of instances in the series
-    * the modality
-    * the body site and laterality
+    A human readable narrative that contains the information about the section. This narrative could contain information like: the series instance UID, the series description, the number of instances in the series, and/or the modality.
     """
     * status from MadoNarrativeNotEmpty (required)
-  * entry 0..*
-    * insert SliceElement( #profile, [[$this.resolve()]] )
-  * entry contains wado-endpoint 0..*
-  * entry[wado-endpoint] only Reference( MadoWadoEndpoint )
-    * ^short = "The WADO endpoint that can be used to retrieve the referenced DICOM objects."
+
