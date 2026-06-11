@@ -26,6 +26,12 @@ jobs:
       - name: Pull IG Publisher Docker image
         run: docker pull hl7fhir/ig-publisher-base:latest
 
+      - name: Download FHIR IG Publisher
+        run: |
+          mkdir -p "${{ github.workspace }}/input-cache"
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            -o "${{ github.workspace }}/input-cache/publisher.jar"
+
       - name: Run _build.sh inside publisher container
         run: |
           docker run --rm \
