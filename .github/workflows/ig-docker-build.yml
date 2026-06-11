@@ -35,10 +35,11 @@ jobs:
       - name: Run _build.sh inside publisher container
         run: |
           docker run --rm \
+            --user root \
             -v "${{ github.workspace }}:/home/publisher/ig" \
             -w /home/publisher/ig \
             hl7fhir/ig-publisher-base:latest \
-            /bin/bash -lc "bash ./_build.sh build"
+            /bin/bash -lc "if ! command -v java >/dev/null 2>&1; then apt-get update && apt-get install -y openjdk-17-jre-headless; fi; bash ./_build.sh build"
 
       - name: Verify QA output exists
         run: |
