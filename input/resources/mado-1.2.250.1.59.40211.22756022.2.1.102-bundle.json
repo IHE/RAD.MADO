@@ -9,7 +9,7 @@
     "value": "mado-bundle--2047166865"
   },
   "type": "document",
-  "timestamp": "2026-05-29T16:28:27.087+02:00",
+  "timestamp": "2026-06-11T09:26:02.961+02:00",
   "entry": [ {
     "fullUrl": "urn:Composition/mado-comp-1814516964",
     "resource": {
@@ -17,7 +17,7 @@
       "id": "mado-comp-1814516964",
       "text": {
         "status": "additional",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Head CT</h1><table><tbody><tr><td><b>Study Instance UID</b></td><td>1.2.250.1.59.40211.22756022.2.1.102</td></tr><tr><td><b>Subject</b></td><td><span class=\"imr-ref-Patient\">John DOE</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Device\">IHEeu imaging converter</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Organization\">Example Hospital</span></td></tr><tr><td><b>Created</b></td><td>Fri May 29 16:28:27 CEST 2026</td></tr><tr><td><b>Type</b></td><td>Diagnostic imaging Study</td></tr><tr><td><b>Category</b></td><td>Medical-Imaging</td></tr><tr><td><b>Study Start</b></td><td>Mon Aug 22 08:31:17 CEST 2022</td></tr><tr><td><b>Modalities</b></td><td>KO, CT</td></tr><tr><td><b>Anatomical region</b></td><td>Entire body as a whole, Structure of head and/or neck</td></tr><tr><td><b>Accession number</b></td><td>http://example.org/fhir/ris-ids | 8529258169397744</td></tr><tr><td><b>Number of series</b></td><td>2</td></tr></tbody></table></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Head CT</h1><table><tbody><tr><td><b>Study Instance UID</b></td><td>1.2.250.1.59.40211.22756022.2.1.102</td></tr><tr><td><b>Subject</b></td><td><span class=\"imr-ref-Patient\">John DOE</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Device\">IHEeu imaging converter</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Organization\">Example Hospital</span></td></tr><tr><td><b>Created</b></td><td>Thu Jun 11 09:26:02 CEST 2026</td></tr><tr><td><b>Type</b></td><td>Diagnostic imaging Study</td></tr><tr><td><b>Category</b></td><td>Medical-Imaging</td></tr><tr><td><b>Study Start</b></td><td>Mon Aug 22 08:31:17 CEST 2022</td></tr><tr><td><b>Modalities</b></td><td>KO, CT</td></tr><tr><td><b>Anatomical region</b></td><td>Entire body as a whole, Structure of head and/or neck</td></tr><tr><td><b>Accession number</b></td><td>http://example.org/fhir/ris-ids | 8529258169397744</td></tr><tr><td><b>Number of series</b></td><td>2</td></tr></tbody></table></div>"
       },
       "identifier": {
         "system": "http://example.org/fhir/document-ids",
@@ -43,7 +43,7 @@
         "type": "Patient",
         "display": "John DOE"
       },
-      "date": "2026-05-29T16:28:27+02:00",
+      "date": "2026-06-11T09:26:02+02:00",
       "author": [ {
         "reference": "urn:Device/creator-device",
         "type": "Device",

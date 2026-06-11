@@ -13,3 +13,4 @@
 /.tmp-codespell-venv/**
 
 /examples/**
+.github/skills/**

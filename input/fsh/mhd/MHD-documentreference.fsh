@@ -35,8 +35,15 @@ profiles (except `securityLabel`).
 * content 1..1
   * attachment 1..1
     * contentType = #application/fhir+json
-  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode|1.5.0
+
+  // Not a defined version - also requires verson algorithm
+  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  // * format
+  //   * ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/version-resolution-method"
+  //   // Allowed codes in current publisher core: package | latest | manifest.
+  //   * ^binding.extension[=].valueCode = #latest
+    
   * extension contains  http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
@@ -56,6 +63,7 @@ profiles (except `securityLabel`).
 """
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
+
 
 * masterIdentifier
   * ^short = "The SOP Instance UID of the DICOM KOS manifest."
