@@ -20,6 +20,9 @@ jobs:
       - name: Validate with Sushi
         run: sushi .
       
+      - name: Install Jekyll
+        run: sudo gem install jekyll
+
       - name: Update publisher
         run: ./_updatePublisher.sh -f -y
 
