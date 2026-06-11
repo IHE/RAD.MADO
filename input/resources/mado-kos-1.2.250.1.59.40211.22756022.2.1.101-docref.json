@@ -44,7 +44,7 @@
       "contentType": "application/dicom",
       "url": "Binary/dicom-kos-mado--2047166866",
       "title": "KOS Imaging Manifest for Imaging Study",
-      "creation": "2026-04-24T14:22:58+02:00"
+      "creation": "2026-06-11T09:26:02+02:00"
     },
     "format": {
       "system": "http://dicom.nema.org/resources/ontology/DCMUID",

@@ -1,9 +1,9 @@
 Instance: mado-bundle-589331894518000
 InstanceOf: MadoFhirBundle
 Title: "Bundle: MADO FHIR document"
-Description: "An example of a MADO FHIR manifest."
+Description: "An example of an FHIR Imaging Study Manifest."
 Usage: #example
-* type = #collection
+* type = #document
 * identifier
   * system = "http://www.example.com/identifiers/mado-bundle"
   * value = "koewopfwjqoddasf"
@@ -11,17 +11,23 @@ Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:4fe96b54-204d-4f98-ae8d-491869a8ba01"
 
-* entry[0].fullUrl = "http://example.org/fhir/ImagingStudy/ExampleImagingStudy"
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Composition/MadoCompositionExample"
+* entry[=].resource = MadoCompositionExample
+
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/ImagingStudy/ExampleImagingStudy"
 * entry[=].resource = ExampleImagingStudy
 
-* entry[+].fullUrl = "http://example.org/fhir/Endpoint/wado-url-endpoint-84713519"
-* entry[=].resource = wado-url-endpoint-84713519
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Endpoint/MadoWadoEndpointExample"
+* entry[=].resource = MadoWadoEndpointExample
 
-* entry[+].fullUrl = "http://example.org/fhir/Patient/pat-mrn-1538098370"
-* entry[=].resource = pat-mrn-1538098370
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Patient/ExamplePatient"
+* entry[=].resource = ExamplePatient
 
-* entry[+].fullUrl = "http://example.org/fhir/Device/device-creator"
-* entry[=].resource = device-creator
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Device/MadoCreatorDeviceExample"
+* entry[=].resource = MadoCreatorDeviceExample
 
-* entry[+].fullUrl = "http://example.org/fhir/Provenance/provenance-example"
-* entry[=].resource = provenance-example
+* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Organization/MadoCreatorOrganizationExample"
+* entry[=].resource = MadoCreatorOrganizationExample
+
+// * entry[+].fullUrl = "http://example.org/fhir/Provenance/provenance-example"
+// * entry[=].resource = provenance-example

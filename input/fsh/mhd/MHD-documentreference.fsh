@@ -1,8 +1,8 @@
 Profile: MadoFhirDocumentReference
 Parent: IHE.MHD.Minimal.DocumentReference
-Title: "MADO MHD DocumentReference Profile for FHIR Imaging Manifests"
+Title: "MADO MHD DocumentReference Profile for FHIR Imaging Study Manifest"
 Description: """
-MADO specific profile for the IHE-MHD Document Reference for MADO FHIR Manifests that includes the MADO specific content format, the extensions
+MADO specific profile for the IHE-MHD Document Reference for FHIR Imaging Study Manifest that includes the MADO specific content format, the extensions
 related to body-site and modality, and the definition on where `StudyInstanceUID` and `AccessionNumber` are stored.
 
 This profile requires `context.period` and copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
@@ -12,10 +12,10 @@ profiles (except `securityLabel`).
 * insert CommonMhdDocumentReferenceFields
 
 // * masterIdentifier
-//   * ^short = "The identifier of the FHIR bundle manifest."
-//   * ^definition = "This field is used to store the identifier of the FHIR bundle manifest."
+//   * ^short = "The identifier of the FHIR Imaging Study Manifest."
+//   * ^definition = "This field is used to store the identifier of the FHIR Imaging Study Manifest."
 * masterIdentifier
-  * ^short = "The identifier of the FHIR bundle manifest."
+  * ^short = "The identifier of the FHIR Imaging Study Manifest."
   * ^definition = "An OID according to the DICOM value representation UI. Note this format is used so the same value is used as the SOP Instance UID of the corresponding DICOM KOS manifest."
 
 * relatesTo 
@@ -35,8 +35,15 @@ profiles (except `securityLabel`).
 * content 1..1
   * attachment 1..1
     * contentType = #application/fhir+json
-  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode|1.5.0
+
+  // Not a defined version - also requires verson algorithm
+  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  // * format
+  //   * ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/version-resolution-method"
+  //   // Allowed codes in current publisher core: package | latest | manifest.
+  //   * ^binding.extension[=].valueCode = #latest
+    
   * extension contains  http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
@@ -57,6 +64,7 @@ profiles (except `securityLabel`).
 * insert SetFmmAndStatusRule( 1, draft )
 * insert CommonMhdDocumentReferenceFields
 
+
 * masterIdentifier
   * ^short = "The SOP Instance UID of the DICOM KOS manifest."
   * ^definition = "An OID according to the DICOM value representation UI."
@@ -65,7 +73,7 @@ profiles (except `securityLabel`).
   * insert SliceElement( #value, code )
 * relatesTo contains fhirReference 0..1
 * relatesTo[fhirReference] 
-  * ^short = "Reference to the DocumentReference resource that contains the FHIR manifest that corresponds to this imaging manifest in DICOM KOS format"
+  * ^short = "Reference to the DocumentReference resource that contains the FHIR Imaging Study Manifest that corresponds to this imaging manifest in DICOM KOS format"
   * code = #transforms
   * target only Reference( MadoFhirDocumentReference )
 * content

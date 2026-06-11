@@ -8,9 +8,84 @@
     "system": "http://example.org/fhir/document-ids",
     "value": "mado-bundle--2047166865"
   },
-  "type": "collection",
-  "timestamp": "2026-04-24T14:23:06.583+02:00",
+  "type": "document",
+  "timestamp": "2026-06-11T09:26:02.961+02:00",
   "entry": [ {
+    "fullUrl": "urn:Composition/mado-comp-1814516964",
+    "resource": {
+      "resourceType": "Composition",
+      "id": "mado-comp-1814516964",
+      "text": {
+        "status": "additional",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Head CT</h1><table><tbody><tr><td><b>Study Instance UID</b></td><td>1.2.250.1.59.40211.22756022.2.1.102</td></tr><tr><td><b>Subject</b></td><td><span class=\"imr-ref-Patient\">John DOE</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Device\">IHEeu imaging converter</span></td></tr><tr><td><b>Author</b></td><td><span class=\"imr-ref-Organization\">Example Hospital</span></td></tr><tr><td><b>Created</b></td><td>Thu Jun 11 09:26:02 CEST 2026</td></tr><tr><td><b>Type</b></td><td>Diagnostic imaging Study</td></tr><tr><td><b>Category</b></td><td>Medical-Imaging</td></tr><tr><td><b>Study Start</b></td><td>Mon Aug 22 08:31:17 CEST 2022</td></tr><tr><td><b>Modalities</b></td><td>KO, CT</td></tr><tr><td><b>Anatomical region</b></td><td>Entire body as a whole, Structure of head and/or neck</td></tr><tr><td><b>Accession number</b></td><td>http://example.org/fhir/ris-ids | 8529258169397744</td></tr><tr><td><b>Number of series</b></td><td>2</td></tr></tbody></table></div>"
+      },
+      "identifier": {
+        "system": "http://example.org/fhir/document-ids",
+        "value": "mado-bundle--2047166865"
+      },
+      "status": "final",
+      "type": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging Study"
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs",
+          "code": "Medical-Imaging",
+          "display": "Medical-Imaging"
+        } ]
+      } ],
+      "subject": {
+        "reference": "urn:Patient/pat-mrn--1097192655",
+        "type": "Patient",
+        "display": "John DOE"
+      },
+      "date": "2026-06-11T09:26:02+02:00",
+      "author": [ {
+        "reference": "urn:Device/creator-device",
+        "type": "Device",
+        "display": "IHEeu imaging converter"
+      }, {
+        "reference": "urn:Organization/creator-organization",
+        "type": "Organization",
+        "display": "Example Hospital"
+      } ],
+      "title": "Head CT",
+      "event": [ {
+        "detail": [ {
+          "reference": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.102",
+          "type": "ImagingStudy",
+          "display": "Study B"
+        } ]
+      } ],
+      "section": [ {
+        "title": "Series",
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tbody><tr><td><b>Series Id</b></td><td>1.2.250.1.59.40211.22756022.2.2.102.202</td></tr><tr><td><b>Modality</b></td><td>KO</td></tr><tr><td><b>Number of Instances</b></td><td>1</td></tr><tr><td><b>Endpoint</b></td><td>WADO endpoint: http://example.com/wado</td></tr></tbody></table></div>"
+        },
+        "entry": [ {
+          "reference": "urn:Endpoint/wado-url-endpoint--271104327",
+          "type": "Endpoint",
+          "display": "WADO endpoint"
+        } ]
+      }, {
+        "title": "Series",
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table><tbody><tr><td><b>Series Id</b></td><td>1.2.250.1.59.40211.22756022.2.2.102.201</td></tr><tr><td><b>Modality</b></td><td>CT</td></tr><tr><td><b>Bodysite</b></td><td>Head</td></tr><tr><td><b>Started</b></td><td>Mon Aug 22 16:47:58 CEST 2022</td></tr><tr><td><b>Description</b></td><td>Series B1</td></tr><tr><td><b>Number of Instances</b></td><td>20</td></tr><tr><td><b>Endpoint</b></td><td>WADO endpoint: http://example.com/wado</td></tr></tbody></table></div>"
+        },
+        "entry": [ {
+          "reference": "urn:Endpoint/wado-url-endpoint--271104327",
+          "type": "Endpoint",
+          "display": "WADO endpoint"
+        } ]
+      } ]
+    }
+  }, {
     "fullUrl": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.102",
     "resource": {
       "resourceType": "ImagingStudy",
@@ -304,10 +379,10 @@
       "id": "pat-mrn--1097192655",
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>Patient/pat-mrn--1097192655</td></tr><tr><td><b>identifier</b></td><td><span><b>Official: </b><b>Medical Record number: </b>UV59569735 [http://example.org/fhir/mrn-ids]</span></td></tr><tr><td><b>name</b></td><td>John DOE</td></tr><tr><td><b>gender</b></td><td>male</td></tr><tr><td><b>birthDate</b></td><td>1977-05-30</td></tr></tbody></table></div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>Patient/pat-mrn--1097192655</td></tr><tr><td><b>identifier</b></td><td><span><b>Usual: </b><b>Medical Record number: </b>UV59569735 [http://example.org/fhir/mrn-ids]</span></td></tr><tr><td><b>name</b></td><td>John DOE</td></tr><tr><td><b>gender</b></td><td>male</td></tr><tr><td><b>birthDate</b></td><td>1977-05-30</td></tr></tbody></table></div>"
       },
       "identifier": [ {
-        "use": "official",
+        "use": "usual",
         "type": {
           "coding": [ {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
@@ -420,61 +495,6 @@
         "type": "Patient",
         "display": "John DOE"
       }
-    }
-  }, {
-    "fullUrl": "urn:Provenance/mado-provenance-mado-bundle--2047166865",
-    "resource": {
-      "resourceType": "Provenance",
-      "id": "mado-provenance-mado-bundle--2047166865",
-      "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\".border-bottom\"><tbody><tr><td><b>id</b></td><td>mado-provenance-mado-bundle--2047166865</td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">John DOE</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">WADO endpoint</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">http://example.org/fhir/ris-ids|8529258169397744</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Study B</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">IHEeu imaging converter</span></td></tr><tr><td><b>target</b></td><td><span class=\"imr-ref-null\">Example Hospital</span></td></tr><tr><td><b>recorded</b></td><td>2026-04-24T14:23:06.545+02:00</td></tr><tr><td><b>agent</b></td><td><div><table class=\".border-bottom\"><tbody><tr><td><b>type</b></td><td>Assembler</td></tr><tr><td><b>who</b></td><td><span class=\"imr-ref-null\">IHEeu imaging converter</span></td></tr><tr><td><b>onBehalfOf</b></td><td><span class=\"imr-ref-null\">Example Hospital</span></td></tr></tbody></table></div></td></tr></tbody></table></div>"
-      },
-      "target": [ {
-        "reference": "urn:Patient/pat-mrn--1097192655",
-        "type": "Patient",
-        "display": "John DOE"
-      }, {
-        "reference": "urn:Endpoint/wado-url-endpoint--271104327",
-        "type": "Endpoint",
-        "display": "WADO endpoint"
-      }, {
-        "reference": "urn:ServiceRequest/reqproc-591403905",
-        "type": "ServiceRequest",
-        "display": "http://example.org/fhir/ris-ids|8529258169397744"
-      }, {
-        "reference": "urn:ImagingStudy/1.2.250.1.59.40211.22756022.2.1.102",
-        "type": "ImagingStudy",
-        "display": "Study B"
-      }, {
-        "reference": "urn:Device/creator-device",
-        "type": "Device",
-        "display": "IHEeu imaging converter"
-      }, {
-        "reference": "urn:Organization/creator-organization",
-        "type": "Organization",
-        "display": "Example Hospital"
-      } ],
-      "recorded": "2026-04-24T14:23:06.545+02:00",
-      "agent": [ {
-        "type": {
-          "coding": [ {
-            "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
-            "code": "assembler",
-            "display": "Assembler"
-          } ]
-        },
-        "who": {
-          "reference": "urn:Device/creator-device",
-          "type": "Device",
-          "display": "IHEeu imaging converter"
-        },
-        "onBehalfOf": {
-          "reference": "urn:Organization/creator-organization",
-          "type": "Organization",
-          "display": "Example Hospital"
-        }
-      } ]
     }
   } ]
 }

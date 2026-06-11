@@ -2,8 +2,8 @@
 
 When distributing a MADO imaging manifest in an {{iheMHD}} environment the `DocumentReference` profiles defined below apply.
 
-* FHIR Imaging Study Manifest SHALL be packaged with an envelope defined in {{MadoFhirDocumentReference}}.
-* DICOM KOS Manifest envelopes SHALL be packaged with an envelope defined in  {{MadoDicomKosDocumentReference}}.
+* FHIR Imaging Study Manifest SHALL be packaged with an envelope defined in [[[MadoFhirDocumentReference]]].
+* DICOM KOS Manifest envelopes SHALL be packaged with an envelope defined in  [[[MadoDicomKosDocumentReference]]].
 
 An IHE-MHD infrastructure may choose to provide one manifest format and implement a mapping service to the alternate format. When such a mapping service is provided, the `address` field in the alternate `DocumentReference` includes a fully populated url to the mapping service that, when called, will return the manifest in the alternate format.
 
@@ -18,15 +18,15 @@ The figure below shows the `MHD DocumentReference`s including the most relevant 
 The main choices illustrated in the figure are:
 
 * There are two different `DocumentReferences`, one for the FHIR ImagingStudy and one for the DICOM KOS representation. When both are present, the relatesTo field points to the other representation.
-* FHIR Imaging Study manifest:
-  * A FHIR manifest is represented as a FHIR json encoded FHIR {{Bundle}} following the profile {{MadoFhirBundle}}. This Bundle contains the {{ImagingStudy}} resource as well other resources such as the {{Patient}} and various {{Endpoint}}s.
-  * The FHIR DocumentReference SHALL include the identifier of the {{MadoFhirBundle}} as `masterIdentifier`.
+* FHIR Imaging Study Manifest:
+  * An FHIR Imaging Study Manifest is represented as a FHIR json encoded FHIR [[[Bundle]]] following the profile [[[MadoFhirBundle]]]. This Bundle contains the [[[ImagingStudy]]] resource as well other resources such as the [[[Patient]]] and various [[[Endpoint]]]s.
+  * The FHIR DocumentReference SHALL include the identifier of the [[[MadoFhirBundle]]] as `masterIdentifier`.
 * DICOM KOS manifest:
   * A KOS manifest is represented as a `application/dicom` encoded DICOM instance (see [8.7.3.1 Instance Media Types](https://dicom.nema.org/medical/dicom/current/output/html/part18.html#table_8.7.3-2)) following the MADO KOS profile.
   * The DICOM KOS manifest DocumentReference SHALL include the `SOPInstanceUid` of the KOS instance as `masterIdentifier`.
 * The `masterIdentifier` SHALL be part of the `identifier` list as well.
 
-The FHIR-manifest can be translated into the KOS-manifest and vice-versa, allowing applications to provide alternate representations when needed (see [Mapping](mapping.html)).
+The FHIR Imaging Study Manifest can be translated into the KOS-manifest and vice-versa, allowing applications to provide alternate representations when needed (see [Mapping](mapping.html)).
 
 ### Related FHIR profiles
 
@@ -65,7 +65,7 @@ Imaging specific search parameters include:
   ]
 } %}
 
-The expression below uses these search parameters to search for a FHIR manifest with StudyInstanceUid=324.232.5.5.324.2.
+The expression below uses these search parameters to search for a FHIR Imaging Study Manifest with StudyInstanceUid=324.232.5.5.324.2.
 
 ```
 DocumentReference/?study-instance-uid=urn:oid:324.232.5.5.324.2&format=urn:ihe:rad:MADO:fhir-manifest:2026
@@ -103,8 +103,8 @@ The list below presents various examples of MADO DocumentReferences.
   ]
 } %}
 
-The [DocumentReference Example for FHIR manifests with transform](DocumentReference-DocumentReferenceFHIRwithTransform.html) example contains a FHIR MADO DocumentReference. The content section does not point to a FHIR file but to a transform service. The `content.attachment` section is presented below
+The [DocumentReference Example for FHIR Imaging Study Manifest with transform](DocumentReference-DocumentReferenceFHIRwithTransform.html) example contains a FHIR MADO DocumentReference. The content section does not point to a FHIR file but to a transform service. The `content.attachment` section is presented below
 
 {% fragment DocumentReference/DocumentReferenceFHIRwithTransform JSON BASE:content.attachment %}
 
-The url points to a transform service and passes the link to the KOS manifest. This is just one example of such service. This specification does not specify the interface. Alternative implementations could could pass the StudyInstanceUID and wado URL parameters, or some other set of data.
+The url points to a transform service and passes the link to the KOS manifest. This is just one example of such service. This specification does not specify the interface. Alternative implementations could pass the StudyInstanceUID and wado URL parameters, or some other set of data.

@@ -16,7 +16,7 @@ Usage: #example
 * status = #current
 * date = "2025-05-08T00:00:00Z"
 
-* subject = Reference(pat-mrn-1538098370)
+* subject = Reference(ExamplePatient)
 // * custodian = Reference(OrganizationSemiStructuredReport)
 * insert DocumentReferenceDefaults
 

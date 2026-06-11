@@ -54,7 +54,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/i
 #  path-pages:
 #    - input/pagecontent
 #    - fsh-generated/includes
-  show-inherited-invariants: 'false'
+  show-inherited-invariants: 'true'
   usage-stats-opt-out: 'false'
   logging: progress
   shownav: 'true'

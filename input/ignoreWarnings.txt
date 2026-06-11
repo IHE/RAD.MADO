@@ -30,6 +30,12 @@ No definition could be found for URL value 'Binary/dicom-kos-mado--2047166865'
 # URL that indicates the URL does not exists
 No definition could be found for URL value 'http://notapplicable'	
 
+# Direct link into internal relative file. Works but warning is not correct.
+The link 'IHE_RAD_Suppl_MADO.pdf#page=10' for "Open in new tab" cannot be resolved (valid targets: [])
+The link 'IHE_RAD_Suppl_MADO.pdf#page=32' for "Open in new tab" cannot be resolved (valid targets: [])
+The link 'IHE_RAD_Suppl_MADO.pdf#page=39' for "Open in new tab" cannot be resolved (valid targets: [])
+
+
 # RADlex has not published a FHIR CodeSystem so it does not resolved
 ValueSet 'http://www.rsna.org/RadLex_Playbook.aspx' not found
 A definition could not be found for Canonical URL 'http://www.rsna.org/RadLex_Playbook.aspx'
@@ -51,5 +57,5 @@ The packageId hl7.fhir.uv.xver-r5.r4 points to the canonical http://hl7.org/fhir
 # Issue in the FHIR release, not this spec
 The definition for the element 'ImagingStudy.series.performer.function' binds to the value set 'http://hl7.org/fhir/ValueSet/series-performer-function|4.0.1' which is experimental, but this structure is not labeled as experimental
 
-# EU codesystem used in example, did not want to polute the dependency tree with codesystem.
+# EU codesystem used in example, did not want to pollute the dependency tree with codesystem.
 A definition for CodeSystem 'http://hl7.eu/fhir/eu-health-data-api/CodeSystem/eehrxf-document-priority-category-cs' could not be found, so the code cannot be validated

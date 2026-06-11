@@ -1,5 +1,6 @@
 /input/images/Thumbs.db
 /temp
+/tmp
 /template
 /output
 /input-cache
@@ -9,6 +10,7 @@
 /_gencontinuous.sh
 /_genonce.bat
 /_genonce.sh
-
+/.tmp-codespell-venv/**
 
 /examples/**
+.github/skills/**

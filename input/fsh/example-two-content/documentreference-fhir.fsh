@@ -1,7 +1,7 @@
 Instance: DocumentReferenceFHIR
 InstanceOf: MadoFhirDocumentReference
-Title: "DocumentReference Example for FHIR manifests"
-Description: "DocumentReference Example for FHIR manifests"
+Title: "DocumentReference Example for FHIR Imaging Study Manifest"
+Description: "DocumentReference Example for FHIR Imaging Study Manifest"
 Usage: #example
 * masterIdentifier[+]
   * system = "http://www.example.com/identifiers/documentreference"
@@ -16,7 +16,7 @@ Usage: #example
 * status = #current
 * date = "2025-05-08T00:00:00Z"
 
-* subject = Reference(pat-mrn-1538098370)
+* subject = Reference(ExamplePatient)
 // * custodian = Reference(OrganizationSemiStructuredReport)
 * insert DocumentReferenceDefaults
 

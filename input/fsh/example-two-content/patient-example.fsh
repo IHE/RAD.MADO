@@ -1,5 +1,5 @@
 
-Instance: pat-mrn-1538098370
+Instance: ExamplePatient
 InstanceOf: Patient
 Title: "Example patient"
 Description: "Example patient"

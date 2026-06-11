@@ -19,7 +19,7 @@ Profile for ImagingStudy resources that represent the imaging studies manifest i
 The anatomical regions covered by the study, depending on the study there can be zero, one or more regions. 
 The regions SHALL overlap with the bodysite references from `ImagingStudy.series.bodysite`.
 """
-//* extension[creator] ^short = "The creator of the MADO imaging study manifest."
+//* extension[creator] ^short = "The creator of the FHIR Imaging Study Manifest."
 
 * subject 1..1 MS
 * subject only Reference( MadoPatient )
