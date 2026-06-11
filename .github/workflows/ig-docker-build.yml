@@ -1,0 +1,41 @@
+name: FHIR IG Docker Build
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ig-docker-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Run _genonce.sh in publisher container
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pull IG Publisher Docker image
+        run: docker pull hl7fhir/ig-publisher-base:latest
+
+      - name: Run _genonce.sh inside publisher container
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/home/publisher/ig" \
+            -w /home/publisher/ig \
+            hl7fhir/ig-publisher-base:latest \
+            /bin/bash -lc "./_genonce.sh"
+
+      - name: Verify QA output exists
+        run: |
+          test -f output/qa.json
+          test -f output/qa-time-report.json
+          test -f output/qa-time-report.tsv
