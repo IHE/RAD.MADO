@@ -32,7 +32,7 @@ jobs:
             -v "${{ github.workspace }}:/home/publisher/ig" \
             -w /home/publisher/ig \
             hl7fhir/ig-publisher-base:latest \
-            /bin/bash -lc "./_build.sh"
+            /bin/bash -lc "bash ./_build.sh build"
 
       - name: Verify QA output exists
         run: |
