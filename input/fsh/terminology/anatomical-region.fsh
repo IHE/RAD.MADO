@@ -1,5 +1,5 @@
 ValueSet:    ValueSetAnatomicalRegion
-Title:	     "Anatomical Region"
+Title:	     "ValueSet: Anatomical Region"
 Description: """
 A shortlist of anatomical regions that can be used for searching reports and manifests. This set is defined in Table 6.X.6.4-1. In this case discrepancies, the values in the table have prevalence. It is planned to
 move this ValueSet to IHE terminologies. When that is done, this definition will be removed.

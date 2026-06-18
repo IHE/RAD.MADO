@@ -8,7 +8,7 @@ This profile defines a WADO endpoint for accessing imaging study content. [MADO 
 * insert SetFmmAndStatusRule( 1, "draft" )
 
 * extension contains MadoRetrieveLocationUIDExtension named retrieveLocationUid 1..1 MS
-
+* status = #active
 * address
   * ^short = "The base URL of the WADO service. When unknown it SHALL be set to \"http://notspecified\""
 * address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.3.0 named dataAbsentReason 0..1
@@ -17,6 +17,9 @@ This profile defines a WADO endpoint for accessing imaging study content. [MADO 
 
 * connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs //"DICOM WADO-RS"
 
+* payloadType.coding 0..0
+//  = http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none
+* payloadType 1..1
 * payloadType.text = "DICOM WADO-RS" // GET proper code for this
 
 // * payloadMimeType

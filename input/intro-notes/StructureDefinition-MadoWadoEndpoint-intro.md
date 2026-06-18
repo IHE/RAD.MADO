@@ -7,3 +7,4 @@ This profile supports two cases (see X.4.1.2 Intra-community Sharing Infrastruct
 
 Note that we do not require population of the `payloadMimeType` as this information is not present in the DICOM KOS. As is defined in section 6.X.6.6.2, in MADO, only the `dicom` mimetype is required.
 
+Note that payloadType has been fixed to text only. We anticipate that a proper code will be required in future versions of this specification.
