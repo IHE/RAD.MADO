@@ -9,8 +9,12 @@ Description: """A profile for the Device resource that represents the creator of
 
 """
 * insert SetFmmAndStatusRule( 1, draft )
+// * type = MadoDeviceType#mado-creator "MADO Creator"
 * type 1..1 MS
-* type = MadoDeviceType#mado-creator "MADO Creator"
+  * coding.system
+    * ^fixedUri = Canonical( MadoDeviceType )
+  * coding.code
+    * ^fixedCode = #mado-creator
 * type.coding 1..1
 * manufacturer MS
 * owner MS

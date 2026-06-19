@@ -66,9 +66,9 @@ The regions SHALL overlap with the bodysite references from `ImagingStudy.series
       * ^short = "Will contain the Key Object Description in the case the instance represents a Key Object."
     * extension contains 
         MadoNumberOfFrames named number-of-frames 0..1 MS and 
-        MadoKeyObjectDocumentTitle named ko-document-title 0..1 MS
+        MadoKeyObjectDocumentTitle named koDocumentTitle 0..1 MS
     * extension[number-of-frames] ^short = "The number of frames in an ImagingStudy instance."
-    * extension[ko-document-title] ^short = "When this instance represents a Key Object Selection document, this extension contains the document title code of the referenced document."
+    * extension[koDocumentTitle] ^short = "When this instance represents a Key Object Selection document, this extension contains the document title code of the referenced document."
 
 
 Invariant:   mado-reqproc-1

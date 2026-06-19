@@ -6,7 +6,18 @@ This profile defines the Web Viewer endpoint for accessing imaging study content
 SHALL be a fully populated URL that contains all the information required to the launch the viewer to this study.
 """
 * insert SetFmmAndStatusRule( 1, "draft" )
-* payloadType =  http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none //"NONE"
+
+* payloadType
+  * insert SliceElement( #value, $this )
+* payloadType contains type-none 1..1
+* payloadType[type-none]
+  * coding 1..1
+  * coding.system
+    * ^fixedUri = http://terminology.hl7.org/CodeSystem/endpoint-payload-type
+  * coding.code
+    * ^fixedCode = #none
+// * payloadType =  http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none //"NONE"
+
 * payloadMimeType = #text/html
 
 // Profile: MadoIidEndpoint

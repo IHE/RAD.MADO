@@ -51,7 +51,7 @@
     "display": "John DOE"
   },
   "date": "2022-08-22T08:31:17.000+02:00",
-  "description": "Imaging Manifest for Imaging Study urn:oid:1.2.250.1.59.40211.22756022.2.1.101",
+  "description": "Imaging Manifest for Imaging Study: Head CT on CT of Head (urn:oid:1.2.250.1.59.40211.22756022.2.1.101)",
   "content": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile",
@@ -64,7 +64,7 @@
       "contentType": "application/fhir+json",
       "url": "Bundle/mado-bundle--2047166866",
       "title": "FHIR Imaging Manifest for Imaging Study",
-      "creation": "2026-06-11T09:26:02+02:00"
+      "creation": "2026-06-19T17:00:57+02:00"
     },
     "format": {
       "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",

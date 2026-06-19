@@ -15,12 +15,40 @@ This profile defines a WADO endpoint for accessing imaging study content. [MADO 
   * ^short = "This extension is present when the address value is a placeholder and should not be used (a RetrieveLocationUID lookup is needed)."
 * address.extension[dataAbsentReason].valueCode = #unknown
 
-* connectionType = http://terminology.hl7.org/CodeSystem/endpoint-connection-type#dicom-wado-rs //"DICOM WADO-RS"
+* connectionType.system
+  * ^fixedUri = http://terminology.hl7.org/CodeSystem/endpoint-connection-type
+* connectionType.code
+  * ^fixedCode = #dicom-wado-rs
 
-* payloadType.coding 0..0
-//  = http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none
-* payloadType 1..1
-* payloadType.text = "DICOM WADO-RS" // GET proper code for this
+
+* payloadType
+  * ^slicing.discriminator[+].type = #value
+  * ^slicing.discriminator[=].path = "coding.code"
+  * ^slicing.discriminator[+].type = #value
+  * ^slicing.discriminator[=].path = "coding.system"
+  * ^slicing.ordered               = false
+  * ^slicing.rules                 = #open
+* payloadType contains text-wado 1..1
+* payloadType[text-wado]
+  * coding
+    * ^slicing.discriminator[+].type = #value
+    * ^slicing.discriminator[=].path = "code"
+    * ^slicing.discriminator[+].type = #value
+    * ^slicing.discriminator[=].path = "system"
+    * ^slicing.ordered               = false
+    * ^slicing.rules                 = #open
+  * coding contains none 1..1
+  * coding[none]
+    * system 
+      * ^fixedUri = http://terminology.hl7.org/CodeSystem/endpoint-payload-type
+    * code
+      * ^fixedCode = #none
+  * text = "DICOM WADO-RS" // GET proper code for this
+
+// * payloadType.coding 0..0
+// //  = http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none
+// * payloadType 1..1
+// * payloadType.text = "DICOM WADO-RS" // GET proper code for this
 
 // * payloadMimeType
 //   * insert SliceElement( #value, $this )

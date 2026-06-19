@@ -14,18 +14,36 @@ A profile for the ServiceRequest resource that represents the Requested Procedur
 * identifier[placer]
   * ^short = "The identifier assigned by the system that placed the order."
   * type 1..1
-    * coding
-      * insert SliceElement( #value, $this )
+    * coding 1..*
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "code"
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.ordered               = false
+      * ^slicing.rules                 = #open
     * coding contains placer 1..1
-    * coding[placer] = $v2-0203#PLAC
+    * coding[placer].system
+      * ^fixedUri = $v2-0203
+    * coding[placer].code
+      * ^fixedCode = #PLAC  
 
 * identifier[filler]
   * ^short = "The identifier assigned by the system that filled the order."
   * type 1..1
-    * coding
-      * insert SliceElement( #value, $this )
+    // * insert SliceElementWithDescription( filler, $v2-020, #FILL )
+    * coding 1..*
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "code"
+      * ^slicing.discriminator[+].type = #value
+      * ^slicing.discriminator[=].path = "system"
+      * ^slicing.ordered               = false
+      * ^slicing.rules                 = #open
     * coding contains filler 1..1
-    * coding[filler] = $v2-0203#FILL
+    * coding[filler].system
+      * ^fixedUri = $v2-0203
+    * coding[filler].code
+      * ^fixedCode = #FILL
+
 
 * status 1..1
   * ^short = "The status of the requested procedure, typically set to completed."

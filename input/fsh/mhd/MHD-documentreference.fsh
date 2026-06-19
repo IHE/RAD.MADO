@@ -35,10 +35,15 @@ profiles (except `securityLabel`).
 * content 1..1
   * attachment 1..1
     * contentType = #application/fhir+json
-
   // Not a defined version - also requires verson algorithm
-  * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode
-  * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  
+  // * format from http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode
+  // * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode|1.5.0#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
+  * format 1..1
+    * system
+      * ^fixedUri = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
+    * code
+      * ^fixedCode = #urn:ihe:rad:MADO:fhir-manifest:2026
   // * format
   //   * ^binding.extension[+].url = "http://hl7.org/fhir/StructureDefinition/version-resolution-method"
   //   // Allowed codes in current publisher core: package | latest | manifest.

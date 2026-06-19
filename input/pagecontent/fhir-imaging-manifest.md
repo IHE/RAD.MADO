@@ -52,7 +52,7 @@ The Binary resource contains the DICOM KOS Manifest for the study. The `Bundle` 
 
 #### Study A
 
-Based on the DICOM study A, ([Study_A.zip](Study_A.zip)), the following resources are created:
+Based on the DICOM study A, ([Study_A.zip](https://raw.githubusercontent.com/IHE/RAD.MADO/master/examples/Dataset_A/Study_A.zip)), the following resources are created:
 
 {% sql {
   "query" : "SELECT type AS Type, id AS Id, name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE ( Id LIKE '%65' ) ORDER BY id ASC",
@@ -65,7 +65,7 @@ Based on the DICOM study A, ([Study_A.zip](Study_A.zip)), the following resource
 
 #### Study B
 
-Based on the DICOM study A, ([Study_B.zip](Study_B.zip)), the following resources are created:
+Based on the DICOM study B, ([Study_B.zip](https://raw.githubusercontent.com/IHE/RAD.MADO/master/examples/Dataset_B/Study_B.zip)), the following resources are created:
 
 {% sql {
   "query" : "SELECT type AS Type, id AS Id, name AS Name, title AS Title, Type, Description, Web FROM Resources WHERE ( Id LIKE '%66' ) ORDER BY id ASC",
