@@ -7,8 +7,8 @@ A profile for the ServiceRequest resource that represents the Requested Procedur
 * insert SetFmmAndStatusRule( 1, draft )
 * identifier
   * insert SliceElement( #value, type.coding )
-* identifier contains accessionNumber 1..1 MS and placer 0..* MS and filler 0..*
-* identifier[accessionNumber] only MadoAccessionNumberIdentifier
+* identifier contains accession-number 1..1 MS and placer 0..* MS and filler 0..*
+* identifier[accession-number] only MadoAccessionNumberIdentifier
   * ^short = "The Accession Number, the issuer of the accession number and the locally unique number that identifies the Imaging Service Request."
 
 * identifier[placer]

@@ -26,7 +26,7 @@ Usage: #example
     * valueCodeableConcept
       * coding[+] = $sct#61685007
 
-* relatesTo[fhirReference]
+* relatesTo[fhir-reference]
   * code = #transforms
   * target = Reference( DocumentReferenceFHIRwithTransform )
 

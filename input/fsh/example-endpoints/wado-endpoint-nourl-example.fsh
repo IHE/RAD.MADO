@@ -8,7 +8,7 @@ Usage: #example
 * payloadType[text-wado].coding[0] = http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none
 * payloadType[text-wado].text = "DICOM WADO-RS" // GET proper code for this
 // * payloadMimeType[dicom]           = #application/dicom
-* extension[retrieveLocationUid].valueString = "oid:213.323245.462.63.56"
+* extension[retrieve-location-uid].valueString = "oid:213.323245.462.63.56"
 * address = "http://notapplicable"
 * address.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 * address.extension.valueCode = #unknown

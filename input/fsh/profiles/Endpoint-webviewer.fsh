@@ -19,7 +19,7 @@ SHALL be a fully populated URL that contains all the information required to the
 // * payloadType =  http://terminology.hl7.org/CodeSystem/endpoint-payload-type#none //"NONE"
 
 * payloadMimeType = #text/html
-
+* address MS
 // Profile: MadoIidEndpoint
 // Parent: Endpoint
 // Title: "Endpoint: MADO profile for IHE IID endpoints"

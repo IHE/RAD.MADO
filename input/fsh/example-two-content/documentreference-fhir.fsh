@@ -28,7 +28,7 @@ Usage: #example
     * valueCodeableConcept
       * coding[+] = $sct#61685007
 
-* relatesTo[kosReference]
+* relatesTo[kos-reference]
   * code = #transforms
   * target = Reference( DocumentReferenceKOS )
 

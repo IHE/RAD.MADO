@@ -20,8 +20,8 @@ profiles (except `securityLabel`).
 
 * relatesTo 
   * insert SliceElement( #value, code )
-* relatesTo contains kosReference 0..1
-* relatesTo[kosReference] 
+* relatesTo contains kos-reference 0..1
+* relatesTo[kos-reference] 
   * ^short = "Reference to the DocumentReference resource that contains the DICOM KOS manifest that corresponds to this imaging manifest in FHIR format"
   * code = #transforms
   * target only Reference( MadoDicomKosDocumentReference )
@@ -76,8 +76,8 @@ profiles (except `securityLabel`).
 
 * relatesTo 
   * insert SliceElement( #value, code )
-* relatesTo contains fhirReference 0..1
-* relatesTo[fhirReference] 
+* relatesTo contains fhir-reference 0..1
+* relatesTo[fhir-reference] 
   * ^short = "Reference to the DocumentReference resource that contains the FHIR Imaging Study Manifest that corresponds to this imaging manifest in DICOM KOS format"
   * code = #transforms
   * target only Reference( MadoFhirDocumentReference )
