@@ -53,7 +53,7 @@ In the KOS column the expression `sequence->field` means that within the sequenc
 |                                                   | MadoComposition.author[source-organization]                                 |                                                                                                                                                                                                                        |
 | MADO Author institution id                        | MadoCreatorOrganization identifier                                          | Institution Name (0008,0080) (V2 XON encoding)                                                                                                                                                                         |
 |                                                   | MadoComposition.author[source-organization]                                 |                                                                                                                                                                                                                        |
-
+| Document identifier                               | MadoFhirBundle.identifier                                                   |  SOP Instance UID (0008,0018)  |
 
 Please note that in this table:
 
