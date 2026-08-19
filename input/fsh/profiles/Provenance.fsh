@@ -6,7 +6,7 @@
 
 // In DICOM KOS this information (and the referred MadoCreator) corresponds to the Institution Name, Institution Id, Manufacturer Name in the General Equipment module.
 // """
-// * insert SetFmmAndStatusRule( 1, draft )
+// * insert SetFmmAndStatusRule( 1, trial-use )
 
 // * target MS
 //   * ^short = "SHALL contain a list with all resources in the Bundle."

@@ -38,6 +38,9 @@ The link 'IHE_RAD_Suppl_MADO.pdf#page=39' for "Open in new tab" cannot be resolv
 
 # RADlex has not published a FHIR CodeSystem so it does not resolved
 ValueSet 'http://www.rsna.org/RadLex_Playbook.aspx' not found
+
+# ihe-iid is intentionally allowed as a MADO Web Viewer connection type; its deprecation is acknowledged.
+%The concept 'ihe-iid' is deprecated and its use should be reviewed
 A definition could not be found for Canonical URL 'http://www.rsna.org/RadLex_Playbook.aspx'
 
 # DICOM publishes this ValueSet without a CodeSystem

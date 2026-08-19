@@ -5,7 +5,7 @@ Description: """
 This profile defines a WADO endpoint for accessing imaging study content. [MADO WADO Endpoint](Endpoint-wado-endpoint-with-url.html) holds an example of a endpoint with a 
 `RetrieveLocationUid` and an address.
 """
-* insert SetFmmAndStatusRule( 1, "draft" )
+* insert SetFmmAndStatusRule( 1, trial-use )
 
 * extension contains MadoRetrieveLocationUIDExtension named retrieve-location-uid 1..1 MS
 * status = #active

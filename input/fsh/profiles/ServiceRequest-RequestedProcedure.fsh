@@ -4,7 +4,7 @@ Title: "MADO Requested Procedure"
 Description: """
 A profile for the ServiceRequest resource that represents the Requested Procedure (see 6.X.2.8.1 Referenced Request Macro Description).
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * identifier
   * insert SliceElement( #value, type.coding )
 * identifier contains accession-number 1..1 MS and placer 0..* MS and filler 0..*

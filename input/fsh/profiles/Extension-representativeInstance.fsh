@@ -5,6 +5,6 @@
 // referenced instance on an ImagingStudy series is a representative instance for that series, which can be 
 // used for display purposes in the MADO context."""
 // Context: ImagingStudy.series, ImagingStudy.series.instance
-// * insert SetFmmAndStatusRule( 1, draft )
+// * insert SetFmmAndStatusRule( 1, trial-use )
 // * value[x] only boolean
 // * valueBoolean 1..1

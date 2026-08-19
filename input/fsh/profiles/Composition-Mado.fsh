@@ -4,7 +4,7 @@ Title: "MADO Composition"
 Description: """A FHIR Composition profile for MADO manifests is needed as FHIR Bundles of type `document` require a `Composition` resource as the first entry. Instances of this profile can be rendered in normal document based system without the need for the Client to understand the MADO-specific profiles, while still allowing to represent the essential information of the manifest such as patient, modality, and anatomical region.
 
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * text 1..1 MS
   * ^short = "A human readable narrative that contains information about the manifest."
   * status from MadoNarrativeNotEmpty (required)

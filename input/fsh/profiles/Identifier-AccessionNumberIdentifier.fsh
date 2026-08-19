@@ -5,7 +5,7 @@ Description: """
 Profile for the Accession Number Identifier used in the MADO context. This profile is used for the Identifier that represents the Accession Number in the MADO context. It includes additional
 constraints and extensions specific to the MADO context, such as the value set for the type of identifier and the fixed value for the system of the identifier.
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * system 1..1 
   * ^short = "The issuer of the accession number."
 * value 1..1
@@ -29,6 +29,6 @@ Description: """
 Profile for the Reference that contains the Accession Number Identifier used in the MADO context. This profile is used for the Reference that contains the Identifier that represents the Accession Number in the MADO context. It includes additional
 constraints and extensions specific to the MADO context, such as the value set for the type of identifier and the fixed value for the system of the identifier.
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * identifier 1..1
 * identifier only MadoAccessionNumberIdentifier

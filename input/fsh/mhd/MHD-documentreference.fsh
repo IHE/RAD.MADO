@@ -8,7 +8,7 @@ related to body-site and modality, and the definition on where `StudyInstanceUID
 This profile requires `context.period` and copies most of the restrictions defined in the [MHD DocumentReference Comprehensive](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) 
 profiles (except `securityLabel`).
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * insert CommonMhdDocumentReferenceFields
 
 // * masterIdentifier
@@ -66,7 +66,7 @@ This profile requires `context.period` and copies most of the restrictions defin
 profiles (except `securityLabel`).
 
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 * insert CommonMhdDocumentReferenceFields
 
 
