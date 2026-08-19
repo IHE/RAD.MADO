@@ -1,43 +1,76 @@
 
 ## Significant Changes
 
-### Significant Changes from Revision x.x
+### Significant Changes from the previous Trial Implementation revision
 
-- change 1
-- change 2
-- etc.
+- Refined the *FHIR Imaging Study Manifest Overview* figure: series and instances are shown as stacked sets, the WADO endpoint is referenced from the series (including its LocationUID), a viewer box is referenced from the study, and the XC-WADO endpoint box was removed.
+- Reworked the "Related FHIR Profiles" tables so the link is carried on the profile title and the redundant name column was removed.
+- Corrected the MADO FHIR Bundle slicing.
+- Added the anatomical-region extension bound to the MADO anatomical region value set and aligned the DICOM KOS &lt;-&gt; FHIR mapping table accordingly.
+- Added instance-level (KIN) information to the ImagingStudy manifest (instance title / key-object document title).
+- Renamed the DocumentReference body-site search parameter to reference the anatomical region.
 
 ## Issues
 
 ### Submit an Issue
 
+Issues can be submitted through the [IHE RAD.MADO GitHub issue tracker](https://github.com/IHE/RAD.MADO/issues).
+
 ### Open Issues
-
-#### Need for a Accession Number Identifier profile
-
-The spec introduces a Data Type Profile: MADO Accession Number Identifier.  Why is this needed when it as not needed for the imaging report ?
-
-**Resolution:** This profile (and the study-instance-uid profile) are added to clearly define the type field requirements when providing identifiers that represent these concepts. We will maintain the definition and require the dcm field.
-
-**OPEN ISSUE:** Discuss during the face-2-face whether and how to include urn:ihe:iti:xds:2013 as a third option.
-
-#### Representation of KIN information
-
-The MADO profile allows for inclusion of KIN - key object information. The information elements include the KIN Document Title Code and description (at instance level) (see the text in line 1195 and lower).
-
-Option 1 = description--> series.instance.title / extension for title-code
-Option 2 = Basic+cross version imaging selection with this info.
-==> Bas will proposal - topic for face-2-face
-
-#### Try-out example 
-
-Does the document remain a collection bundle or move to a document bundle.
 
 ### Closed Issues
 
+#### Representation of KIN information
+
+The MADO profile allows for inclusion of KIN - key object information. The information elements include the KIN Document Title Code and description (at instance level).
+
+**Resolution:** KIN information is represented at the instance level of the `ImagingStudy`. When a referenced instance represents a Key Object Selection document, `ImagingStudy.series.instance.extension[ko-document-title]` carries the Document Title code (bound to DICOM CID 7010, based on TID 2010) and `ImagingStudy.series.instance.title` carries the Key Object Description.
+
+#### Need for an Accession Number Identifier profile
+
+The spec introduces a Data Type Profile: MADO Accession Number Identifier.  Why is this needed when it was not needed for the imaging report ?
+
+**Resolution:** This profile (and the study-instance-uid profile) are added to clearly define the type field requirements when providing identifiers that represent these concepts. We will maintain the definition and require the dcm field.
+
+#### Anatomical region: coded value vs. free text
+
+The DICOM KOS "Target Region" may carry either a code or free text, but the FHIR manifest restricts the anatomical region to a coded value.
+
+**Resolution:** The `ImagingStudy` anatomical-region extension keeps a `preferred` binding to the MADO anatomical region value set, so a coded value is expected but other codes remain allowed. The MHD DocumentReference body-site extension uses an `extensible` binding to the same value set.
+
+#### Bundle type of the FHIR manifest (collection vs. document)
+
+Should the FHIR Imaging Study Manifest be a `collection` Bundle or a `document` Bundle? A `document` Bundle is a better fit for MHD publication (ITI-65/ITI-105 are designed for document Bundles) but requires a `Composition` resource whose narrative reflects the study.
+
+**Resolution:** The manifest SHALL always be a `document` Bundle. It includes a `Composition` that carries the document header fields and renders the study-level information (patient, study date/time, modalities, anatomical regions, number of series, institution name).
+
+#### Author of the manifest (Provenance vs. MADO Creator)
+
+How should the creator/author of the manifest be represented: via `Provenance`, `Composition.author` referencing the MADO Creator device/organization, `meta.source`, or a `Bundle.link`?
+
+**Resolution:** Use a `Provenance` resource, as it is the standard pattern and is required if the document is to be signed. The MADO Creator device and organization profiles are retained so that manufacturer, type and owner can be required.
+
+#### Mapping table refinements
+
+Review comments identified several corrections to the DICOM KOS &lt;-&gt; FHIR mapping table, including: adding the StudyInstanceUID reference under `CurrentRequestedProcedureEvidenceSequence`; using `ReferencedSOPInstanceUID` for the instance UID; clarifying which `ServiceRequest.identifier` is intended for the order/accession number and using the MADO term "Placer Order Number / Imaging Service Request"; and confirming where "Number of Study-related Series" maps.
+
+**Resolution:** The editorial corrections have been applied to the mapping table.
+
+#### WADO endpoint at the study level
+
+If all series point to the same WADO base URL, should the endpoint also be allowed at the study level?
+
+**Resolution:** Keep it aligned with the DICOM KOS representation and reference the WADO endpoint at the series level (duplicated per series). An example with a WADO endpoint that has no URL is included and described in the text.
+
+#### payloadMimeType on the WADO endpoint
+
+Should `Endpoint.payloadMimeType` be kept, given it is not present in DICOM?
+
+**Resolution:** Leave it as is.
+
 #### XC WADO endpoint
 
-XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Imaging Study Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding the IHE-RAD-XC-WADO specification.
+XC-WADO end-point is not part of the MADO Profile.  Remove XC-WADO Endpoint box from the Figure: FHIR Imaging Study Manifest Overview.  Below remove the text about two endpoint formats, including: “The MADO FHIR XC-WADO Endpoint endpoint which provides an IHE-RAD-XC-WADO endpoint corresponding to the IHE-RAD-XC-WADO specification.
 
 **Resolution:** We will better explain that this is a profile that defines how to encode XC-WADO information in the FHIR Imaging Study Manifest.
 
@@ -50,7 +83,7 @@ The Figure: FHIR Imaging Study Manifest Overview should be refined because some 
 
 #### Circular dependencies between mapping and definition
 
-Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specific the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
+Below the figure, the following text is inappropriate: “The Bundle SHALL contain all available data elements in the FHIR column in Table 4.3-1 (see DICOM KOS <-> FHIR mappings).”  The mapping cannot be used to specify the Manifest Content.  This creates a circular specification.  Similar comment with the text: “What resources to include depends on the information to be included, see DICOM KOS <-> FHIR mappings for more information on when to include what resource.” which is also improper.  Need a full FHIR explicit structured definition in this section.
 
 **Resolution**: Flag them using MustSupport - add definition to manifest definition page.
 
@@ -77,11 +110,11 @@ MadoRepresentativeInstanceExtension
 
 ```
 Extension: Representative Instance
-An extension to indicate that a referenced instance on and ImagingStudy series is a representative instance for that series. This extension is used in the MADO context to indicate that a referenced instance on an ImagingStudy series is a representative instance for that series, which can be used for display purposes in the MADO context.
+An extension to indicate that a referenced instance on an ImagingStudy series is a representative instance for that series. This extension is used in the MADO context to indicate that a referenced instance on an ImagingStudy series is a representative instance for that series, which can be used for display purposes in the MADO context.
 In the Manifest Envelope, the descriptive text (first five sentences and the text below the figure) for MHD needs a structure that sets a context about the MHD profile to better understand these technical statements (e.g. using the MHD actor profile names and associated MHD transactions).
 ```
 
-**Resolution:** In (an earlier?) version of the MADO spec, in the KOS list of images, there was a remark that this should contain the representative images to be shown first. This extension was added to support those. I cannot find that text in the current spec anymore. If these are indeed no longer in the spec, we will remove this extension.
+**Resolution:** In (an earlier?) version of the MADO spec, in the KOS list of images, there was a remark that this should contain the representative images to be shown first. This extension was added to support those. This text is no longer present in the current spec, so this extension has been removed (disabled in the build).
 
 #### Base resource for MHD DocumentReference
 
@@ -89,7 +122,7 @@ In the Manifest Envelope, section related FHIR Profile, it speaks about the rela
  
 **Answer:** Minimal Document Reference has been chosen as this is the minimal MHD requirement and the one used in the EU Health Access API specification. I do not see a reason to add the restrictions in this profile to all deployments of MADO.
 
-The comprehensive includes relevant fields that are needed in this context such as time, practiseSetting and facilityType
+The comprehensive includes relevant fields that are needed in this context such as time, practiceSetting and facilityType
 
 **Resolution:** Take over the fields from comprehensive except `securityLabel` and add Period.
 

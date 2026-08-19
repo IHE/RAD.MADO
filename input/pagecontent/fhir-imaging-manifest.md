@@ -1,12 +1,12 @@
 {% include aliases.md %}
 
-The FHIR Imaging Study Manifest represents a summary of the data stored in a DICOM imaging study. It contains the information stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URL's that allow download of the imaging content.
+The FHIR Imaging Study Manifest represents a summary of the data stored in a DICOM imaging study. It contains the information stored in a PACS expressed in FHIR. This page defines the FHIR encoding of such manifest. It is the '*document*' that is searched for and provides the URLs that allow download of the imaging content.
 
 This section specifies the structure and format of an Imaging Study Manifest for the MADO Profile using the FHIR standard. It is based on the DICOM Key Object Selection (KOS) Document Information Object Definition (IOD) as specified in DICOM PS3.3 Section A.35.4 Key Object Selection Document IOD.
 
 ### FHIR Imaging Study Manifest overview
 
-The FHIR Imaging Study Manifest is a FHIR document [[[Bundle]]]. The figure below presents an overview of the Bundle and the imaging manifest data that included in it. In order to keep the diagram readable, not all references are included.
+The FHIR Imaging Study Manifest is a FHIR document [[[Bundle]]]. The figure below presents an overview of the Bundle and the imaging manifest data that is included in it. In order to keep the diagram readable, not all references are included.
 
 {% include img.html img="fhir-manifest-overview.drawio.svg" caption="Figure: FHIR Imaging Study Manifest Overview" %}
 
@@ -16,7 +16,7 @@ The profiles for the [[[MadoFhirBundle]]] and the resources it contains have fie
 
 The [[[MadoComposition]]] is required in order to make it a FHIR document Bundle and can be used to present a rendering of the content of the manifest.
 
-The [[[MadoImagingStudy]]] is the heart of the manifest and provides most of the information related to the imaging study including the modality, uid's and series and instances.
+The [[[MadoImagingStudy]]] is the heart of the manifest and provides most of the information related to the imaging study including the modality, UIDs, series and instances.
 
 The [[[MadoPatient]]] resource holds the patient information.
 
@@ -27,9 +27,9 @@ The [[[MadoRequestedProcedure]]] provides information on the order for the imagi
 [[[Endpoint]]] resources contain the information that allows the client to access the DICOM data. The current model identifies different [[[Endpoint]]]s:
 
 * On study level, the manifest MAY contain:
-  * The [[[MadoWebViewerEndpoint]]] which provides a web based endpoint. The `address` defined in the endpoint, opens a webviewer on the study.
+  * The [[[MadoWebViewerEndpoint]]] which provides a web-based endpoint. The `address` defined in the endpoint opens a web viewer on the study.
 * For each series, the manifest SHALL contain:
-  * The [[[MadoWadoEndpoint]]] which `address` field holds the WADO base url that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
+  * The [[[MadoWadoEndpoint]]] whose `address` field holds the WADO base URL that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
 
 ### Related FHIR profiles
 
