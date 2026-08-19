@@ -6,7 +6,7 @@
 id: ihe.rad.mado
 canonical: https://profiles.ihe.net/RAD/MADO
 # version: 0.2.0-current
-version: 0.1.0
+version: 1.0.0
 name: IHE_RAD_MADO
 title: "Manifest-based Access to DICOM Objects (MADO)"
 description: ImplementationGuide for IHE Radiology Technical Framework Supplement Manifest-based Access to DICOM Objects (MADO)
@@ -15,7 +15,7 @@ description: ImplementationGuide for IHE Radiology Technical Framework Supplemen
 releaseLabel: trial-use
 #releaseLabel: release
 #date: 2026-03-16
-status: draft # draft | active | retired | unknown
+status: active # draft | active | retired | unknown
 publisher:
   ## Find your domain contact on the https://www.ihe.net/ihe_domains page
   - name: IHE Radiology Technical Committee
@@ -38,7 +38,8 @@ copyrightYear: 2025+
 dependencies:
   # ihe.iti.mhd: current
   ihe.iti.mhd: 4.2.3
-  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2 
+  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
+  # hl7.fhir.uv.xver-r5.r4: 0.1.0
   fhir.dicom: 
     id: DICOM
     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom

@@ -1,7 +1,7 @@
 {
     "package-id" : "ihe.rad.mado",
-    "version" : "0.1.0",
-    "path" : "https://profiles.ihe.net/RAD/MADO/0.1.0",
+    "version" : "1.0.0",
+    "path" : "https://profiles.ihe.net/RAD/MADO/1.0.0",
     "mode" : "milestone",
     "status" : "trial-use",
     "sequence" : "Publication",
@@ -17,4 +17,4 @@
     "registry-country" : "uv",
     "registry-authority" : "IHE",
     "first" : true
-  }
+}

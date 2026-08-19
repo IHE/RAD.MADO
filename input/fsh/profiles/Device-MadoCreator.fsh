@@ -23,8 +23,6 @@ Description: """A profile for the Device resource that represents the creator of
 Profile:     MadoCreatorOrganization
 Parent:      Organization
 Title:       "MADO Creator Organization"
-Description: "Profile on Organization that specifies the required elements for the organization that creates MADO manifests.
-"
-* name MS
+Description: "Profile on Organization that specifies the required elements for the organization that creates MADO manifests."
+* name 1..1 MS
 * identifier MS
-* type MS
