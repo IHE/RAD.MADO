@@ -126,6 +126,7 @@ pages:
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
+  Contents: toc.html
   MADO Home: index.html
   Volume 1: 
     Introduction: volume-1.html
