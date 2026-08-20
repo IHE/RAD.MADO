@@ -7,7 +7,7 @@ SHALL be a fully populated URL that contains all the information required to the
 """
 * insert SetFmmAndStatusRule( 1, trial-use )
 
-* connectionType from MadoWebViewerConnectionType (required)
+* connectionType = MadoEndpointConnectionTypes#web-viewer
 
 * payloadType
   * ^slicing.discriminator[+].type = #value
