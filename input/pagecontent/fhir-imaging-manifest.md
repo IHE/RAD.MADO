@@ -26,10 +26,10 @@ The [[[MadoRequestedProcedure]]] provides information on the order for the imagi
 
 [[[Endpoint]]] resources contain the information that allows the client to access the DICOM data. The current model identifies different [[[Endpoint]]]s:
 
-* On study level, the manifest MAY contain:
-  * The [[[MadoWebViewerEndpoint]]] which provides a web-based endpoint. The `address` defined in the endpoint opens a web viewer on the study.
-* For each series, the manifest SHALL contain:
-  * The [[[MadoWadoEndpoint]]] whose `address` field holds the WADO base URL that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
+- On study level, the manifest MAY contain:
+  - The [[[MadoWebViewerEndpoint]]] which provides a web-based endpoint. The `address` defined in the endpoint opens a web viewer on the study.
+- For each series, the manifest SHALL contain:
+  - The [[[MadoWadoEndpoint]]] whose `address` field holds the WADO base URL that allows access to the series information (see [IHE RAD TF-2](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_TF_Vol2.pdf): 4.107 WADO-RS Retrieve [RAD-107]).
 
 ### Related FHIR profiles
 
