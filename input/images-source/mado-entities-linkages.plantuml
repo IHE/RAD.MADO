@@ -1,0 +1,14 @@
+@startuml
+skinparam svgDimensionStyle false
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor White
+  BorderColor Black
+}
+rectangle "Clinical Order\n(Placer Order Number)" as CO
+rectangle "Imaging Procedure Request\n(Accession Number)" as IPR
+rectangle "Imaging Study\n(Study Instance UID)" as IS
+CO "1-n" -- "1-n" IPR
+CO "1-n" -- "1-n" IS
+IPR "1-n" -- "1-n" IS
+@enduml

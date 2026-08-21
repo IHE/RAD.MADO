@@ -1,0 +1,24 @@
+@startuml
+skinparam BoxPadding 40
+box "Grouped"
+participant "Imaging Document Consumer" as IDC
+participant "Image Display Invoker" as IDI
+end box
+box "Grouped"
+participant "Imaging Document Source" as IDS
+participant "Image Display" as ID
+end box
+== Get server-side viewer URL ==
+IDC->IDC: //Access Imaging Study Manifest//
+IDC->IDC: //User is aware that a remote viewer//\n//may be invoked and chooses to//\n//launch it//
+IDC->IDC: //Get server-side Display URL//\n//from Imaging Study Manifest//
+== Launch server-side viewer using URL ==
+IDC-->IDI: //User passes Display URL to request//\n//launch of remote image display//\n//application//
+activate IDI
+activate ID
+IDI->IDI: //Request Display of Study Images//
+IDI->ID: Invoke Image Display [RAD-106]
+ID->ID: //Display Study Images//
+deactivate ID
+deactivate IDI
+@enduml

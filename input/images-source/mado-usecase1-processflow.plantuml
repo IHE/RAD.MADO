@@ -1,0 +1,19 @@
+@startuml
+participant "Imaging Document Consumer" as IDC
+participant "Imaging Document Source" as IDS
+== Get and Select study/series/instance uids ==
+IDC->IDC: //Access Imaging Study Manifest//
+alt study level
+IDC->IDC: Select Study references
+else series level
+IDC->IDC: Select Series references
+else instance level
+IDC->IDC: Select Image references
+end
+== Get Instances ==
+IDC->IDS: WADO-RS Retrieve [RAD-107] for study/series/instances
+activate IDS
+IDS-->IDC: Return instances
+IDC->IDC: //Process instances //
+deactivate IDS
+@enduml

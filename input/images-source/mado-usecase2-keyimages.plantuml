@@ -1,0 +1,20 @@
+@startuml
+participant "Imaging Document Consumer" as IDC
+participant "Imaging Document Source" as IDS
+== Select Key Image Note ==
+IDC->IDC: //Access descriptive information//\n//from Imaging Study Manifest//
+IDC->IDC: //Present KOS/KIN Titles of Key//\n//Images and optional descriptions//\n//for user selection//
+IDC->IDC: //Select required KOS/KIN//
+== Get Key Image Note and Select study/series/instance uids for Key Images ==
+IDC->IDS: WADO-RS Retrieve [RAD-107] to retrieve KOS/KIN Instance
+activate IDS
+IDS-->IDC: Return KOS/KIN Instance
+IDC->IDC: //Get Study/Series/Instance UIDs//\n//of Key Images from KOS/KIN//
+deactivate IDS
+== Get Key Images ==
+IDC->IDS: WADO-RS Retrieve [RAD-107] to retrieve Key Image Instances
+activate IDS
+IDS-->IDC: Return Key Image Instances
+IDC->IDC: //Process Key Images//
+deactivate IDS
+@enduml

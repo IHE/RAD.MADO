@@ -1,0 +1,16 @@
+@startuml
+participant Requester
+participant Responder
+== Get Instances ==
+Requester -> Responder: Get Instances Request
+Responder --> Requester: Get Instances Response
+== Get Metadata ==
+Requester -> Responder: Get Metadata Request
+Responder --> Requester: Get Metadata Response
+== Get Bulkdata ==
+Requester -> Responder: Get Bulkdata Request
+Responder --> Requester: Get Bulkdata Response
+== Get Rendered Instances ==
+Requester -> Responder: Get Rendered Instances Request
+Responder --> Requester: Get Rendered Instances Response
+@enduml
