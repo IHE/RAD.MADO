@@ -54,7 +54,7 @@ In the KOS column the expression `sequence->field` means that within the sequenc
 
 Please note that in this table:
 
-* Multiplicities are not indicated nor implied. Please refer to the base DICOM KOS Manifest or FHIR Imaging Study Manifest for information on multiplicities.
-* The intention of this table is to present the location in the FHIR/DICOM manifest where the corresponding information element can be found. It is not intended as a definition on the construction of the FHIR/DICOM KOS manifest. In the case of discrepancies, the definitions of these formats have prevalence.
-* In the case that for a concept the table lists multiple locations, this means that the same value is present at each location. Instances where those data elements differ are malformed.
+- Multiplicities are not indicated nor implied. Please refer to the base DICOM KOS Manifest or FHIR Imaging Study Manifest for information on multiplicities.
+- The intention of this table is to present the location in the FHIR/DICOM manifest where the corresponding information element can be found. It is not intended as a definition on the construction of the FHIR/DICOM KOS manifest. In the case of discrepancies, the definitions of these formats have prevalence.
+- In the case that for a concept the table lists multiple locations, this means that the same value is present at each location. Instances where those data elements differ are malformed.
   
