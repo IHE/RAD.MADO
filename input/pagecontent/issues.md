@@ -18,6 +18,15 @@ Issues can be submitted through the [IHE RAD.MADO GitHub issue tracker](https://
 
 ### Open Issues
 
+#### Cross-version (xver) extension package for DocumentReference body-site, modality and content.profile
+
+The MADO FHIR DocumentReference profiles (`MadoFhirDocumentReference`, `MadoDicomKosDocumentReference`) use R5-on-R4 cross-version extensions from `hl7.fhir.uv.xver-r5.r4` for `DocumentReference.bodySite`, `DocumentReference.modality`, and `DocumentReference.content.profile`. The IG is currently pinned to `0.0.1-snapshot-2`. Two problems remain:
+
+- Moving to the released `0.1.0` package is not backward compatible: `bodySite` loses its inline `concept` sub-extension (becomes `Reference(BodyStructure)` only), the `modality` extension is removed entirely, and the `content.profile` sub-slice is renamed from `value[x]` to `value`. All three break the current profiles and the body-site / modality SearchParameters.
+- With the pinned snapshot, the IG publisher reports one persistent, non-suppressible error: `ImplementationGuide.dependsOn: The packageId hl7.fhir.uv.xver-r5.r4 points to the canonical http://hl7.org/fhir/uv/xver which is inconsistent with the stated canonical http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4`. This originates in the xver package metadata and cannot be resolved from `sushi-config.yaml`.
+
+**Discussion:** The IG stays on `hl7.fhir.uv.xver-r5.r4#0.0.1-snapshot-2` because it is the only version whose extensions match the current DocumentReference design (inline coded body-site, a modality extension, and the `value[x]` content-profile slice). Migrating to `0.1.0` would require redesigning the body-site to reference a `BodyStructure` resource, finding a replacement for the now-absent modality extension, and updating the content-profile slice name and the affected SearchParameters. The dependency-canonical error is acknowledged as an upstream xver package issue and is suppressed via `input/ignoreWarnings.txt`.
+
 ### Closed Issues
 
 #### Representation of KIN information

@@ -49,7 +49,7 @@ profiles (except `securityLabel`).
   //   // Allowed codes in current publisher core: package | latest | manifest.
   //   * ^binding.extension[=].valueCode = #latest
     
-  * extension contains  http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile named profile 1..*
+  * extension contains  $CrossVersion-R5-DocumentReference.content.profile-for-R4 named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
     * extension[value[x]]
