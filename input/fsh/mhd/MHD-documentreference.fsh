@@ -52,7 +52,7 @@ profiles (except `securityLabel`).
   * extension contains  $CrossVersion-R5-DocumentReference.content.profile-for-R4 named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
-    * extension[value[x]]
+    * extension[value]
       * valueCanonical = Canonical( MadoFhirBundle )
 
 Profile: MadoDicomKosDocumentReference

@@ -12,4 +12,4 @@ Usage: #definition
 * code = #anatomical-region
 * base[+] = #DocumentReference
 * type = #token
-* expression = "DocumentReference.extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.bodySite').extension('concept').value"
+* expression = "DocumentReference.extension('https://profiles.ihe.net/RAD/MADO/StructureDefinition/ext-R5-DocumentReference.bodySite').extension('concept').value"

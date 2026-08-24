@@ -38,8 +38,7 @@ copyrightYear: 2025+
 dependencies:
   # ihe.iti.mhd: current
   ihe.iti.mhd: 4.2.3
-  hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
-  # hl7.fhir.uv.xver-r5.r4: 0.1.0
+  hl7.fhir.uv.xver-r5.r4: 0.1.0
   fhir.dicom: 
     id: DICOM
     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom

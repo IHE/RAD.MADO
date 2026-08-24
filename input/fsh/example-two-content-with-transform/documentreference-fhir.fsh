@@ -37,8 +37,8 @@ Usage: #example
   * format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
   * extension[profile]
     * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile"
-    * extension[value[x]]
-      * url = "value[x]"
+    * extension[value]
+      * url = "value"
       * valueCanonical = Canonical( MadoFhirBundle )
   * attachment[+]
     * contentType = #application/fhir+json
