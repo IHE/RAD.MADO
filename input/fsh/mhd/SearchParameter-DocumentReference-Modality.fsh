@@ -4,7 +4,7 @@ InstanceOf: SearchParameter
 Usage: #definition
 * name = "DocumentReferenceModality"
 * extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"
+  * url = $StructureDefinitionStandardsStatus
   * valueCode = #trial-use
 * status = #active
 * experimental = false 

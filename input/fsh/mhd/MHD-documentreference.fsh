@@ -91,7 +91,7 @@ RuleSet: CommonMhdDocumentReferenceFields
 * obeys mado-docref-1
 * identifier 1..*
 // bodysite
-* extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 MS
+* extension contains MadoDocumentReferenceBodySite named bodysite 0..1 MS
 * extension[bodysite].extension[concept] 1..1
 * extension[bodysite].extension[concept]
   * valueCodeableConcept from ValueSetAnatomicalRegion (extensible)
@@ -99,7 +99,7 @@ RuleSet: CommonMhdDocumentReferenceFields
   * ^definition = "This field may be used to provide additional information about the anatomical region of interest for the imaging manifest."
 
 // // modality
-* extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 MS
+* extension contains MadoDocumentReferenceModality named modality 1..1 MS
 
 * type 1..1 MS
   * ^short = "Kind of document (LOINC if possible), see section 6.X.6 of volume 3."

@@ -1,6 +1,6 @@
 RuleSet: SetFmmAndStatusRule ( fmm, status )
-* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = {fmm}
-* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status].valueCode = #{status}
+* ^extension[$StructureDefinitionFmm].valueInteger = {fmm}
+* ^extension[$StructureDefinitionStandardsStatus].valueCode = #{status}
 * ^jurisdiction = http://unstats.un.org/unsd/methods/m49/m49.html#EU "Europe"
 
 

@@ -36,7 +36,7 @@ Usage: #example
 * content[+]
   * format =  http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:rad:MADO:fhir-manifest:2026 // pending
   * extension[profile]
-    * url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile"
+    * url = $CrossVersion-R5-DocumentReference.content.profile-for-R4
     * extension[value]
       * url = "value"
       * valueCanonical = Canonical( MadoFhirBundle )

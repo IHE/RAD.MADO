@@ -10,5 +10,5 @@ Usage: #example
 // * payloadMimeType[dicom]           = #application/dicom
 * extension[retrieve-location-uid].valueString = "oid:213.323245.462.63.56"
 * address = "http://notapplicable"
-* address.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* address.extension.url = $DataAbsentReason
 * address.extension.valueCode = #unknown
