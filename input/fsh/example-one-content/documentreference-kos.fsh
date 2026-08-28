@@ -24,9 +24,8 @@ Usage: #example
 * extension[modality].valueCodeableConcept = http://dicom.nema.org/resources/ontology/DCM#MR
 
 * extension[bodysite]
-  * extension[concept]
-    * valueCodeableConcept
-      * coding[+] = $sct#61685007
+  * valueCodeableConcept
+    * coding[+] = $sct#61685007
 
 * content[+]
   * attachment[+]

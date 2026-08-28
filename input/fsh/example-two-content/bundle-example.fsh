@@ -11,23 +11,23 @@ Usage: #example
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:4fe96b54-204d-4f98-ae8d-491869a8ba01"
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Composition/MadoCompositionExample"
-* entry[=].resource = MadoCompositionExample
+* entry[composition].fullUrl = "https://profiles.ihe.net/RAD/MADO/Composition/MadoCompositionExample"
+* entry[composition].resource = MadoCompositionExample
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/ImagingStudy/ExampleImagingStudy"
-* entry[=].resource = ExampleImagingStudy
+* entry[imaging-study].fullUrl = "https://profiles.ihe.net/RAD/MADO/ImagingStudy/ExampleImagingStudy"
+* entry[imaging-study].resource = ExampleImagingStudy
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Endpoint/MadoWadoEndpointExample"
-* entry[=].resource = MadoWadoEndpointExample
+* entry[wado-endpoint].fullUrl = "https://profiles.ihe.net/RAD/MADO/Endpoint/MadoWadoEndpointExample"
+* entry[wado-endpoint].resource = MadoWadoEndpointExample
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Patient/ExamplePatient"
-* entry[=].resource = ExamplePatient
+* entry[patient].fullUrl = "https://profiles.ihe.net/RAD/MADO/Patient/ExamplePatient"
+* entry[patient].resource = ExamplePatient
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Device/MadoCreatorDeviceExample"
-* entry[=].resource = MadoCreatorDeviceExample
+* entry[creator-device].fullUrl = "https://profiles.ihe.net/RAD/MADO/Device/MadoCreatorDeviceExample"
+* entry[creator-device].resource = MadoCreatorDeviceExample
 
-* entry[+].fullUrl = "https://profiles.ihe.net/RAD/MADO/Organization/MadoCreatorOrganizationExample"
-* entry[=].resource = MadoCreatorOrganizationExample
+* entry[creator-organization].fullUrl = "https://profiles.ihe.net/RAD/MADO/Organization/MadoCreatorOrganizationExample"
+* entry[creator-organization].resource = MadoCreatorOrganizationExample
 
 // * entry[+].fullUrl = "http://example.org/fhir/Provenance/provenance-example"
 // * entry[=].resource = provenance-example

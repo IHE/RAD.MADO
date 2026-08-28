@@ -29,7 +29,7 @@ IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (serve
       * definition = Canonical( SearchParameterDocumentReferenceBodySite )
       * type = #token
       * extension[+]
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * url = $CapabilityStatementExpectation
         * valueCode = #SHALL
       * documentation = "Anatomical region of the related imaging study"
     * searchParam[+]
@@ -37,7 +37,7 @@ IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (serve
       * definition = Canonical( SearchParameterDocumentReferenceModality )
       * type = #token
       * extension[+]
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * url = $CapabilityStatementExpectation
         * valueCode = #SHALL
       * documentation = "Modality of the related imaging study" 
     * searchParam[+]
@@ -45,7 +45,7 @@ IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (serve
       * definition = Canonical( SearchParameterDocumentReferenceStudyInstanceUid )
       * type = #token
       * extension[+]
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * url = $CapabilityStatementExpectation
         * valueCode = #SHALL
       * documentation = "Study Instance UID of the related imaging study"   
     * searchParam[+]
@@ -53,6 +53,6 @@ IHE RAD Manifest based Access to DICOM Objects(MADO) - Document Responder (serve
       * definition = Canonical( SearchParameterDocumentReferenceAccessionNumber )
       * type = #token
       * extension[+]
-        * url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+        * url = $CapabilityStatementExpectation
         * valueCode = #SHALL
       * documentation = "Accession Number of the related imaging study"   

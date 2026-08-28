@@ -52,7 +52,7 @@ profiles (except `securityLabel`).
   * extension contains  $CrossVersion-R5-DocumentReference.content.profile-for-R4 named profile 1..*
   * extension[profile]
     * ^short = "Contains the profile of the referred report"
-    * extension[value[x]]
+    * extension[value]
       * valueCanonical = Canonical( MadoFhirBundle )
 
 Profile: MadoDicomKosDocumentReference
@@ -91,15 +91,15 @@ RuleSet: CommonMhdDocumentReferenceFields
 * obeys mado-docref-1
 * identifier 1..*
 // bodysite
-* extension contains $CrossVersion-R5-DocumentReference.bodySite-for-R4 named bodysite 0..1 MS
-* extension[bodysite].extension[concept] 1..1
-* extension[bodysite].extension[concept]
+* extension contains
+    MadoDocumentReferenceBodySite named bodysite 0..* MS and
+    MadoDocumentReferenceModality named modality 1..* MS
+* extension[bodysite]
   * valueCodeableConcept from ValueSetAnatomicalRegion (extensible)
   * ^short = "The anatomical region of the patient that is the focus of the imaging manifest, concept field is required."
   * ^definition = "This field may be used to provide additional information about the anatomical region of interest for the imaging manifest."
 
 // // modality
-* extension contains $CrossVersion-R5-DocumentReference.modality-for-R4 named modality 1..1 MS
 
 * type 1..1 MS
   * ^short = "Kind of document (LOINC if possible), see section 6.X.6 of volume 3."
