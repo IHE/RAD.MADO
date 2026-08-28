@@ -92,8 +92,7 @@ RuleSet: CommonMhdDocumentReferenceFields
 * identifier 1..*
 // bodysite
 * extension contains MadoDocumentReferenceBodySite named bodysite 0..1 MS
-* extension[bodysite].extension[concept] 1..1
-* extension[bodysite].extension[concept]
+* extension[bodysite]
   * valueCodeableConcept from ValueSetAnatomicalRegion (extensible)
   * ^short = "The anatomical region of the patient that is the focus of the imaging manifest, concept field is required."
   * ^definition = "This field may be used to provide additional information about the anatomical region of interest for the imaging manifest."

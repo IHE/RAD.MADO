@@ -11,16 +11,13 @@
     }
   }, {
     "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/ext-R5-DocumentReference.bodySite",
-    "extension": [ {
-      "url": "concept",
-      "valueCodeableConcept": {
+    "valueCodeableConcept": {
         "coding": [ {
           "system": "http://snomed.info/sct",
           "code": "774007",
           "display": "Structure of head and/or neck"
-        } ]
-      }
-    } ]
+      } ]
+    }
   } ],
   "masterIdentifier": {
     "system": "http://example.org/fhir/document-ids",
