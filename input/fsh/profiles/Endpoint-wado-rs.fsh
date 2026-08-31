@@ -5,13 +5,13 @@ Description: """
 This profile defines a WADO endpoint for accessing imaging study content. [MADO WADO Endpoint](Endpoint-wado-endpoint-with-url.html) holds an example of a endpoint with a 
 `RetrieveLocationUid` and an address.
 """
-* insert SetFmmAndStatusRule( 1, "draft" )
+* insert SetFmmAndStatusRule( 1, trial-use )
 
 * extension contains MadoRetrieveLocationUIDExtension named retrieve-location-uid 1..1 MS
 * status = #active
 * address
   * ^short = "The base URL of the WADO service. When unknown it SHALL be set to \"http://notspecified\""
-* address.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason|5.3.0 named data-absent-reason 0..1
+* address.extension contains $DataAbsentReason|5.3.0 named data-absent-reason 0..1
   * ^short = "This extension is present when the address value is a placeholder and should not be used (a RetrieveLocationUID lookup is needed)."
 * address.extension[data-absent-reason].valueCode = #unknown
 

@@ -1,6 +1,11 @@
 //============== ALIAS ===============
 
-// --- Code Systems
+// --- Code Systems - common
+Alias: SCT = http://snomed.info/sct
+Alias: UCUM = http://unitsofmeasure.org
+Alias: LOINC = http://loinc.org
+
+// --- Code Systems - this IG
 Alias: $absent-unknown-uv-ips = http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips
 Alias: $ajcc = http://cancerstaging.org
 Alias: $atc = http://www.whocc.no/atc

@@ -2,7 +2,7 @@
   "resourceType": "DocumentReference",
   "id": "mado-documentreference-kos--2047166866",
   "extension": [ {
-    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.modality",
+    "url": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/ext-R5-DocumentReference.modality",
     "valueCodeableConcept": {
       "coding": [ {
         "system": "http://dicom.nema.org/resources/ontology/DCM",
@@ -36,7 +36,7 @@
     "extension": [ {
       "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.content.profile",
       "extension": [ {
-        "url": "value[x]",
+        "url": "value",
         "valueUri": "https://profiles.ihe.net/RAD/MADO/StructureDefinition/MadoFhirBundle"
       } ]
     } ],

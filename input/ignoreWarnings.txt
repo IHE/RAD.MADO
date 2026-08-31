@@ -38,6 +38,9 @@ The link 'IHE_RAD_Suppl_MADO.pdf#page=39' for "Open in new tab" cannot be resolv
 
 # RADlex has not published a FHIR CodeSystem so it does not resolved
 ValueSet 'http://www.rsna.org/RadLex_Playbook.aspx' not found
+
+# ihe-iid is intentionally allowed as a MADO Web Viewer connection type; its deprecation is acknowledged.
+%The concept 'ihe-iid' is deprecated and its use should be reviewed
 A definition could not be found for Canonical URL 'http://www.rsna.org/RadLex_Playbook.aspx'
 
 # DICOM publishes this ValueSet without a CodeSystem
@@ -51,8 +54,8 @@ The ImplementationGuide uses package ihe.iti.mhd#4.2.3 released on 2025-10-31, b
 # Source profile issue that cannot be resolved in this spec.
 Reference to draft CodeSystem http://hl7.org/fhir/document-reference-status|4.0.1
 
-# Extension package issue outside the scope of this spec.
-The packageId hl7.fhir.uv.xver-r5.r4 points to the canonical http://hl7.org/fhir/uv/xver which is inconsistent with the stated canonical of http://hl7.org/fhir/5.0/ImplementationGuide/hl7.fhir.uv.xver-r5.r4
+# The bodySite SearchParameter walks into the 'concept' sub-extension of the local DocumentReference.bodySite extension; 'concept' is the correct sub-extension key.
+Reference to an unknown extension - double check that the URL 'concept' is correct
 
 # Issue in the FHIR release, not this spec
 The definition for the element 'ImagingStudy.series.performer.function' binds to the value set 'http://hl7.org/fhir/ValueSet/series-performer-function|4.0.1' which is experimental, but this structure is not labeled as experimental

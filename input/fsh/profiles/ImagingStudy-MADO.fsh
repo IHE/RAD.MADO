@@ -4,7 +4,7 @@ Title: "MADO Imaging Study"
 Description: """
 Profile for ImagingStudy resources that represent the imaging studies manifest in the MADO context. It includes additional constraints and extensions specific to the MADO context, such as the study modality, the clinical specialty, the anatomical region of interest, the presence of significant images.
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 
 * identifier 1..*
 * identifier

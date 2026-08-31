@@ -5,7 +5,7 @@ Description: """
 Profile for FHIR Bundles used as an FHIR Imaging Study Manifest in the MADO context. It includes constraints and extensions specific to FHIR Imaging Study Manifest, such as the type of study, the clinical specialty, and the anatomical region of interest.
 
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 
 * identifier 1..1 MS
   * ^short = "An OID according for a FHIR-Based formatted Imaging Study Manifest. The OID is structured according to the DICOM UI value representation. In the case that a DICOM KOS manifest is present, this field will hold the same value as the SOP Instance UID of the corresponding translated DICOM KOS manifest."
@@ -29,7 +29,7 @@ Profile for FHIR Bundles used as an FHIR Imaging Study Manifest in the MADO cont
     patient 0..1 MS and
     wado-endpoint 1..* MS and
     web-endpoint 0..* MS and
-    creator 1..1 MS and
+    creator-device 1..1 MS and
     creator-organization 0..1 MS and
     requested-procedure 0..* MS 
 
@@ -42,7 +42,7 @@ Profile for FHIR Bundles used as an FHIR Imaging Study Manifest in the MADO cont
 * entry[patient].resource only MadoPatient
   * ^short = "Patient the study is about."
 
-* entry[creator].resource only MadoCreator
+* entry[creator-device].resource only MadoCreator
   * ^short = "The author of the manifest."
 
 * entry[creator-organization].resource only MadoCreatorOrganization

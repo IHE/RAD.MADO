@@ -8,7 +8,7 @@ Description: """A profile for the Device resource that represents the creator of
 * owner (Reference to MadoCreatorOrganization)
 
 """
-* insert SetFmmAndStatusRule( 1, draft )
+* insert SetFmmAndStatusRule( 1, trial-use )
 // * type = MadoDeviceType#mado-creator "MADO Creator"
 * type 1..1 MS
   * coding.system
@@ -24,5 +24,6 @@ Profile:     MadoCreatorOrganization
 Parent:      Organization
 Title:       "MADO Creator Organization"
 Description: "Profile on Organization that specifies the required elements for the organization that creates MADO manifests."
+* insert SetFmmAndStatusRule( 1, trial-use )
 * name 1..1 MS
 * identifier MS

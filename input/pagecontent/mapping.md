@@ -2,7 +2,7 @@
 
 The mapping between the DICOM KOS and FHIR format is presented in the table below. In order to make it clear what concept is addressed, the first column contains a short characterization of the concept. The other two columns show the corresponding FHIR and DICOM KOS fields. In the case that more than one field is presented, it is expected that the concept will be present in each of them.
 
-In the FHIR column, the expression `Resource.field1.field2` means within the resource `Resource`, there is an element called `field1` that contains the element `field2`. The expression `field1->resource` means that `field1` is reference that points to the resource `resource`.
+In the FHIR column, the expression `Resource.field1.field2` means within the resource `Resource`, there is an element called `field1` that contains the element `field2`. The expression `field1->resource` means that `field1` is a reference that points to the resource `resource`.
 
 In the KOS column the expression `sequence->field` means that within the sequence `sequence` there is a field called `field`. The expression `SR:EV(aaa,DCM,"name")->EV(bbb,DCM,"name")` means that within the DICOM SR ContentSequence there is a SR node with the code `aaa` that contains the SR node `bbb`.
 
@@ -54,7 +54,7 @@ In the KOS column the expression `sequence->field` means that within the sequenc
 
 Please note that in this table:
 
-* Multiplicities are not indicated nor implied. Please refer to the base DICOM KOS Manifest or FHIR Imaging Study Manifest for information on multiplicities.
-* The intention of this table is present the location in the FHIR/DICOM manifest where the corresponding information element can be found. It is not intended as a definition on the construction of the FHIR/DICOM KOS manifest. In the case of discrepancies, the definitions of these formats have prevalence.
-* In the case that for a concept the table lists multiple locations, this means that the same value is present at each location. Instances where those data elements differ are malformed.
+- Multiplicities are not indicated nor implied. Please refer to the base DICOM KOS Manifest or FHIR Imaging Study Manifest for information on multiplicities.
+- The intention of this table is to present the location in the FHIR/DICOM manifest where the corresponding information element can be found. It is not intended as a definition on the construction of the FHIR/DICOM KOS manifest. In the case of discrepancies, the definitions of these formats have prevalence.
+- In the case that for a concept the table lists multiple locations, this means that the same value is present at each location. Instances where those data elements differ are malformed.
   
