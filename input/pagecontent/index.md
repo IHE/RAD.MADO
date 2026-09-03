@@ -15,4 +15,4 @@ IOD or FHIR Imaging Study resource, as well as profiling in a more precise way e
 attributes and new attributes, such as those necessary to improve access to key images in a way 
 compatible with the IHE KIN Profile.
 
-{% include stunote.html text="Note that there are two components to the MADO Profile. This implementation guide only represents the FHIR part of the MADO specification. Where applicable, references/redirects are added that point to the PDF MADO specification that contains the Volume 1, Volume 2 and the DICOM part of Volume 3. Both components must be implemented to conform."%}
+{% include stunote.html text="Note: There are two components to the MADO Profile. This implementation guide only represents the FHIR part of the MADO specification. Where applicable, references/redirects are added that point to the PDF MADO specification that contains the Volume 1, Volume 2 and the DICOM part of Volume 3. Both components must be implemented to conform."%}
