@@ -6,6 +6,6 @@ The Manifest-based Access to DICOM Objects (MADO) Profile represents a summary o
 
 This Continuous Build is at http://build.fhir.org/ig/IHE/RAD.MADO/branches/master/index.html
 
-Formal Publication at http://profiles.ihe.net/RAD/MADO (TODO)
+Formal Publication at http://profiles.ihe.net/RAD/MADO
 
 History of publications at https://profiles.ihe.net/RAD/MADO/history.html
